@@ -1,7 +1,34 @@
 @import "tailwindcss";
 
 @layer base {
+  :root {
+    --colombiando-yellow: #FFB100;
+    --colombiando-blue: #0060BB;
+    --colombiando-red: #D00000;
+  }
+  
   html {
     font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-colombiando-yellow {
+    color: var(--colombiando-yellow);
+  }
+  .text-colombiando-blue {
+    color: var(--colombiando-blue);
+  }
+  .text-colombiando-red {
+    color: var(--colombiando-red);
+  }
+  .bg-colombiando-yellow {
+    background-color: var(--colombiando-yellow);
+  }
+  .bg-colombiando-blue {
+    background-color: var(--colombiando-blue);
+  }
+  .bg-colombiando-red {
+    background-color: var(--colombiando-red);
   }
 }
