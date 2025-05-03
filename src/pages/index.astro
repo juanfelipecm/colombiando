@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Gallery from '../components/Gallery.astro';
 import FlippableCard from '../components/FlippableCard.astro';
 import SpeechBubble from '../components/SpeechBubble.astro';
+import HoverSpeechBubble from '../components/HoverSpeechBubble.astro';
 ---
 
 <Layout>
@@ -42,11 +43,71 @@ import SpeechBubble from '../components/SpeechBubble.astro';
 
 	<!-- Speech Bubble Example -->
 	<section class="bg-white py-12">
-		<div class="max-w-4xl mx-auto px-4">
-			<SpeechBubble className="mb-10 max-w-3xl">
+		<div class="max-w-4xl mx-auto px-4 flex flex-col gap-8">
+			<SpeechBubble variant="yellow" className="mb-6 max-w-3xl">
 				Apoyamos a los profesores rurales multigrado con recursos, herramientas y comunidad para transformar la educación en Colombia.
 			</SpeechBubble>
+			
+			<SpeechBubble variant="red" className="mb-6 max-w-3xl">
+				Cada año capacitamos a más de 100 docentes en metodologías innovadoras para la educación rural.
+			</SpeechBubble>
+			
+			<SpeechBubble variant="blue" className="mb-6 max-w-3xl">
+				Nuestros proyectos han beneficiado a más de 5,000 estudiantes en zonas rurales de Colombia.
+			</SpeechBubble>
+			<HoverSpeechBubble variant="blue">
+				Apoyamos a los profesores rurales multigrado con recursos, herramientas y comunidad para transformar la educación en Colombia.
+			</HoverSpeechBubble>
 		</div>
 	</section>
+
+	<!-- Section Salon Rural -->
+	<section class="py-12 min-h-[110vh]" style="background-image: url('/src/assets/images/colombiando-salon-rural.jpg'); background-size: cover; background-position: center;">
+		<!-- Safe Div -->
+		<div class="my-36 mx-24 grid grid-cols-4 grid-rows-3 gap-16 min-h-[600px]">
+			<div class="flex items-center justify-center">
+				<HoverSpeechBubble variant="red">“Estamos a marzo y no han llegado las cartillas de este año”</HoverSpeechBubble>
+			</div>
+			
+			<div class="flex items-center justify-center">
+				<HoverSpeechBubble variant="blue">“Tengo estudiantes de Transición, 1°, 2°, 3°, 4°, 5°”</HoverSpeechBubble>
+			</div>
+			
+			<div class="flex items-center justify-center">
+				<HoverSpeechBubble variant="yellow">“El rector no ha venido en los último 9 años”</HoverSpeechBubble>
+			</div>
+			
+			<div class="flex items-center justify-center">
+				<HoverSpeechBubble variant="red">“El horario acá es de 7 a 12 porque no hay servicio de almuerzo”</HoverSpeechBubble>
+			</div>
+			
+			<div class="flex items-center justify-center">
+				<HoverSpeechBubble variant="blue">“Planeo todas las tardes unas 2 horas y media”</HoverSpeechBubble>
+			</div>
+			
+			<div class="flex items-center justify-center">
+				<HoverSpeechBubble variant="yellow">“No hay internet”</HoverSpeechBubble>
+			</div>
+			
+			<div class="flex items-center justify-center">
+				<HoverSpeechBubble variant="red">“Seguimos sin baños en la escuela”</HoverSpeechBubble>
+			</div>
+			
+			<div class="flex items-center justify-center">
+				<HoverSpeechBubble variant="blue">“Seguimos sin luz”</HoverSpeechBubble>
+			</div>
+			
+			<div class="flex items-center justify-center">
+				<HoverSpeechBubble variant="yellow">“Tenemos un computador de los gordos y ya no prende”</HoverSpeechBubble>
+			</div>
+			
+			<div class="flex items-center justify-center">
+				<HoverSpeechBubble variant="red">“Debo planear clase de
+					castellano, matemáticas, ciencias sociales, ciencias naturales, geografía, historia, cátedra de paz, cátedra afro, geometría, estadística, inglés, lecto-escritura, informática, religión…”
+					</HoverSpeechBubble>
+			</div>
+		</div>
+	</section>
+
 
 </Layout>

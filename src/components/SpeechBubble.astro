@@ -2,20 +2,40 @@
 interface Props {
   content?: string;
   className?: string;
+  variant?: 'yellow' | 'red' | 'blue';
 }
 
-const { content, className = ""} = Astro.props;
+const { content, className = "", variant = "yellow" } = Astro.props;
+
+// Map variants to colors
+const colors = {
+  yellow: {
+    bg: 'var(--colombiando-yellow)',
+    color: '#000000'
+  },
+  red: {
+    bg: 'var(--colombiando-red)',
+    color: '#000000'
+  },
+  blue: {
+    bg: 'var(--colombiando-blue)',
+    color: '#000000'
+  }
+};
+
+const bgColor = colors[variant].bg;
+const textColor = colors[variant].color;
 ---
 
-<div class={`speech-bubble ${className}`}>
+<div class={`speech-bubble speech-bubble-${variant} ${className}`}>
   <slot>{content}</slot>
 </div>
 
-<style>
+<style define:vars={{ bgColor, textColor }}>
   .speech-bubble {
     box-sizing: border-box;
     position: relative;
-    background: #FFB100;
+    background: var(--bgColor);
     border: 3px solid #000000;
     box-shadow: 5px 5px 0px #000000;
     padding: 20px;
@@ -23,6 +43,7 @@ const { content, className = ""} = Astro.props;
     border-radius: 16px;
     font-weight: 600;
     font-size: 0.75rem;
+    color: var(--textColor);
   }
   
   @media (min-width: 1024px) {
@@ -38,7 +59,7 @@ const { content, className = ""} = Astro.props;
     left: 20px;
     width: 30px;
     height: 30px;
-    background: #FFB100;
+    background: var(--bgColor);
     border-right: 3px solid #000000;
     border-bottom: 3px solid #000000;
     box-shadow: 4px 4px 0px #000000;
