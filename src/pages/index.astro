@@ -4,6 +4,8 @@ import Gallery from '../components/Gallery.astro';
 import FlippableCard from '../components/FlippableCard.astro';
 import SpeechBubble from '../components/SpeechBubble.astro';
 import HoverSpeechBubble from '../components/HoverSpeechBubble.astro';
+// Import the video asset
+import footerVideo from '../assets/videos/colombiando-escuela-rural.mp4';
 ---
 
 <Layout>
@@ -41,73 +43,99 @@ import HoverSpeechBubble from '../components/HoverSpeechBubble.astro';
 	
 	</section>	
 
-	<!-- Speech Bubble Example -->
-	<section class="bg-white py-12">
-		<div class="max-w-4xl mx-auto px-4 flex flex-col gap-8">
-			<SpeechBubble variant="yellow" className="mb-6 max-w-3xl">
-				Apoyamos a los profesores rurales multigrado con recursos, herramientas y comunidad para transformar la educación en Colombia.
-			</SpeechBubble>
-			
-			<SpeechBubble variant="red" className="mb-6 max-w-3xl">
-				Cada año capacitamos a más de 100 docentes en metodologías innovadoras para la educación rural.
-			</SpeechBubble>
-			
-			<SpeechBubble variant="blue" className="mb-6 max-w-3xl">
-				Nuestros proyectos han beneficiado a más de 5,000 estudiantes en zonas rurales de Colombia.
-			</SpeechBubble>
-			<HoverSpeechBubble variant="blue">
-				Apoyamos a los profesores rurales multigrado con recursos, herramientas y comunidad para transformar la educación en Colombia.
-			</HoverSpeechBubble>
-		</div>
-	</section>
 
 	<!-- Section Salon Rural -->
-	<section class="py-12 min-h-[110vh]" style="background-image: url('/src/assets/images/colombiando-salon-rural.jpg'); background-size: cover; background-position: center;">
-		<!-- Safe Div -->
-		<div class="my-36 mx-24 grid grid-cols-4 grid-rows-3 gap-16 min-h-[600px]">
-			<div class="flex items-center justify-center">
-				<HoverSpeechBubble variant="red">“Estamos a marzo y no han llegado las cartillas de este año”</HoverSpeechBubble>
-			</div>
-			
-			<div class="flex items-center justify-center">
-				<HoverSpeechBubble variant="blue">“Tengo estudiantes de Transición, 1°, 2°, 3°, 4°, 5°”</HoverSpeechBubble>
-			</div>
-			
-			<div class="flex items-center justify-center">
-				<HoverSpeechBubble variant="yellow">“El rector no ha venido en los último 9 años”</HoverSpeechBubble>
-			</div>
-			
-			<div class="flex items-center justify-center">
-				<HoverSpeechBubble variant="red">“El horario acá es de 7 a 12 porque no hay servicio de almuerzo”</HoverSpeechBubble>
-			</div>
-			
-			<div class="flex items-center justify-center">
-				<HoverSpeechBubble variant="blue">“Planeo todas las tardes unas 2 horas y media”</HoverSpeechBubble>
-			</div>
-			
-			<div class="flex items-center justify-center">
-				<HoverSpeechBubble variant="yellow">“No hay internet”</HoverSpeechBubble>
-			</div>
-			
-			<div class="flex items-center justify-center">
-				<HoverSpeechBubble variant="red">“Seguimos sin baños en la escuela”</HoverSpeechBubble>
-			</div>
-			
-			<div class="flex items-center justify-center">
-				<HoverSpeechBubble variant="blue">“Seguimos sin luz”</HoverSpeechBubble>
-			</div>
-			
-			<div class="flex items-center justify-center">
-				<HoverSpeechBubble variant="yellow">“Tenemos un computador de los gordos y ya no prende”</HoverSpeechBubble>
-			</div>
-			
-			<div class="flex items-center justify-center">
-				<HoverSpeechBubble variant="red">“Debo planear clase de
-					castellano, matemáticas, ciencias sociales, ciencias naturales, geografía, historia, cátedra de paz, cátedra afro, geometría, estadística, inglés, lecto-escritura, informática, religión…”
-					</HoverSpeechBubble>
+	<section class="py-12 min-h-screen" style="background-image: url('/src/assets/images/colombiando-salon-rural.jpg'); background-size: cover; background-position: center;">
+		<!-- Responsive Grid Container -->
+		<div class="mx-4 sm:mx-8 md:mx-12 lg:mx-24 my-8 sm:my-16 md:my-24 lg:my-36">
+			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8 md:gap-12 lg:gap-16">
+				<div class="flex items-center justify-center p-2">
+					<HoverSpeechBubble variant="red">"Estamos a marzo y no han llegado las cartillas de este año"</HoverSpeechBubble>
+				</div>
+				
+				<div class="flex items-center justify-center p-2">
+					<HoverSpeechBubble variant="blue">"Tengo estudiantes de Transición, 1°, 2°, 3°, 4°, 5°"</HoverSpeechBubble>
+				</div>
+				
+				<div class="flex items-center justify-center p-2">
+					<HoverSpeechBubble variant="yellow">"El rector no ha venido en los último 9 años"</HoverSpeechBubble>
+				</div>
+				
+				<div class="flex items-center justify-center p-2">
+					<HoverSpeechBubble variant="red">"El horario acá es de 7 a 12 porque no hay servicio de almuerzo"</HoverSpeechBubble>
+				</div>
+				
+				<div class="flex items-center justify-center p-2">
+					<HoverSpeechBubble variant="blue">"Planeo todas las tardes unas 2 horas y media"</HoverSpeechBubble>
+				</div>
+				
+				<div class="flex items-center justify-center p-2">
+					<HoverSpeechBubble variant="yellow">"No hay internet"</HoverSpeechBubble>
+				</div>
+				
+				<div class="flex items-center justify-center p-2">
+					<HoverSpeechBubble variant="red">"Seguimos sin baños en la escuela"</HoverSpeechBubble>
+				</div>
+				
+				<div class="flex items-center justify-center p-2">
+					<HoverSpeechBubble variant="blue">"Seguimos sin luz"</HoverSpeechBubble>
+				</div>
+				
+				<div class="flex items-center justify-center p-2">
+					<HoverSpeechBubble variant="yellow">"Tenemos un computador de los gordos y ya no prende"</HoverSpeechBubble>
+				</div>
+				
+				<div class="flex items-center justify-center p-2">
+					<HoverSpeechBubble variant="red">"Debo planear clase de
+						castellano, matemáticas, ciencias sociales, ciencias naturales, geografía, historia, cátedra de paz, cátedra afro, geometría, estadística, inglés, lecto-escritura, informática, religión…"
+						</HoverSpeechBubble>
+				</div>
 			</div>
 		</div>
 	</section>
 
+	<footer>		
+		<div class="flex flex-col lg:flex-row min-h-96" >
+			<div class="flex flex-1 items-center gap-2 justify-center">
+				<img src="/logo-ColombiAndo.png" alt="ColombiAndo logo" class="h-12 w-auto" />
+			  </div>
+			<div class="flex flex-1 flex-col gap-2 justify-center border-x-2 border-black my-10 px-10">
+				<h5 class="text-xl font-bold">Una plataforma de profes para profes.</h5>
+				<p class="text-sm">Somos una comunidad de profesores multigrado que se apoya, se conecta, comparte buenas prácticas y visibiliza la educación rural.  </p>
+			</div>
+			<div class="flex flex-1 flex-col justify-center gap-2 px-10">
+				<h5 class="text-xl font-bold">Información de contacto</h5>
+				<p class="text-sm">hola@colombiando.co</p>
+				<div class="flex gap-4 mt-2">
+					<a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-2xl">
+						<i class="fab fa-instagram"></i>
+					</a>
+					<a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-2xl">
+						<i class="fab fa-linkedin"></i>
+					</a>
+				</div>
+				<div class="flex flex-col gap-2 mt-10">
+					<a href="https://colombiando.co" target="_blank" rel="noopener noreferrer" class="text-sm underline">Información RTE</a>
+				</div>
+				<div class="flex flex-col gap-2">
+					<a href="https://colombiando.co" target="_blank" rel="noopener noreferrer" class="text-sm underline">Política de privacidad</a>
+				</div>
+			</div>
+			<div class="flex flex-1 flex-col gap-2">
+				<!-- Video Background -->
+				<video 
+					class="h-full object-cover z-0 opacity-20" 
+					autoplay 
+					muted 
+					loop 
+					playsinline
+				>
+					<source src={footerVideo} type="video/mp4">
+					<!-- Fallback for browsers that don't support video -->
+					Your browser does not support the video tag.
+				</video>
+			</div>
+		</div>
+	</footer>
 
 </Layout>
