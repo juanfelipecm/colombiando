@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Gallery from '../components/Gallery.astro';
+import FlippableCard from '../components/FlippableCard.astro';
+import SpeechBubble from '../components/SpeechBubble.astro';
 ---
 
 <Layout>
@@ -13,7 +16,8 @@ import Layout from '../layouts/Layout.astro';
 			Somos el mejor aliado del profesor rural multigrado.
 		</h1>
 	</section>
-	<!-- Section Quienes Somos -->
+
+	<!-- Section de Profe a Profe -->
 	<section class="bg-white">
 		<div class="flex flex-col lg:flex-row mx-auto px-4 py-16 gap-8 max-w-6xl items-center">
 			<h2 class="text-2xl lg:text-4xl font-bold text-colombiando-blue lg:min-w-fit">De profe a profe</h2>
@@ -21,4 +25,28 @@ import Layout from '../layouts/Layout.astro';
 			<p class="text-xl">Una plataforma de profes para profes. Somos una comunidad de profesores multigrado que se apoya, se conecta, comparte buenas prácticas y visibiliza la educación rural. </p>
 		</div>
 	</section>
+	<Gallery />
+
+	<!-- Section Quienes Somos -->
+	<section class="bg-white">
+		<div class="flex flex-col lg:flex-row mx-auto px-4 py-16 gap-8 max-w-6xl items-center">
+			<div class="flex flex-col gap-4 max-w-lg">
+				<h2 class="text-2xl lg:text-4xl font-bold text-colombiando-red 	lg:min-w-fit">Quienes Somos</h2>
+				<p class="text-xl">Colombiando es una organización sin ánimo de lucro que desde el 2022 co-crea proyectos educativos con profesores multigrado con el fin de cultivar e incentivar el interés por aprender en niños, niñas y jóvenes de	contextos rurales en Colombia. </p>
+			</div>
+			<FlippableCard />
+		</div>
+		
+	
+	</section>	
+
+	<!-- Speech Bubble Example -->
+	<section class="bg-white py-12">
+		<div class="max-w-4xl mx-auto px-4">
+			<SpeechBubble className="mb-10 max-w-3xl">
+				Apoyamos a los profesores rurales multigrado con recursos, herramientas y comunidad para transformar la educación en Colombia.
+			</SpeechBubble>
+		</div>
+	</section>
+
 </Layout>
