@@ -3,11 +3,20 @@ import Button from './Button.astro';
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="absolute top-0 left-0 right-0 z-10 flex items-center justify-between bg-white rounded-lg px-6 py-3 m-8 shadow-lg">
+<header class="absolute top-0 left-0 right-0 z-10 flex items-center justify-between bg-white rounded-lg px-6 py-3 m-2 md:m-8 shadow-lg">
   <div class="flex items-center gap-2">
-    <img src="/logo-ColombiAndo.png" alt="ColombiAndo logo" class="h-14 w-auto" />
+    <img src="/logo-ColombiAndo.png" alt="ColombiAndo logo" class="h-10 w-auto md:h-14" />
   </div>
-  <nav class="flex flex-grow gap-4 border-b-4 border-black justify-end ml-6 pb-4">
+  
+  <!-- Mobile menu button -->
+  <button id="mobile-menu-toggle" class="md:hidden focus:outline-none" aria-label="Toggle menu">
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+  
+  <!-- Desktop Navigation -->
+  <nav class="hidden md:flex flex-grow gap-4 border-b-4 border-black justify-end ml-6 pb-4">
     <a href="/">
       <Button variant="yellow" active={currentPath === '/'}>Inicio</Button>
     </a>
@@ -15,4 +24,47 @@ const currentPath = Astro.url.pathname;
     <Button variant="red">Nosotras</Button>
     <Button variant="white">Donaciones</Button>
   </nav>
+  
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="fixed inset-0 z-20 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+    <div class="flex justify-between items-center p-6 border-b">
+      <img src="/logo-ColombiAndo.png" alt="ColombiAndo logo" class="h-10 w-auto" />
+      <button id="mobile-menu-close" class="focus:outline-none" aria-label="Close menu">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav class="flex flex-col items-center gap-6 p-8">
+      <a href="/" class="w-full max-w-xs text-center">
+        <Button variant="yellow" active={currentPath === '/'} class="w-full">Inicio</Button>
+      </a>
+      <a href="#" class="w-full max-w-xs text-center">
+        <Button variant="blue" class="w-full">Proyectos</Button>
+      </a>
+      <a href="#" class="w-full max-w-xs text-center">
+        <Button variant="red" class="w-full">Nosotras</Button>
+      </a>
+      <a href="#" class="w-full max-w-xs text-center">
+        <Button variant="white" class="w-full">Donaciones</Button>
+      </a>
+    </nav>
+  </div>
 </header>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    mobileMenuToggle?.addEventListener('click', () => {
+      mobileMenu?.classList.remove('translate-x-full');
+    });
+    
+    mobileMenuClose?.addEventListener('click', () => {
+      mobileMenu?.classList.add('translate-x-full');
+    });
+  });
+</script>
