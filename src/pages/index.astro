@@ -123,17 +123,23 @@ import footerVideo from '../assets/videos/colombiando-escuela-rural.mp4';
 			</div>
 			<div class="flex flex-1 flex-col gap-2">
 				<!-- Video Background -->
-				<video 
-					class="h-full object-cover z-0 opacity-20" 
-					autoplay 
-					muted 
-					loop 
-					playsinline
-				>
-					<source src={footerVideo} type="video/mp4">
-					<!-- Fallback for browsers that don't support video -->
-					Your browser does not support the video tag.
-				</video>
+				<div class="relative h-full w-full">
+					<video 
+						class="h-full w-full object-cover " 
+						autoplay 
+						muted 
+						loop 
+						playsinline
+					>
+						<source src={footerVideo} type="video/mp4">
+						<!-- Fallback for browsers that don't support video -->
+						Your browser does not support the video tag.
+					</video>
+					<div class="flex flex-col gap-2 items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+						<img src="/colombiando-logo.gif" alt="Colombiando logo" class="w-[80%] h-[80%]" />
+						<img src="/colombiando-logo-blanco.png" alt="Colombiando logo" class="w-[90%] h-[60%]" />
+					</div>
+				</div>
 			</div>
 		</div>
 	</footer>
