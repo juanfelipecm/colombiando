@@ -1,0 +1,54 @@
+---
+// Import the video asset
+import footerVideo from '../assets/videos/colombiando-escuela-rural.mp4';
+---
+
+<footer>		
+    <div class="flex flex-col lg:flex-row min-h-96 gap-y-10">
+        <div class="flex flex-1 items-center gap-2 justify-center mt-20 md:mt-0">
+            <img src="/logo-ColombiAndo.png" alt="ColombiAndo logo" class="h-12 w-auto" />
+        </div>
+        <div class="flex flex-1 flex-col gap-2 justify-center border-x-2 border-black my-10 px-10">
+            <h5 class="text-xl font-bold">Una plataforma de profes para profes.</h5>
+            <p class="text-sm">Somos una comunidad de profesores multigrado que se apoya, se conecta, comparte buenas prácticas y visibiliza la educación rural.</p>
+        </div>
+        <div class="flex flex-1 flex-col justify-center gap-2 px-10">
+            <h5 class="text-xl font-bold">Información de contacto</h5>
+            <p class="text-sm">hola@colombiando.co</p>
+            <div class="flex gap-4 mt-2">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-2xl">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-2xl">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <div class="flex flex-col gap-2 mt-10">
+                <a href="https://colombiando.co" target="_blank" rel="noopener noreferrer" class="text-sm underline">Información RTE</a>
+            </div>
+            <div class="flex flex-col gap-2">
+                <a href="https://colombiando.co" target="_blank" rel="noopener noreferrer" class="text-sm underline">Política de privacidad</a>
+            </div>
+        </div>
+        <div class="flex flex-1 flex-col gap-2">
+            <!-- Video Background -->
+            <div class="relative h-full w-full">
+                <video 
+                    class="h-full w-full object-cover " 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline
+                >
+                    <source src={footerVideo} type="video/mp4">
+                    <!-- Fallback for browsers that don't support video -->
+                    Your browser does not support the video tag.
+                </video>
+                <div class="flex flex-col gap-2 items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    <img src="/colombiando-logo.gif" alt="Colombiando logo" class="w-[80%] h-[80%]" />
+                    <img src="/colombiando-logo-blanco.png" alt="Colombiando logo" class="w-[90%] h-[60%]" />
+                </div>
+            </div>
+        </div>
+    </div>
+</footer> 

@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Accordion from '../components/Accordion.astro';
+import AccordionItem from '../components/AccordionItem.astro';
+import { Image } from 'astro:assets';
+import img1 from '../assets/images/colombiando-1.jpg';
+import img2 from '../assets/images/colombiando-2.jpg';
+import img3 from '../assets/images/colombiando-3.jpg';
+import img4 from '../assets/images/colombiando-4.jpg';
+---
+
+<Layout>
+	<Header />
+	<section
+		class="relative w-full h-[98vh] bg-cover bg-center flex items-end justify-center p-10 pb-20 lg:pb-0"
+		style="background-image: url('/src/assets/images/colombiando-diana-sara.jpg');"
+	>
+  <div class="mx-4 w-full bg-colombiando-yellow rounded-lg p-14 translate-y-16">
+    <h1 class="text-3xl md:text-7xl font-semibold text-white">Nuestros Proyectos</h1>
+  </div>
+	</section>  
+  <section class="bg-white py-16 my-10">     
+    <div class="max-w-8xl mx-5 flex flex-col lg:flex-row">
+      <div class="border border-[#0060BB] border-r-0 flex flex-col justify-center p-20">          
+        <h2 class="text-3xl lg:text-4xl font-bold border-b-3 border-[#0060BB] pb-4 mb-4 w-fit">Investigando</h2>
+        <p class="text-sm max-w-5xl"><span class="font-bold">Si queremos proponer, debemos entender.</span> Por eso, Investigando propone un modelo de investigación - acción participativa. Como profesoras buscamos vivir y comprender lo que realmente sucede dentro del aula rural multigrado y caracterizar estos espacios. Actualmente existe un déficit de información accesible, clara y útil que defina cuáles son los factores habilitantes, barreras, necesidad de docentes y apoyo profesional. Este proceso lo hacemos en tres escalas diferentes.</p>
+      </div>
+    <Accordion>
+      <AccordionItem title="Comunidad" color="blue" isOpen={true}>
+          <p class="text-sm"><span class="font-bold">Estamos en el territorio.</span> Investigamos acompañando al profesor rural multigrado en toda su jornada escolar. Nos convertimos en profesoras asistentes que realizan un acompañamiento a los estudiantes, apoyan al docente en todo lo que necesite, evaluamos el contexto y analizamos las necesidades. Estamos con la comunidad por periodos de 1-3 meses.</p>
+          <div class="gallery flex gap-4 h-[200px]">
+            <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
+              <Image src={img1} alt="Colombiando 1" class="object-cover w-full h-full" />
+            </div>
+            <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
+              <Image src={img2} alt="Colombiando 2" class="object-cover w-full h-full" />
+            </div>
+            <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
+                <Image src={img3} alt="Colombiando 3" class="object-cover w-full h-full" />
+            </div>
+          </div>
+      </AccordionItem>
+
+      <AccordionItem title="Boletiando" color="blue">
+        <p>Descripción del proyecto Boletiando...</p>
+        <div class="grid grid-cols-2 gap-4 mt-4">
+          <img src="/src/assets/images/colombiando-1.jpg" alt="Boletiando" class="rounded-lg">
+          <div>
+            <h3 class="font-bold mb-2">Objetivo:</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+      </AccordionItem>
+
+      <AccordionItem title="Semillero de Educadores" color="blue">
+        <p>Descripción del proyecto Semillero de Educadores...</p>
+        <ul class="list-disc pl-5 mt-4">
+          <li>Formación de docentes rurales</li>
+          <li>Intercambio de experiencias pedagógicas</li>
+          <li>Desarrollo de material didáctico</li>
+        </ul>
+      </AccordionItem>
+    </Accordion>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout> 
+
+<style scoped>
+  .gallery:hover .gallery-item {
+    flex: 1;
+  }
+  .gallery-item:hover {
+    flex: 2.5 !important;
+    z-index: 10;
+  }
+  </style>          

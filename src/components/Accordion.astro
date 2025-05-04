@@ -1,0 +1,75 @@
+---
+// This component acts as a container for AccordionItem components
+---
+
+<div class="accordion w-full">
+  <slot />
+</div>
+
+<script>
+  function setupAccordion() {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    const accordionContents = document.querySelectorAll('.accordion-content');
+    const accordionIcons = document.querySelectorAll('.accordion-icon');
+
+    // Find the initially open accordion item
+    let openItemIndex = -1;
+    
+    accordionContents.forEach((content, index) => {
+      if (!content.classList.contains('hidden')) {
+        openItemIndex = index;
+      }
+    });
+
+    function toggleAccordion(index) {
+      // Close currently open item if it's not the clicked one
+      if (openItemIndex !== -1 && openItemIndex !== index) {
+        accordionContents[openItemIndex].classList.add('hidden');
+        accordionIcons[openItemIndex].textContent = '+';
+      }
+      
+      // Toggle clicked item
+      const content = accordionContents[index];
+      const icon = accordionIcons[index];
+      
+      if (!content || !icon) return;
+      
+      const isHidden = content.classList.contains('hidden');
+      
+      if (isHidden) {
+        content.classList.remove('hidden');
+        icon.textContent = '-';
+        openItemIndex = index;
+      } else {
+        content.classList.add('hidden');
+        icon.textContent = '+';
+        openItemIndex = -1;
+      }
+    }
+
+    // Add click handler to each header
+    accordionHeaders.forEach((header, index) => {
+      header.addEventListener('click', () => {
+        toggleAccordion(index);
+      });
+    });
+
+    // Add specific click handlers for the icons 
+    accordionIcons.forEach((icon, index) => {
+      icon.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent the header's click event from firing
+        toggleAccordion(index);
+      });
+    });
+  }
+
+  // Run on initial page load
+  if (document.readyState === 'complete') {
+    setupAccordion();
+  } else {
+    document.addEventListener('DOMContentLoaded', setupAccordion);
+  }
+  
+  // Also set up for Astro page transitions if they exist
+  document.addEventListener('astro:page-load', setupAccordion);
+</script> 

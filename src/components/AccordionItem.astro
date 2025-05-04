@@ -1,0 +1,32 @@
+---
+interface Props {
+  title: string;
+  isOpen?: boolean;
+  color?: "red" | "blue" | "yellow";
+}
+
+const { title, isOpen = false, color = "red" } = Astro.props;
+
+const colorClasses = {
+  red: "border-[#D00000] text-[#D00000]",
+  blue: "border-[#0060BB] text-[#0060BB]",
+  yellow: "border-[#FFB100] text-[#FFB100]"
+};
+
+const borderColor = colorClasses[color].split(" ")[0];
+const textColor = colorClasses[color].split(" ")[1];
+---
+
+<div class={`accordion-item border-x ${borderColor} border-t ${borderColor} last:border-b last:${borderColor}`}>
+  <button class="accordion-header w-full flex justify-between items-center py-6 px-4 text-left">
+    <h2 class="text-md md:text-3xl font-bold">{title}</h2>
+    <span class={`accordion-icon text-3xl font-light ${textColor} cursor-pointer`}>
+      {isOpen ? '-' : '+'}
+    </span>
+  </button>
+  <div class={`accordion-content px-4 pb-6 ${isOpen ? 'block' : 'hidden'}`}>
+    <div class="content-inner text-lg">
+      <slot />
+    </div>
+  </div>
+</div> 
