@@ -1,75 +1,98 @@
 ---
-// This component acts as a container for AccordionItem components
+// Simple container for AccordionItem components
 ---
 
-<div class="accordion w-full">
+<div class="accordion w-full overflow-hidden">
   <slot />
 </div>
 
 <script>
+  document.addEventListener('astro:page-load', setupAccordion);
+  
   function setupAccordion() {
     const accordionHeaders = document.querySelectorAll('.accordion-header');
-    const accordionContents = document.querySelectorAll('.accordion-content');
-    const accordionIcons = document.querySelectorAll('.accordion-icon');
-
-    // Find the initially open accordion item
-    let openItemIndex = -1;
+    const accordionItems = document.querySelectorAll('.accordion-item');
     
-    accordionContents.forEach((content, index) => {
-      if (!content.classList.contains('hidden')) {
-        openItemIndex = index;
-      }
-    });
-
-    function toggleAccordion(index) {
-      // Close currently open item if it's not the clicked one
-      if (openItemIndex !== -1 && openItemIndex !== index) {
-        accordionContents[openItemIndex].classList.add('hidden');
-        accordionIcons[openItemIndex].textContent = '+';
-      }
+    // Open the first item by default if none are open
+    if (accordionItems.length > 0) {
+      const openItems = Array.from(accordionItems).filter(item => 
+        item.querySelector('.accordion-content').style.display !== 'none');
       
-      // Toggle clicked item
-      const content = accordionContents[index];
-      const icon = accordionIcons[index];
-      
-      if (!content || !icon) return;
-      
-      const isHidden = content.classList.contains('hidden');
-      
-      if (isHidden) {
-        content.classList.remove('hidden');
-        icon.textContent = '-';
-        openItemIndex = index;
-      } else {
-        content.classList.add('hidden');
-        icon.textContent = '+';
-        openItemIndex = -1;
+      if (openItems.length === 0) {
+        const firstItem = accordionItems[0];
+        const firstContent = firstItem.querySelector('.accordion-content');
+        const firstIcon = firstItem.querySelector('.accordion-icon');
+        const firstHeader = firstItem.querySelector('.accordion-header');
+        const color = firstItem.dataset.color;
+        
+        firstContent.style.display = 'block';
+        firstIcon.textContent = '-';
+        firstHeader.style.backgroundColor = 'white';
+        firstHeader.style.color = color;
       }
     }
-
-    // Add click handler to each header
-    accordionHeaders.forEach((header, index) => {
-      header.addEventListener('click', () => {
-        toggleAccordion(index);
-      });
-    });
-
-    // Add specific click handlers for the icons 
-    accordionIcons.forEach((icon, index) => {
-      icon.addEventListener('click', (e) => {
-        e.stopPropagation(); // Prevent the header's click event from firing
-        toggleAccordion(index);
+    
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', function() {
+        const item = this.closest('.accordion-item');
+        const content = item.querySelector('.accordion-content');
+        const icon = this.querySelector('.accordion-icon');
+        const isOpen = content.style.display !== 'none';
+        
+        // Get the color from data attribute
+        const color = item.dataset.color;
+        
+        // Toggle current item
+        if (isOpen) {
+          // Only close if there's another item open
+          const openItems = Array.from(accordionItems).filter(accItem => 
+            accItem !== item && 
+            accItem.querySelector('.accordion-content').style.display === 'block');
+          
+          if (openItems.length > 0) {
+            // Safe to close this item
+            content.style.display = 'none';
+            icon.textContent = '+';
+            
+            // Change color (closed state: colored bg, white text)
+            this.style.backgroundColor = color;
+            this.style.color = 'white';
+          }
+        } else {
+          // First close all other open items
+          accordionItems.forEach(accItem => {
+            if (accItem !== item) {
+              const accContent = accItem.querySelector('.accordion-content');
+              const accIcon = accItem.querySelector('.accordion-icon');
+              const accHeader = accItem.querySelector('.accordion-header');
+              const accColor = accItem.dataset.color;
+              
+              // Close this item
+              accContent.style.display = 'none';
+              accIcon.textContent = '+';
+              
+              // Change color (closed state: colored bg, white text)
+              accHeader.style.backgroundColor = accColor;
+              accHeader.style.color = 'white';
+            }
+          });
+          
+          // Then open this item
+          content.style.display = 'block';
+          icon.textContent = '-';
+          
+          // Change color (open state: white bg, colored text)
+          this.style.backgroundColor = 'white';
+          this.style.color = color;
+        }
       });
     });
   }
-
+  
   // Run on initial page load
   if (document.readyState === 'complete') {
     setupAccordion();
   } else {
     document.addEventListener('DOMContentLoaded', setupAccordion);
   }
-  
-  // Also set up for Astro page transitions if they exist
-  document.addEventListener('astro:page-load', setupAccordion);
 </script> 
