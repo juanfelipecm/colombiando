@@ -10,6 +10,11 @@ import img2 from '../assets/images/colombiando-2.jpg';
 import img3 from '../assets/images/colombiando-3.jpg';
 import img4 from '../assets/images/colombiando-4.jpg';
 import InfoCard from '../components/InfoCard.astro';
+import programaLeonor1 from '../assets/images/programa-leonor/programa-leonor-colombiando-1.jpg';
+import programaLeonor2 from '../assets/images/programa-leonor/programa-leonor-colombiando-2.jpg';
+import programaLeonor3 from '../assets/images/programa-leonor/programa-leonor-colombiando-3.jpg';
+import programaLeonor4 from '../assets/images/programa-leonor/programa-leonor-colombiando-4.jpg';
+import programaLeonor5 from '../assets/images/programa-leonor/programa-leonor-colombiando-5.jpg';
 ---
 
 <Layout>
@@ -77,18 +82,31 @@ import InfoCard from '../components/InfoCard.astro';
       </div>
     <Accordion class="lg:w-1/3">
       <AccordionItem title="En el cañón" color="red">
-          <p class="text-sm"><span class="font-bold">Estamos en el territorio.</span> Investigamos acompañando al profesor rural multigrado en toda su jornada escolar. Nos convertimos en profesoras asistentes que realizan un acompañamiento a los estudiantes, apoyan al docente en todo lo que necesite, evaluamos el contexto y analizamos las necesidades. Estamos con la comunidad por periodos de 1-3 meses.</p>
-          <div class="gallery flex gap-4 h-[200px] mt-6">
-            <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
-              <Image src={img1} alt="Colombiando 1" class="object-cover w-full h-full" />
-            </div>
-            <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
-              <Image src={img2} alt="Colombiando 2" class="object-cover w-full h-full" />
-            </div>
-            <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
-                <Image src={img3} alt="Colombiando 3" class="object-cover w-full h-full" />
-            </div>
+        <!-- Card Programa Leonor -->
+        <div class="bg-white border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] p-7 max-w-[450px] min-w-[200px] mx-auto relative overflow-hidden">
+          <div class="flex flex-col">
+            <h2 class="text-2xl font-bold text-colombiando-red">Programa Leonor</h2>
+            <div class="h-0.5 bg-colombiando-red w-full mt-2 mb-6"></div>
+            <p class="text-xs"><span class="font-bold">Porque "aprender es un honor"</span>, es la <span class="font-bold">mula educativa</span> de Colombiando que se encarga de conectar las ocho escuelas del cañón mediante el préstamo de libros y juegos una vez al mes en cada escuela. Además,en sus recorridos lidera experiencias que despiertan el interés por aprender.</p>
+            <div class="gallery flex gap-4 h-[200px] mt-6 overflow-x-scroll">
+              <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
+                <Image src={programaLeonor1} alt="Programa Leonor 1" class="object-cover w-full h-full" />
+              </div>
+              <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
+                <Image src={programaLeonor2} alt="Programa Leonor 2" class="object-cover w-full h-full" />
+              </div>
+              <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
+                <Image src={programaLeonor3} alt="Programa Leonor 3" class="object-cover w-full h-full" />
+              </div>
+              <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
+                <Image src={programaLeonor4} alt="Programa Leonor 4" class="object-cover w-full h-full" />
+              </div>
+              <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
+                <Image src={programaLeonor5} alt="Programa Leonor 5" class="object-cover w-full h-full" />
+              </div>
+            </div>            
           </div>
+        </div>
       </AccordionItem>
 
       <AccordionItem title="Boletiando" color="red">
