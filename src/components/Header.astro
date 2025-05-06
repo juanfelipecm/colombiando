@@ -48,11 +48,11 @@ const currentPath = Astro.url.pathname;
       <a href="/proyectos" class="w-full max-w-xs text-center">
         <Button variant="blue" active={currentPath === '/proyectos'} class="w-full">Proyectos</Button>
       </a>
-      <a href="#" class="w-full max-w-xs text-center">
-        <Button variant="red" class="w-full">Nosotras</Button>
+      <a href="/nosotras" class="w-full max-w-xs text-center">
+        <Button variant="red" active={currentPath === '/nosotras'} class="w-full">Nosotras</Button>
       </a>
-      <a href="#" class="w-full max-w-xs text-center">
-        <Button variant="white" class="w-full">Donaciones</Button>
+      <a href="/donaciones" class="w-full max-w-xs text-center">
+        <Button variant="white" active={currentPath === '/donaciones'} class="w-full">Donaciones</Button>
       </a>
     </nav>
   </div>

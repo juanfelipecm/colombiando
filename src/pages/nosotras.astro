@@ -1,11 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import heroNosotrasImage from '../assets/images/hero-colombiando-nosotras.jpg';
 ---
 
 <Layout>
 	<section
 		class="relative w-full h-[98vh] bg-cover bg-center flex items-end justify-center p-10 pb-20 lg:pb-0"
-		style="background-image: url('/src/assets/images/hero-colombiando-nosotras.jpg');"
+		style={`background-image: url(${heroNosotrasImage.src});`}
 	>
     <div class="mx-4 w-full bg-colombiando-red rounded-lg p-14 translate-y-16">
       <h1 class="text-3xl md:text-7xl font-semibold text-white">Colombiando somos todos</h1>
@@ -17,7 +18,7 @@ import Layout from '../layouts/Layout.astro';
       {Array.from({ length: 49 }).map((_, i) => (
         <div class="image-container group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 h-64 cursor-pointer">
           <img 
-            src={`/src/assets/images/nosotras/colombiando-somos-todos-${i + 1}.jpg`} 
+            src={`/assets/images/nosotras/colombiando-somos-todos-${i + 1}.jpg`} 
             alt={`Colombiando somos todos ${i + 1}`}
             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
