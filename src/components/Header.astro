@@ -23,8 +23,12 @@ const currentPath = Astro.url.pathname;
     <a href="/proyectos">
       <Button variant="blue" active={currentPath === '/proyectos'}>Proyectos</Button>
     </a>
-    <Button variant="red">Nosotras</Button>
-    <Button variant="white">Donaciones</Button>
+    <a href="/nosotras">
+      <Button variant="red" active={currentPath === '/nosotras'}>Nosotras</Button>
+    </a>
+    <a href="/donaciones">
+      <Button variant="white" active={currentPath === '/donaciones'}>Donaciones</Button>
+    </a>
   </nav>
   
   <!-- Mobile Navigation -->

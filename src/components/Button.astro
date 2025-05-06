@@ -17,7 +17,7 @@ const { variant = 'red', active = false, ...props } = Astro.props;
           ${variant === 'yellow' ? 'bg-colombiando-yellow text-black border-colombiando-yellow' : ''}
           ${variant === 'blue' ? 'bg-colombiando-blue text-black border-colombiando-blue' : ''}
           ${variant === 'white' ? 'bg-white text-black border-black' : ''}
-          hover:pb-1 hover:border-b-2 ${
+          hover:pb-2 hover:border-b-2 hover:translate-y-1 ${
           variant === 'red' ? 'hover:border-colombiando-red' :
           variant === 'yellow' ? 'hover:border-colombiando-yellow' :
           variant === 'blue' ? 'hover:border-colombiando-blue' :
