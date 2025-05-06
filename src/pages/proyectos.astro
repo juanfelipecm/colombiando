@@ -21,6 +21,17 @@ import casaLeonor3 from '../assets/images/casa-de-leonor/casa-de-leonor-colombia
 import casaLeonor4 from '../assets/images/casa-de-leonor/casa-de-leonor-colombiando-4.jpg';
 import casaLeonor5 from '../assets/images/casa-de-leonor/casa-de-leonor-colombiando-5.jpg';
 import casaLeonor6 from '../assets/images/casa-de-leonor/casa-de-leonor-colombiando-6.jpg';
+import boletinColombiando from '../assets/images/boletin-colombiando.png';
+import semilleroEducadores1 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-1.jpg';
+import semilleroEducadores2 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-2.jpg';
+import semilleroEducadores3 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-3.jpg';
+import semilleroEducadores4 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-4.jpg';
+import semilleroEducadores5 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-5.jpg';
+import semilleroEducadores6 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-6.jpg';
+import semilleroEducadores7 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-7.jpg';
+import semilleroEducadores8 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-8.jpg';
+import semilleroEducadores9 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-9.jpg';
+import semilleroEducadores10 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-10.jpg';
 ---
 
 <Layout>
@@ -141,10 +152,10 @@ import casaLeonor6 from '../assets/images/casa-de-leonor/casa-de-leonor-colombia
                  <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
                    <Image src={casaLeonor4} alt="Casa de Leonor 4" class="object-cover w-full h-full" />
                  </div>
-                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow  -[2px_2px_0px_0px_#000000]">
+                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
                    <Image src={casaLeonor5} alt="Casa de Leonor 5" class="object-cover w-full h-full" />
                  </div>
-                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow  -[2px_2px_0px_0px_#000000]">
+                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
                    <Image src={casaLeonor6} alt="Casa de Leonor 6" class="object-cover w-full h-full" />
                  </div>
                </div>
@@ -154,23 +165,51 @@ import casaLeonor6 from '../assets/images/casa-de-leonor/casa-de-leonor-colombia
       </AccordionItem>
 
       <AccordionItem title="Boletiando" color="red">
-        <p class="text-sm"><span class="font-bold">Creemos en los datos.</span> Nos enfocamos en encontrar y analizar información cuantitativa sobre la modalidad rural multigrado en Colombia. Es una modalidad única que merece ser analizada desde sus propios datos y sus metodologías particulares de enseñanza y aprendizaje.</p>
-        
-        <div class="flex flex-row overflow-x-scroll gap-4 mt-6 pb-4">
-          <InfoCard title="30-40 Horas" subtitle="por colegio" description="de tutorías remediables destinadas a construir aprendizajes básicos en lectura y matemática." />
-          <InfoCard title="562" subtitle="niños y niñas" description="evaluados antes de empezar las actividades." />
-          <InfoCard title="266" subtitle="estudiantes" description="rezagados que están recibiendo las tutorías." />
-          <InfoCard title="11" subtitle="grupos" description="organizados según el nivel de aprendizaje de los estudiantes." />
-        </div>
+        <div class="flex flex-col lg:flex-row gap-4 p-4">
+          <div class="flex flex-col">
+            <p class="text-sm"><span class="font-bold">El boletín Colombiando</span> Un espacio para encontrar recursos, mensajes, ideas, preguntas y buenas prácticas que entre profes multigrado queremos compartir. Red de profesores rurales multigrado.</p>
+          </div>
+          <div class="flex flex-col border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] overflow-hidden">
+            <Image src={boletinColombiando} alt="Boletín Colombiando" class="object-cover w-full h-full" />
+          </div>
+        </div>  
       </AccordionItem>
 
       <AccordionItem title="Semillero de Educadores" color="red">
-        <p>Descripción del proyecto Semillero de Educadores...</p>
-        <ul class="list-disc pl-5 mt-4">
-          <li>Formación de docentes rurales</li>
-          <li>Intercambio de experiencias pedagógicas</li>
-          <li>Desarrollo de material didáctico</li>
-        </ul>
+        <p class="text-xs mb-2">Actualmente en Colombiando promovemos espacios para la construcción de puentes entre comunidades mediante la co-creación de proyectos educativos que fortalezcan el aprendizaje mutuo, el trabajo colaborativo y el compromiso social.</p>
+        <p class="text-xs">Queremos despertar el interés y compromiso en los jóvenes de los colegios privados en la ciudad por la educación y la ruralidad en Colombia. </p>
+        <div class="gallery flex gap-4 h-[200px] mt-6 pb-4 overflow-x-scroll">
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores1} alt="Semillero de Educadores 1" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores2} alt="Semillero de Educadores 2" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[150px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores3} alt="Semillero de Educadores 3" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores4} alt="Semillero de Educadores 4" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores5} alt="Semillero de Educadores 5" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+              <Image src={semilleroEducadores6} alt="Semillero de Educadores 6" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores7} alt="Semillero de Educadores 7" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores8} alt="Semillero de Educadores 8" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores9} alt="Semillero de Educadores 9" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores10} alt="Semillero de Educadores 10" class="object-cover w-full h-full" />
+          </div>
+        </div>        
       </AccordionItem>
     </Accordion>
     </div>
