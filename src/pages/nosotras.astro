@@ -10,5 +10,131 @@ import Layout from '../layouts/Layout.astro';
     <div class="mx-4 w-full bg-colombiando-red rounded-lg p-14 translate-y-16">
       <h1 class="text-3xl md:text-7xl font-semibold text-white">Colombiando somos todos</h1>
     </div>
-	</section>     
+	</section>
+  
+  <section class="container mx-auto px-4 pt-32 pb-20">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 grid-flow-dense" id="gallery-grid">
+      {Array.from({ length: 49 }).map((_, i) => (
+        <div class="image-container group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 h-64 cursor-pointer">
+          <img 
+            src={`/src/assets/images/nosotras/colombiando-somos-todos-${i + 1}.jpg`} 
+            alt={`Colombiando somos todos ${i + 1}`}
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+            onload="checkOrientation(this)"
+            data-index={i}
+          />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Lightbox Gallery -->
+  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center">
+    <button id="close-lightbox" class="absolute top-5 right-5 text-white text-4xl cursor-pointer">&times;</button>
+    <button id="prev-button" class="absolute left-5 text-white text-4xl cursor-pointer">&larr;</button>
+    <button id="next-button" class="absolute right-5 text-white text-4xl cursor-pointer">&rarr;</button>
+    <div class="max-w-[90vw] max-h-[90vh]">
+      <img id="lightbox-img" class="max-w-full max-h-[90vh] object-contain" src="" alt="Lightbox image">
+    </div>
+  </div>
+
+  <script>
+    function checkOrientation(img: HTMLImageElement) {
+      // Wait for the image to load
+      if (img.complete) {
+        applyOrientation(img);
+      } else {
+        img.onload = () => applyOrientation(img);
+      }
+    }
+
+    function applyOrientation(img: HTMLImageElement) {
+      const container = img.closest('.image-container');
+      
+      if (!container) return;
+      
+      // Check if image is landscape (wider than tall)
+      if (img.naturalWidth > img.naturalHeight) {
+        // Make landscape images span 2 columns
+        container.classList.add('landscape');
+        (container as HTMLElement).style.gridColumn = 'span 2';
+      } else {
+        // Portrait images stay as 1 column
+        container.classList.add('portrait');
+        (container as HTMLElement).style.gridColumn = 'span 1';
+      }
+    }
+
+    // Process all images when page loads
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.image-container img').forEach(img => {
+        checkOrientation(img as HTMLImageElement);
+      });
+
+      // Lightbox functionality
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+      const closeBtn = document.getElementById('close-lightbox');
+      const prevBtn = document.getElementById('prev-button');
+      const nextBtn = document.getElementById('next-button');
+      const galleryImages = document.querySelectorAll('.image-container img');
+      let currentIndex = 0;
+
+      // Open lightbox when an image is clicked
+      galleryImages.forEach((img, index) => {
+        img.addEventListener('click', () => {
+          lightboxImg.src = (img as HTMLImageElement).src;
+          lightboxImg.alt = (img as HTMLImageElement).alt;
+          currentIndex = index;
+          lightbox?.classList.remove('hidden');
+          lightbox?.classList.add('flex');
+          document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+      });
+
+      // Close lightbox
+      closeBtn?.addEventListener('click', () => {
+        lightbox?.classList.add('hidden');
+        lightbox?.classList.remove('flex');
+        document.body.style.overflow = '';
+      });
+
+      // Navigate to previous image
+      prevBtn?.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        lightboxImg.src = (galleryImages[currentIndex] as HTMLImageElement).src;
+        lightboxImg.alt = (galleryImages[currentIndex] as HTMLImageElement).alt;
+      });
+
+      // Navigate to next image
+      nextBtn?.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        lightboxImg.src = (galleryImages[currentIndex] as HTMLImageElement).src;
+        lightboxImg.alt = (galleryImages[currentIndex] as HTMLImageElement).alt;
+      });
+
+      // Close lightbox on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !lightbox?.classList.contains('hidden')) {
+          lightbox?.classList.add('hidden');
+          lightbox?.classList.remove('flex');
+          document.body.style.overflow = '';
+        } else if (e.key === 'ArrowLeft') {
+          prevBtn?.click();
+        } else if (e.key === 'ArrowRight') {
+          nextBtn?.click();
+        }
+      });
+
+      // Close on click outside the image
+      lightbox?.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.add('hidden');
+          lightbox.classList.remove('flex');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+  </script>
 </Layout>
