@@ -1,6 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import heroNosotrasImage from '../assets/images/hero-colombiando-nosotras.jpg';
+import { Image } from 'astro:assets';
+
+// Dynamically import all gallery images
+const imageImports = await Promise.all(
+  Array.from({ length: 49 }).map(async (_, i) => {
+    const imageNumber = i + 1;
+    return import(`../assets/images/nosotras/colombiando-somos-todos-${imageNumber}.jpg`);
+  })
+);
 ---
 
 <Layout>
@@ -15,15 +24,14 @@ import heroNosotrasImage from '../assets/images/hero-colombiando-nosotras.jpg';
   
   <section class="container mx-auto px-4 pt-32 pb-20">
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 grid-flow-dense" id="gallery-grid">
-      {Array.from({ length: 49 }).map((_, i) => (
+      {imageImports.map((imageModule, i) => (
         <div class="image-container group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 h-64 cursor-pointer">
-          <img 
-            src={`../assets/images/nosotras/colombiando-somos-todos-${i + 1}.jpg`} 
+          <Image 
+            src={imageModule.default}
             alt={`Colombiando somos todos ${i + 1}`}
             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            loading="lazy"
-            onload="checkOrientation(this)"
             data-index={i}
+            id={`gallery-img-${i}`}
           />
         </div>
       ))}
@@ -69,6 +77,24 @@ import heroNosotrasImage from '../assets/images/hero-colombiando-nosotras.jpg';
 
     // Process all images when page loads
     document.addEventListener('DOMContentLoaded', () => {
+      // Use mutation observer to detect when images are loaded by Astro
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.type === 'childList') {
+            document.querySelectorAll('.image-container img').forEach(img => {
+              checkOrientation(img as HTMLImageElement);
+            });
+          }
+        });
+      });
+      
+      // Start observing the gallery grid for changes
+      const galleryGrid = document.getElementById('gallery-grid');
+      if (galleryGrid) {
+        observer.observe(galleryGrid, { childList: true, subtree: true });
+      }
+      
+      // Also check immediately for any images already loaded
       document.querySelectorAll('.image-container img').forEach(img => {
         checkOrientation(img as HTMLImageElement);
       });

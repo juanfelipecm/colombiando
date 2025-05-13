@@ -46,3 +46,38 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## 📁 Asset Handling
+
+This project uses Astro's built-in asset handling system for all images and static files. Rather than referencing files with direct URLs, we use the following pattern:
+
+```astro
+---
+// Import individual images directly
+import myImage from '../assets/images/my-image.jpg';
+
+// For multiple images like in a gallery, use dynamic imports
+const imageImports = await Promise.all(
+  Array.from({ length: 10 }).map(async (_, i) => {
+    return import(`../assets/images/gallery/image-${i + 1}.jpg`);
+  })
+);
+---
+
+<!-- Using a single image -->
+<img src={myImage.src} alt="My Image" />
+
+<!-- Using the Image component (better for optimization) -->
+<Image src={myImage} alt="My Image" />
+
+<!-- Using dynamically imported images -->
+{imageImports.map((img, i) => (
+  <Image src={img.default} alt={`Gallery image ${i}`} />
+))}
+```
+
+This approach ensures that:
+1. Assets are properly optimized during build
+2. Files are fingerprinted for cache busting
+3. References work correctly in both development and production
+4. No need to manually copy files between directories
