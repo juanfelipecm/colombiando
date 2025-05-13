@@ -1,9 +1,17 @@
 ---
 import Button from './Button.astro';
 const currentPath = Astro.url.pathname;
+
+// Helper function to check if a path is active
+const isActive = (path: string) => {
+  if (path === '/') {
+    return currentPath === '/' || currentPath === '';
+  }
+  return currentPath.startsWith(path);
+};
 ---
 
-<header class="absolute top-0 left-0 right-0 z-10 flex items-center justify-between bg-white rounded-lg px-6 py-3 m-2 md:m-8 shadow-lg">
+<header class="fixed top-0 left-0 right-0 z-100 flex items-center justify-between bg-white rounded-lg px-6 py-3 mx-2 md:mx-8 mt-2 md:mt-4 shadow-lg">
   <div class="flex items-center gap-2">
     <a href="/">
       <img src="/logo-ColombiAndo.png" alt="ColombiAndo logo" class="h-10 w-auto md:h-14" />
@@ -20,16 +28,16 @@ const currentPath = Astro.url.pathname;
   <!-- Desktop Navigation -->
   <nav class="hidden md:flex flex-grow gap-4 border-b-4 border-black justify-end ml-6 pb-4">
     <a href="/">
-      <Button variant="yellow" active={currentPath === '/'}>Inicio</Button>
+      <Button variant="yellow" active={isActive('/')}>Inicio</Button>
     </a>
     <a href="/proyectos">
-      <Button variant="blue" active={currentPath === '/proyectos'}>Proyectos</Button>
+      <Button variant="blue" active={isActive('/proyectos')}>Proyectos</Button>
     </a>
     <a href="/nosotras">
-      <Button variant="red" active={currentPath === '/nosotras'}>Nosotras</Button>
+      <Button variant="red" active={isActive('/nosotras')}>Nosotras</Button>
     </a>
     <a href="/donaciones">
-      <Button variant="white" active={currentPath === '/donaciones'}>Donaciones</Button>
+      <Button variant="white" active={isActive('/donaciones')}>Donaciones</Button>
     </a>
   </nav>
   
@@ -45,16 +53,16 @@ const currentPath = Astro.url.pathname;
     </div>
     <nav class="flex flex-col items-center gap-6 p-8">
       <a href="/" class="w-full max-w-xs text-center">
-        <Button variant="yellow" active={currentPath === '/'} class="w-full">Inicio</Button>
+        <Button variant="yellow" active={isActive('/')} class="w-full">Inicio</Button>
       </a>
       <a href="/proyectos" class="w-full max-w-xs text-center">
-        <Button variant="blue" active={currentPath === '/proyectos'} class="w-full">Proyectos</Button>
+        <Button variant="blue" active={isActive('/proyectos')} class="w-full">Proyectos</Button>
       </a>
       <a href="/nosotras" class="w-full max-w-xs text-center">
-        <Button variant="red" active={currentPath === '/nosotras'} class="w-full">Nosotras</Button>
+        <Button variant="red" active={isActive('/nosotras')} class="w-full">Nosotras</Button>
       </a>
       <a href="/donaciones" class="w-full max-w-xs text-center">
-        <Button variant="white" active={currentPath === '/donaciones'} class="w-full">Donaciones</Button>
+        <Button variant="white" active={isActive('/donaciones')} class="w-full">Donaciones</Button>
       </a>
     </nav>
   </div>
