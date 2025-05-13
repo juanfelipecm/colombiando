@@ -25,7 +25,7 @@ import salonRuralImage from '../assets/images/colombiando-salon-rural.jpg';
 	<section class="bg-white">
 		<div class="flex flex-col lg:flex-row mx-auto px-4 py-16 gap-8 max-w-6xl lg:items-center">
 			<h2 class="text-2xl lg:text-4xl font-bold text-colombiando-blue lg:min-w-fit">De profe a profe</h2>
-			<div class="hidden lg:block w-1.5 bg-black h-24"></div>
+			<div class="hidden lg:block w-[3px] flex-none bg-black h-24"></div>
 			<p class="text-lg lg:text-xl">Una plataforma de profes para profes. Somos una comunidad de profesores multigrado que se apoya, se conecta, comparte buenas prácticas y visibiliza la educación rural. </p>
 		</div>
 	</section>
@@ -36,7 +36,7 @@ import salonRuralImage from '../assets/images/colombiando-salon-rural.jpg';
 		<div class="flex flex-col lg:flex-row mx-auto px-4 py-16 gap-8 max-w-6xl items-center">
 			<div class="flex flex-col gap-4 max-w-lg">
 				<h2 class="text-2xl lg:text-4xl font-bold text-colombiando-red 	lg:min-w-fit">Quiénes somos</h2>
-				<p class="text-lg lg:text-xl">Colombiando es una organización sin ánimo de lucro que desde el 2022 co-crea proyectos educativos con profesores multigrado con el fin de cultivar e incentivar el interés por aprender en niños, niñas y jóvenes de	contextos rurales en Colombia. </p>
+				<p class="text-lg lg:text-xl">Colombiando es una organización sin ánimo de lucro que, desde el 2022, está investigando cómo ser el mejor aliado del profesor rural multigrado. Actualmente co-creamos proyectos educativos con más de 30 profesores rurales de escuelas multigrado en zonas alejadas del país con el objetivo de ser un apoyo para ellos en su práctica docente.</p>
 			</div>
 			<FlippableCard />
 		</div>
@@ -45,52 +45,84 @@ import salonRuralImage from '../assets/images/colombiando-salon-rural.jpg';
 	</section>	
 
 
+	<!-- Intro Salón Rural -->
+	<section class="bg-white">
+		<div class="flex flex-col lg:flex-row mx-auto px-4 py-16 gap-8 max-w-6xl lg:items-center">
+			<h2 class="text-2xl lg:text-4xl font-bold text-colombiando-blue flex-1 ">Bienvenido al Salón Rural Multigrado</h2>
+			<div class="hidden lg:block w-[3px] flex-none bg-black h-24"></div>
+			<p class="text-lg lg:text-xl flex-1">Esta imagen refleja el corazón de una escuela rural multigrado: un aula viva donde se encuentran aprendizajes, retos y sueños, contados desde la voz de quienes enseñan cada día dentro de ella. </p>
+		</div>
+	</section>
+
 	<!-- Section Salon Rural -->
-	<section class="pb-24 lg:pb-0 py-12 min-h-screen" style={`background-image: url(${salonRuralImage.src}); background-size: cover; background-position: center;`}>
+	<section class="pb-24 lg:pb-0 py-12 min-h-[125vh]" style={`background-image: url(${salonRuralImage.src}); background-size: cover; background-position: center;`}>
 		<!-- Responsive Grid Container -->
 		<div class="mx-4 sm:mx-8 md:mx-12 lg:mx-24 my-8 sm:my-16 md:my-24 lg:my-36">
 			<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8 md:gap-12 lg:gap-16">
 				<div class="flex items-center justify-center p-2 mt-3 ml-2">
-					<HoverSpeechBubble variant="red">"Estamos a marzo y no han llegado las cartillas de este año"</HoverSpeechBubble>
+					<HoverSpeechBubble variant="red">“Los estudiantes de todas las edades se apoyan mucho entre ellos”</HoverSpeechBubble>
 				</div>
 				
 				<div class="flex items-center justify-center p-2 mb-4 mr-1">
-					<HoverSpeechBubble variant="blue">"Tengo estudiantes de Transición, 1°, 2°, 3°, 4°, 5°"</HoverSpeechBubble>
+					<HoverSpeechBubble variant="blue">“Yo aca enseño como puedo las materias que no son mi fuerte”</HoverSpeechBubble>
 				</div>
 				
 				<div class="flex items-center justify-center p-2 mt-6 ml-4">
-					<HoverSpeechBubble variant="yellow">"El rector no ha venido en los último 9 años"</HoverSpeechBubble>
+					<HoverSpeechBubble variant="yellow">“Los estudiantes respetan los diferentes ritmos de aprendizaje”</HoverSpeechBubble>
 				</div>
 				
 				<div class="flex items-center justify-center p-2 mb-3 mr-2">
-					<HoverSpeechBubble variant="red">"El horario acá es de 7 a 12 porque no hay servicio de almuerzo"</HoverSpeechBubble>
+					<HoverSpeechBubble variant="red">“La escuela es parte principal de la comunidad”</HoverSpeechBubble>
 				</div>
 				
 				<div class="flex items-center justify-center p-2 mt-2 ml-3">
-					<HoverSpeechBubble variant="blue">"Planeo todas las tardes unas 2 horas y media"</HoverSpeechBubble>
+					<HoverSpeechBubble variant="blue">“En recreos hay espacios de juego entre estudiantes de diferentes edades”</HoverSpeechBubble>
 				</div>
 				
 				<div class="flex items-center justify-center p-2 mb-5 ml-1">
-					<HoverSpeechBubble variant="yellow">"No hay internet"</HoverSpeechBubble>
+					<HoverSpeechBubble variant="yellow">“Acá soy la aseadora, el todero, la psicóloga además de ser la profesora”</HoverSpeechBubble>
 				</div>
 				
 				<div class="flex items-center justify-center p-2 mt-4 mr-3">
-					<HoverSpeechBubble variant="red">"Seguimos sin baños en la escuela"</HoverSpeechBubble>
+					<HoverSpeechBubble variant="red">“Se cuidan mucho entre todos”</HoverSpeechBubble>
 				</div>
 				
 				<div class="flex items-center justify-center p-2 mb-2 ml-5">
-					<HoverSpeechBubble variant="blue">"Seguimos sin luz"</HoverSpeechBubble>
+					<HoverSpeechBubble variant="blue">“Debo planear clases de castellano, matemáticas, ciencias sociales, ciencias naturales, geografía, historia, cátedra de paz, cátedra afro, geometría, estadística, inglés, lecto-escritura, informática, religión…”</HoverSpeechBubble>
 				</div>
 				
 				<div class="flex items-center justify-center p-2 mt-3 mr-2">
-					<HoverSpeechBubble variant="yellow">"Tenemos un computador de los gordos y ya no prende"</HoverSpeechBubble>
+					<HoverSpeechBubble variant="yellow">“Existe mucho amor por la escuela e interés por aprender”</HoverSpeechBubble>
 				</div>
 				
 				<div class="flex items-center justify-center p-2 mb-6 ml-3">
-					<HoverSpeechBubble variant="red">"Debo planear clase de
-						castellano, matemáticas, ciencias sociales, ciencias naturales, geografía, historia, cátedra de paz, cátedra afro, geometría, estadística, inglés, lecto-escritura, informática, religión…"
-						</HoverSpeechBubble>
+					<HoverSpeechBubble variant="red">“Seguimos sin baños en la escuela y tampoco tenemos luz”</HoverSpeechBubble>
 				</div>
+				
+				<div class="flex items-center justify-center p-2 mb-6 ml-3">
+					<HoverSpeechBubble variant="yellow">“Me reconocen por ser profesor”</HoverSpeechBubble>
+				</div>
+
+				<div class="flex items-center justify-center p-2 mb-6 ml-3">
+					<HoverSpeechBubble variant="blue">“Tengo estudiantes de Transición, 1°, 2°, 3°, 4°, 5°"</HoverSpeechBubble>
+				</div>
+
+				<div class="flex items-center justify-center p-2 mt-3 mr-2">
+					<HoverSpeechBubble variant="red">“Yo nunca he recibido una capacitación en cómo enseñar un aula multigrado”</HoverSpeechBubble>
+				</div>
+				
+				<div class="flex items-center justify-center p-2 mb-6 ml-3">
+					<HoverSpeechBubble variant="yellow">“Estamos a marzo y no han llegado las cartillas de este año”</HoverSpeechBubble>
+				</div>
+				
+				<div class="flex items-center justify-center p-2 mb-6 ml-3">
+					<HoverSpeechBubble variant="blue">“El rector no ha venido en los últimos 2 años”</HoverSpeechBubble>
+				</div>
+
+				<div class="flex items-center justify-center p-2 mb-6 ml-3">
+					<HoverSpeechBubble variant="red">“El modelo de cartillas no existe para todas las clases”</HoverSpeechBubble>
+				</div>				
+
 			</div>
 		</div>
 	</section>
