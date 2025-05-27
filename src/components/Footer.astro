@@ -4,47 +4,61 @@ import footerVideo from '../assets/videos/colombiando-escuela-rural.mp4';
 ---
 
 <footer>		
-    <div class="flex flex-col lg:flex-row min-h-96 gap-y-10">
+    <div class="flex flex-col lg:flex-row min-h-96 gap-y-10 items-center">
         <div class="flex flex-1 items-center gap-2 justify-center mt-20 md:mt-0">
             <img src="/logo-ColombiAndo.png" alt="ColombiAndo logo" class="h-12 w-auto" />
         </div>
-        <div class="flex flex-1 flex-col gap-2 justify-center border-x-2 border-black my-10 px-10 h-52 bg-red-100">
-            <h5 class="text-xl font-bold">Una plataforma de profes para profes</h5>
+        <div class="flex flex-1 flex-col gap-2 justify-start border-x-2 border-white lg:border-black px-10 h-52">
+            <h5 class="text-xl font-bold mt-8">Una plataforma de profes para profes</h5>
             <p class="text-sm">Somos una comunidad de profesores multigrado que se apoya, se conecta, comparte buenas prácticas y visibiliza la educación rural.</p>
         </div>
-        <div class="flex flex-1 flex-col justify-center gap-2 px-10 h-52 bg-blue-100">
-            <h5 class="text-xl mt-4 font-bold">Información de contacto</h5>
+        <div class="flex flex-1 flex-col justify-start gap-2 px-10 h-52">
+            <h5 class="text-xl mt-8 font-bold">Información de contacto</h5>
             <p class="text-sm">hola@colombiando.co</p>
             <div class="flex gap-4 mt-2">
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="text-2xl">
+                <a href="https://instagram.com/colombiandoporcolombia/" target="_blank" rel="noopener noreferrer" class="text-2xl">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-2xl">
+                <a href="https://www.linkedin.com/company/colombiando/" target="_blank" rel="noopener noreferrer" class="text-2xl">
                     <i class="fab fa-linkedin"></i>
                 </a>
             </div>
             <div class="flex flex-col gap-2 ">
-                <a href="https://colombiando.co" target="_blank" rel="noopener noreferrer" class="text-sm underline">Información RTE</a>
+                <a href="/documentos" rel="noopener noreferrer" class="text-sm underline">Información RTE</a>
             </div>
-            <div class="flex flex-col gap-2">
-                <a href="https://colombiando.co" target="_blank" rel="noopener noreferrer" class="text-sm underline">Política de privacidad</a>
-            </div>
+            <!-- <div class="flex flex-col gap-2"> -->
+                <!-- <a href="https://colombiando.co" target="_blank" rel="noopener noreferrer" class="text-sm underline">Política de privacidad</a> -->
+            <!-- </div> -->
         </div>
-        <div class="flex flex-1 flex-col gap-2">
+        <div class="flex flex-1 flex-col gap-2 h-96">
             <!-- Video Background -->
             <div class="relative h-full min-h-full w-full">
+                <!-- Fallback image for when video fails to load -->
+                <img 
+                    id="video-fallback"
+                    src="/colombiando-salon-rural-min.jpeg" 
+                    alt="Colombiando logo" 
+                    class="h-full w-full object-cover absolute inset-0 bg-colombiando-blue"
+                    style="display: none;"
+                />
+                
                 <video 
-                    class="h-full w-full object-cover " 
+                    id="footer-video"
+                    class="h-full w-full object-cover" 
                     autoplay 
                     muted 
                     loop 
                     playsinline
-                    preload="auto"
+                    preload="metadata"
+                    webkit-playsinline
+                    x-webkit-airplay="allow"
+                    disablepictureinpicture
                 >
                     <source src={footerVideo} type="video/mp4">
                     <!-- Fallback for browsers that don't support video -->
                     Your browser does not support the video tag.
                 </video>
+                
                 <div class="flex flex-col gap-2 items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                     <img src="/colombiando-logo.gif" alt="Colombiando logo" class="w-[80%] h-[80%]" />
                     <img src="/colombiando-logo-blanco.png" alt="Colombiando logo" class="w-[90%] h-[60%]" />
@@ -52,4 +66,61 @@ import footerVideo from '../assets/videos/colombiando-escuela-rural.mp4';
             </div>
         </div>
     </div>
-</footer> 
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('footer-video') as HTMLVideoElement | null;
+    const fallback = document.getElementById('video-fallback') as HTMLImageElement | null;
+    
+    if (video && fallback) {
+        // Function to handle video load failure
+        function showFallback() {
+            if (video && fallback) {
+                video.style.display = 'none';
+                fallback.style.display = 'block';
+                console.log('Video fallback activated');
+            }
+        }
+        
+        // Function to handle successful video load
+        function hideFailback() {
+            if (video && fallback) {
+                video.style.display = 'block';
+                fallback.style.display = 'none';
+            }
+        }
+        
+        // Set up event listeners
+        video.addEventListener('error', showFallback);
+        video.addEventListener('loadstart', hideFailback);
+        
+        // Safari-specific handling
+        if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+            // For Safari, try to force play after a short delay
+            setTimeout(() => {
+                if (video) {
+                    video.play().catch((error: any) => {
+                        console.log('Safari autoplay failed:', error);
+                        // Don't show fallback just for autoplay failure in Safari
+                        // The video element will still be visible, just not playing
+                    });
+                }
+            }, 100);
+        }
+        
+        // Check if video can play after attempting to load
+        setTimeout(() => {
+            if (video && video.readyState === 0) {
+                // Video hasn't loaded at all
+                showFallback();
+            }
+        }, 3000);
+        
+        // Additional check for video playback
+        video.addEventListener('canplay', () => {
+            hideFailback();
+        });
+    }
+});
+</script> 
