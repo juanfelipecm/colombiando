@@ -1,6 +1,9 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
-  image: string;
+  image: ImageMetadata;
   alt: string;
   variant?: 'red' | 'blue' | 'yellow';
 }
@@ -16,5 +19,5 @@ const borderColorClass = {
 ---
 
 <div class={`bg-white rounded-lg h-72 w-full shadow-[7px_10px_0px_0px_#000000] transition-all duration-300 border-8 ${borderColorClass}`}>
-    <img src={image} alt={alt} class="w-full h-full object-cover" />
+    <Image src={image} alt={alt} class="w-full h-full object-cover rounded-sm" />
 </div>
