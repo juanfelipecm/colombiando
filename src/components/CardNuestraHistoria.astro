@@ -1,15 +1,32 @@
 ---
 import ImageRecuadro from './ImageRecuadro.astro';
-import colombiando1 from '../assets/images/colombiando-1.jpg';
+
+interface Props {
+  image: string;
+  alt: string;
+  variant?: 'red' | 'blue' | 'yellow';
+  ano: string;
+  titulo: string;
+  parrafo: string;
+}
+
+const { image, alt, variant = 'red', ano, titulo, parrafo } = Astro.props as Props;
+
+// Define text color classes based on variant
+const textColorClass = {
+  red: 'text-colombiando-red',
+  blue: 'text-colombiando-blue',
+  yellow: 'text-colombiando-yellow'
+}[variant];
 ---
 
-<div class="flex flex-col gap-4">
-    <ImageRecuadro image={colombiando1.src} variant="blue" alt="Colombiando 1" />
-    <div class="flex flex-col gap-4">
-        <h3 class="text-2xl font-bold">Año</h3>
-        <h2 class="text-4xl font-bold">Título</h2>
+<div class="flex flex-col gap-4 my-10 mr-4">
+    <ImageRecuadro image={image} variant={variant} alt={alt} />
+    <div class="flex flex-col gap-0.5">
+        <h3 class={`text-xl font-bold ${textColorClass}`}>{ano}</h3>
+        <h2 class={`text-4xl font-bold ${textColorClass}`}>{titulo}</h2>
         <p class="text-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+            {parrafo}
         </p> 
     </div>
 </div>

@@ -7,14 +7,14 @@ interface Props {
 
 const { image, alt, variant = 'red' } = Astro.props as Props;
 
-// Define border color classes based on variant
+// Define border color classes based on variant with actual color codes
 const borderColorClass = {
-  red: 'border-colombiando-red',
-  blue: 'border-colombiando-blue',
-  yellow: 'border-colombiando-yellow'
+  red: 'border-[#D00000]',
+  blue: 'border-[#0060BB]',
+  yellow: 'border-[#FFB100]'
 }[variant];
 ---
 
-<div class={`bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 border-8 ${borderColorClass}`}>
+<div class={`bg-white rounded-lg h-72 w-full shadow-[7px_10px_0px_0px_#000000] transition-all duration-300 border-8 ${borderColorClass}`}>
     <img src={image} alt={alt} class="w-full h-full object-cover" />
 </div>

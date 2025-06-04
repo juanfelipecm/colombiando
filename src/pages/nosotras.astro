@@ -2,6 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import heroNosotrasImage from '../assets/images/hero-colombiando-nosotras.jpg';
 import { Image } from 'astro:assets';
+import colombiando1 from '../assets/images/colombiando-1.jpg';
+import colombiando2 from '../assets/images/programa-leonor/programa-leonor-colombiando-1.jpg';
+import colombiando3 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-1.jpg';
+import colombiando4 from '../assets/images/colombiando-2.jpg';
+import colombiando5 from '../assets/images/colombiando-3.jpg';
+import colombiando6 from '../assets/images/colombiando-diana-sara.jpg';
+import colombiando7 from '../assets/images/colombiando-4.jpg';
+import CardNuestraHistoria from '../components/CardNuestraHistoria.astro';
 
 // Dynamically import all gallery images
 const imageImports = await Promise.all(
@@ -35,6 +43,24 @@ const imageImports = await Promise.all(
           />
         </div>
       ))}
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-4 md:gap-8 justify-between md:flex-row px-4 md:px-6 border border-[#0060BB] mx-4 md:m-10 max-w-8xl md:max-h-[80vh]">
+    <div class="flex flex-2 flex-col gap-2 my-4 md:my-auto mx-4 md:mx-10">
+      <h2 class="text-lg md:text-xl lg:text-3xl font-bold text-colombiando-red border-b-3 border-[#D00000] pb-2 md:pb-4 w-fit">Nuestra historia</h2>
+      <p class="text-xs md:text-sm max-w-xl leading-relaxed">
+        <span class="font-bold">Si queremos proponer, debemos entender.</span> Por eso, Investigando propone un modelo de investigación - acción participativa. Como profesoras buscamos vivir y comprender lo que realmente sucede dentro del aula rural multigrado y caracterizar estos espacios. Actualmente existe un déficit de información accesible, clara y útil que defina cuáles son los factores habilitantes, barreras, necesidad de docentes y apoyo profesional. Este proceso lo hacemos en tres escalas diferentes:
+      </p>
+    </div>
+    <div class="flex flex-2 flex-col md:max-h-none md:overflow-y-scroll pr-2">
+      <CardNuestraHistoria image={colombiando1.src} alt="Colombiando 1" variant="yellow" ano="2022" titulo="Comienzos" parrafo="Comenzamos cuatro profesoras trabajando en un mismo colegio. Surge la pregunta ¿qué está pasando en la educación rural?" />
+      <CardNuestraHistoria image={colombiando2.src} alt="Colombiando 1" variant="blue" ano="2022" titulo="Queríamos entender" parrafo="Viajamos al Carmen de Viborál queriendo entender las dinámicas de la educación en primera infancia en la ruralidad. La desigualdad en Colombia comienza desde la primera infancia." />
+      <CardNuestraHistoria image={colombiando3.src} alt="Colombiando 1" variant="red" ano="2023" titulo="Primer piloto" parrafo="Queriendo conectar las diferentes ludotecas y tener mayor alcance surge Leonor, la mula itinerante." />
+      <CardNuestraHistoria image={colombiando4.src} alt="Colombiando 1" variant="yellow" ano="2023" titulo="Queríamos conectar" parrafo="Comenzamos con vacaciones recreativas para diferentes escuelas en el Cañón del Río Santo Domingo y creando ludotecas en las escuelas." />
+      <CardNuestraHistoria image={colombiando5.src} alt="Colombiando 1" variant="blue" ano="2023" titulo="Los primeros aliados" parrafo="Van llegando diferentes aliados para ir ejecutando los diferentes proyectos: J&J, Sanofi, Colegio Los Nogales" />
+      <CardNuestraHistoria image={colombiando6.src} alt="Colombiando 1" variant="red" ano="2024" titulo="Centro de Aprendizaje" parrafo="Tras conversaciones con la comunidad surge la idea de un centro de aprendizaje. Comienza el diseño participativo de La Casa de Leonor." />
+      <CardNuestraHistoria image={colombiando7.src} alt="Colombiando 1" variant="yellow" ano="2024" titulo="Comienzo de Investigando" parrafo="Queriendo realmente entender el reto de la educación rural multigrado, comienza una etapa de investigación: Investigando." />
     </div>
   </section>
 
