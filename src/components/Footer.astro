@@ -30,15 +30,15 @@ import footerVideo from '../assets/videos/colombiando-escuela-rural.mp4';
                 <!-- <a href="https://colombiando.co" target="_blank" rel="noopener noreferrer" class="text-sm underline">Política de privacidad</a> -->
             <!-- </div> -->
         </div>
-        <div class="flex flex-1 flex-col gap-2 h-96">
+        <div class="flex flex-1 flex-col gap-2 h-64 lg:h-96">
             <!-- Video Background -->
-            <div class="relative h-full min-h-full w-full">
+            <div class="relative h-full min-h-[24rem] lg:min-h-[24rem] w-full">
                 <!-- Fallback image for when video fails to load -->
                 <img 
                     id="video-fallback"
                     src="/colombiando-salon-rural-min.jpeg" 
-                    alt="Colombiando logo" 
-                    class="h-full w-full object-cover absolute inset-0 bg-colombiando-blue"
+                    alt="Colombiando classroom" 
+                    class="h-full w-full object-cover absolute inset-0 bg-colombiando-blue z-0"
                     style="display: none;"
                 />
                 
@@ -74,53 +74,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const fallback = document.getElementById('video-fallback') as HTMLImageElement | null;
     
     if (video && fallback) {
-        // Function to handle video load failure
-        function showFallback() {
-            if (video && fallback) {
-                video.style.display = 'none';
-                fallback.style.display = 'block';
-                console.log('Video fallback activated');
-            }
+        // Detect Chrome desktop specifically
+        const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        const isDesktop = window.innerWidth >= 768;
+        const isChromeDesktop = isChrome && isDesktop;
+        
+        if (isChromeDesktop) {
+            // Show video on Chrome desktop
+            video.style.display = 'block';
+            fallback.style.display = 'none';
+            console.log('Chrome desktop detected: showing video');
+        } else {
+            // Show image everywhere else (other browsers, mobile, etc.)
+            video.style.display = 'none';
+            fallback.style.display = 'block';
+            console.log('Non-Chrome or mobile detected: showing image');
         }
-        
-        // Function to handle successful video load
-        function hideFailback() {
-            if (video && fallback) {
-                video.style.display = 'block';
-                fallback.style.display = 'none';
-            }
-        }
-        
-        // Set up event listeners
-        video.addEventListener('error', showFallback);
-        video.addEventListener('loadstart', hideFailback);
-        
-        // Safari-specific handling
-        if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
-            // For Safari, try to force play after a short delay
-            setTimeout(() => {
-                if (video) {
-                    video.play().catch((error: any) => {
-                        console.log('Safari autoplay failed:', error);
-                        // Don't show fallback just for autoplay failure in Safari
-                        // The video element will still be visible, just not playing
-                    });
-                }
-            }, 100);
-        }
-        
-        // Check if video can play after attempting to load
-        setTimeout(() => {
-            if (video && video.readyState === 0) {
-                // Video hasn't loaded at all
-                showFallback();
-            }
-        }, 3000);
-        
-        // Additional check for video playback
-        video.addEventListener('canplay', () => {
-            hideFailback();
-        });
     }
 });
 </script> 
