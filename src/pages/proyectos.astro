@@ -8,6 +8,7 @@ import img2 from '../assets/images/colombiando-2.jpg';
 import img3 from '../assets/images/colombiando-3.jpg';
 import img4 from '../assets/images/colombiando-4.jpg';
 import InfoCard from '../components/InfoCard.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
 import programaLeonor1 from '../assets/images/programa-leonor/programa-leonor-colombiando-1.jpg';
 import programaLeonor2 from '../assets/images/programa-leonor/programa-leonor-colombiando-2.jpg';
 import programaLeonor3 from '../assets/images/programa-leonor/programa-leonor-colombiando-3.jpg';
@@ -242,6 +243,9 @@ import bgImage from '../assets/images/hero-colombiando-nosotras.jpg';
         <div class="flex flex-col lg:flex-row gap-4 p-4">
           <div class="flex flex-col">
             <p class="text-sm"><span class="font-bold">El boletín Colombiando</span> Un espacio para encontrar recursos, mensajes, ideas, preguntas y buenas prácticas que entre profes multigrado queremos compartir. Red de profesores rurales multigrado.</p>
+            <div class="mt-4">
+              <NewsletterSignup variant="red" />
+            </div>
           </div>
           <div class="flex flex-col border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] overflow-hidden">
             <Image src={boletinColombiando} alt="Boletín Colombiando" class="object-cover w-full h-full" />

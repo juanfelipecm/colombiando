@@ -1,0 +1,51 @@
+---
+import Button from './Button.astro';
+const { variant = 'yellow', ...props } = Astro.props;
+---
+
+<!-- Newsletter Signup Component -->
+<div class="newsletter-signup" {...props}>
+  <!-- Button that opens the Tally popup -->
+  <Button variant={variant} id="newsletter-button">
+    Recibe el Boletín
+  </Button>
+</div>
+
+<script>
+  // Tally popup functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const button = document.getElementById('newsletter-button');
+    const formId = '31e4z1';
+
+    if (button) {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Check if Tally is available
+        if (typeof (window as any).Tally !== 'undefined') {
+          // Open Tally popup with custom options
+          (window as any).Tally.openPopup(formId, {
+            layout: 'modal',
+            width: 600,
+            hideTitle: false,
+            overlay: true,
+            onOpen: () => {
+              console.log('Newsletter popup opened');
+            },
+            onClose: () => {
+              console.log('Newsletter popup closed');
+            },
+            onSubmit: (payload: any) => {
+              console.log('Newsletter form submitted:', payload);
+              // You can add analytics tracking or other logic here
+            }
+          });
+        } else {
+          console.error('Tally widget not loaded');
+        }
+      });
+    }
+  });
+</script>
+
+<!-- No custom styles needed - Tally handles the popup styling -->
