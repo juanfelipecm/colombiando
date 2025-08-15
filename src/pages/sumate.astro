@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Accordion from '../components/Accordion.astro';
+import AccordionItem from '../components/AccordionItem.astro';
+import { Image } from 'astro:assets';
+import bgImage from '../assets/images/hero-colombiando-nosotras.jpg';
+---
+
+<Layout>
+	<section
+		class="relative w-full h-[98vh] bg-cover bg-center flex items-end justify-center p-10 pb-20 lg:pb-0"
+		style={`background-image: url(${bgImage.src});`}
+	>
+  <div class="mx-4 w-full bg-colombiando-yellow rounded-lg p-14 translate-y-16">
+    <h1 class="text-3xl md:text-7xl font-semibold text-white">Súmate</h1>
+  </div>
+	</section> 
+
+  <section class="bg-white py-16 mt-20">     
+    <div class="max-w-8xl mx-auto px-5 flex flex-col lg:flex-row">
+      <div class="border border-[#0060BB] md:border-r-0 flex flex-col justify-center p-20 lg:w-2/5 lg:flex-shrink-0">          
+        <h2 class="text-3xl lg:text-4xl font-bold text-colombiando-blue border-b-3 border-[#0060BB] pb-4 mb-4 w-fit">Súmate a Colombiando</h2>
+        <p class="text-sm max-w-xl"><span class="font-bold">Una fundación con las puertas abiertas. </span>Aporta a la educación rural multigrado con una donación, una idea, una mensaje de apoyo.</p>
+      </div>
+    <Accordion class="lg:w-3/5">
+      <AccordionItem title="Donación" color="blue">
+        <div class="flex flex-col gap-4">
+          <p class="text-sm">
+            <span class="font-bold">Tu apoyo hace la diferencia.</span> Con tu donación podemos seguir llevando educación de calidad a las escuelas rurales más alejadas de Colombia. Cada aporte nos permite:
+          </p>
+          <ul class="text-sm list-disc list-inside space-y-2 ml-4">
+            <li>Financiar el programa Leonor y sus bibliotecas itinerantes</li>
+            <li>Apoyar la Casa de Leonor como espacio de aprendizaje comunitario</li>
+            <li>Desarrollar nuevos programas educativos como Ando Ingeniando</li>
+            <li>Mantener nuestra investigación en territorio</li>
+            <li>Formar y acompañar docentes rurales multigrado</li>
+          </ul>
+          <div class="bg-gray-50 p-6 rounded-xl mt-4">
+            <h4 class="font-bold text-sm mb-2">Formas de donar:</h4>
+            <div class="space-y-2 text-sm">
+              <p><span class="font-semibold">Transferencia bancaria:</span> [Información bancaria aquí]</p>
+              <p><span class="font-semibold">PayPal:</span> [Link de PayPal aquí]</p>
+              <p><span class="font-semibold">Otras formas:</span> Contáctanos para explorar otras opciones</p>
+            </div>
+          </div>
+        </div>
+      </AccordionItem>
+
+      <AccordionItem title="Contacto" color="blue">
+        <div class="flex flex-col gap-4">
+          <p class="text-sm">
+            <span class="font-bold">¿Tienes preguntas? ¿Quieres colaborar?</span> Nos encanta conocer personas comprometidas con la educación rural. Escríbenos y conversemos sobre cómo puedes sumarte a nuestra misión.
+          </p>
+          
+          <div class="grid md:grid-cols-2 gap-6 mt-4">
+            <div class="bg-gray-50 p-6 rounded-xl">
+              <h4 class="font-bold text-sm mb-3">Información de contacto</h4>
+              <div class="space-y-2 text-sm">
+                <p><span class="font-semibold">Email:</span> contacto@colombiando.org</p>
+                <p><span class="font-semibold">Teléfono:</span> +57 (XXX) XXX-XXXX</p>
+                <p><span class="font-semibold">WhatsApp:</span> +57 (XXX) XXX-XXXX</p>
+              </div>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-xl">
+              <h4 class="font-bold text-sm mb-3">Redes sociales</h4>
+              <div class="space-y-2 text-sm">
+                <p><span class="font-semibold">Instagram:</span> @colombiando</p>
+                <p><span class="font-semibold">Facebook:</span> ColombiAndo</p>
+                <p><span class="font-semibold">LinkedIn:</span> ColombiAndo</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6">
+            <h4 class="font-bold text-sm mb-3">Formas de colaborar:</h4>
+            <ul class="text-sm list-disc list-inside space-y-1 ml-4">
+              <li>Voluntariado en programas educativos</li>
+              <li>Alianzas estratégicas</li>
+              <li>Donación de materiales educativos</li>
+              <li>Apoyo profesional especializado</li>
+              <li>Difusión de nuestra causa</li>
+            </ul>
+          </div>
+        </div>
+      </AccordionItem>
+    </Accordion>
+    </div>
+  </section>
+</Layout>
+
+<style scoped>
+  .gallery:hover .gallery-item {
+    flex: 1;
+  }
+  .gallery-item:hover {
+    flex: 2.5 !important;
+    z-index: 10;
+  }
+</style>

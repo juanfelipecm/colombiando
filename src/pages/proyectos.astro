@@ -31,6 +31,11 @@ import semilleroEducadores7 from '../assets/images/semillero-educadores/semiller
 import semilleroEducadores8 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-8.jpg';
 import semilleroEducadores9 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-9.jpg';
 import semilleroEducadores10 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-10.jpg';
+import andoIngeniando1 from '../assets/images/ando-ingeniando/ando-ingeniando-1.jpg';
+import andoIngeniando2 from '../assets/images/ando-ingeniando/ando-ingeniando-2.jpg';
+import andoIngeniando3 from '../assets/images/ando-ingeniando/ando-ingeniando-3.jpg';
+import andoIngeniando4 from '../assets/images/ando-ingeniando/ando-ingeniando-4.jpg';
+import andoIngeniando5 from '../assets/images/ando-ingeniando/ando-ingeniando-5.jpg';
 import bgImage from '../assets/images/hero-colombiando-nosotras.jpg';
 ---
 
@@ -185,22 +190,19 @@ import bgImage from '../assets/images/hero-colombiando-nosotras.jpg';
               <p class="text-xs">Programa para despertar y cultivar la curiosidad por las áreas STEM en 8 escuelas del Cañón del Río Santo Domingo, Antioquia</p>              
                <div class="gallery flex gap-4 h-[200px] mt-6 pb-4 overflow-x-scroll">
                  <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
-                   <Image src={casaLeonor1} alt="Casa de Leonor 1" class="object-cover w-full h-full" />
+                   <Image src={andoIngeniando1} alt="Ando Ingeniando 1" class="object-cover w-full h-full" />
                  </div>
                  <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
-                   <Image src={casaLeonor2} alt="Casa de Leonor 2" class="object-cover w-full h-full" />
+                   <Image src={andoIngeniando2} alt="Ando Ingeniando 2" class="object-cover w-full h-full" />
                  </div>
                  <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[150px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
-                   <Image src={casaLeonor3} alt="Casa de Leonor 3" class="object-cover w-full h-full" />
+                   <Image src={andoIngeniando3} alt="Ando Ingeniando 3" class="object-cover w-full h-full" />
                  </div>
                  <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
-                   <Image src={casaLeonor4} alt="Casa de Leonor 4" class="object-cover w-full h-full" />
+                   <Image src={andoIngeniando4} alt="Ando Ingeniando 4" class="object-cover w-full h-full" />
                  </div>
                  <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
-                   <Image src={casaLeonor5} alt="Casa de Leonor 5" class="object-cover w-full h-full" />
-                 </div>
-                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
-                   <Image src={casaLeonor6} alt="Casa de Leonor 6" class="object-cover w-full h-full" />
+                   <Image src={andoIngeniando5} alt="Ando Ingeniando 5" class="object-cover w-full h-full" />
                  </div>
                </div>
              </div>            
@@ -240,16 +242,25 @@ import bgImage from '../assets/images/hero-colombiando-nosotras.jpg';
       </AccordionItem>
 
       <AccordionItem title="Boletiando" color="red">
-        <div class="flex flex-col lg:flex-row gap-4 p-4">
+        <div class="flex flex-col gap-4 p-4">
           <div class="flex flex-col">
-            <p class="text-sm"><span class="font-bold">El boletín Colombiando</span> Un espacio para encontrar recursos, mensajes, ideas, preguntas y buenas prácticas que entre profes multigrado queremos compartir. Red de profesores rurales multigrado.</p>
+            <p class="text-sm"><span class="font-bold">El boletín Colombiando</span> Red de 46 profesores rurales multigrado. Un espacio para encontrar recursos, mensajes, ideas, preguntas y buenas prácticas que entre profes multigrado queremos compartir. 
+            </p>
             <div class="mt-4">
               <NewsletterSignup variant="red" />
             </div>
           </div>
-          <div class="flex flex-col border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] overflow-hidden">
-            <Image src={boletinColombiando} alt="Boletín Colombiando" class="object-cover w-full h-full" />
-          </div>
+          <div class="flex flex-row overflow-auto gap-4">
+            <div class="flex flex-col border border-black rounded-2xl shadow- [2px_2px_0px_0px_#000000] overflow-hidden w-xs">
+              <Image src={boletinColombiando} alt="Boletín Colombiando"   class="object-cover w-full h-full" />
+            </div>
+            <div class="flex flex-col border border-black rounded-2xl shadow- [2px_2px_0px_0px_#000000] overflow-hidden w-xs">
+              <Image src={boletinColombiando} alt="Boletín Colombiando"   class="object-cover w-full h-full" />
+            </div>
+            <div class="flex flex-col border border-black rounded-2xl shadow- [2px_2px_0px_0px_#000000] overflow-hidden w-xs">
+              <Image src={boletinColombiando} alt="Boletín Colombiando"   class="object-cover w-full h-full" />
+            </div>                        
+           </div> 
         </div>  
       </AccordionItem>
 
