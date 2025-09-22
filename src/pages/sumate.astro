@@ -4,6 +4,7 @@ import Accordion from '../components/Accordion.astro';
 import AccordionItem from '../components/AccordionItem.astro';
 import { Image } from 'astro:assets';
 import bgImage from '../assets/images/hero-colombiando-nosotras.jpg';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
 ---
 
 <Layout>
@@ -41,22 +42,24 @@ import bgImage from '../assets/images/hero-colombiando-nosotras.jpg';
           <p class="text-sm">
             <span class="font-bold">¿Tienes preguntas? ¿Quieres colaborar?</span> Nos encanta conocer personas comprometidas con la educación rural. Escríbenos y conversemos sobre cómo puedes sumarte a nuestra misión.
           </p>
-          
+
+          <div class="mt-4">
+            <NewsletterSignup variant="yellow" formId="wLl07O" buttonText="Escríbenos" />
+          </div>          
+
           <div class="grid md:grid-cols-2 gap-6 mt-4">
             <div class="bg-gray-50 p-6 rounded-xl">
               <h4 class="font-bold text-sm mb-3">Información de contacto</h4>
               <div class="space-y-2 text-sm">
-                <p><span class="font-semibold">Email:</span> contacto@colombiando.org</p>
-                <p><span class="font-semibold">Teléfono:</span> +57 (XXX) XXX-XXXX</p>
-                <p><span class="font-semibold">WhatsApp:</span> +57 (XXX) XXX-XXXX</p>
+                <p><span class="font-semibold">Email:</span> hola@colombiando.org</p>
+                <p><span class="font-semibold">WhatsApp:</span> +57 317 538 4935</p>
               </div>
             </div>
             
             <div class="bg-gray-50 p-6 rounded-xl">
               <h4 class="font-bold text-sm mb-3">Redes sociales</h4>
               <div class="space-y-2 text-sm">
-                <p><span class="font-semibold">Instagram:</span> @colombiando</p>
-                <p><span class="font-semibold">Facebook:</span> ColombiAndo</p>
+                <p><span class="font-semibold">Instagram:</span> @colombiandoporcolombia</p>
                 <p><span class="font-semibold">LinkedIn:</span> ColombiAndo</p>
               </div>
             </div>

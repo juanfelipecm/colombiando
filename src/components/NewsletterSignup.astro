@@ -1,13 +1,18 @@
 ---
 import Button from './Button.astro';
-const { variant = 'yellow', ...props } = Astro.props;
+const { 
+  variant = 'yellow', 
+  formId = '31e4z1', 
+  buttonText = 'Recibe el Boletín',
+  ...props 
+} = Astro.props;
 ---
 
 <!-- Newsletter Signup Component -->
-<div class="newsletter-signup" {...props}>
+<div class="newsletter-signup" data-form-id={formId} {...props}>
   <!-- Button that opens the Tally popup -->
   <Button variant={variant} id="newsletter-button">
-    Recibe el Boletín
+    {buttonText}
   </Button>
 </div>
 
@@ -15,7 +20,7 @@ const { variant = 'yellow', ...props } = Astro.props;
   // Tally popup functionality
   document.addEventListener('DOMContentLoaded', function() {
     const button = document.getElementById('newsletter-button');
-    const formId = '31e4z1';
+    const formId = document.querySelector('.newsletter-signup')?.getAttribute('data-form-id') || '31e4z1';
 
     if (button) {
       button.addEventListener('click', function(e) {
