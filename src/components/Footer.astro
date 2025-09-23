@@ -4,7 +4,7 @@ import footerVideo from '../assets/videos/colombiando-escuela-rural.mp4';
 ---
 
 <footer>		
-    <div class="flex flex-col lg:flex-row min-h-96 gap-y-10 items-center">
+    <div class="flex flex-col lg:flex-row min-h-96 gap-y-10 lg:items-center">
         <div class="flex flex-1 items-center gap-2 justify-center mt-20 md:mt-0">
             <img src="/logo-ColombiAndo.png" alt="ColombiAndo logo" class="h-12 w-auto" />
         </div>
@@ -30,15 +30,15 @@ import footerVideo from '../assets/videos/colombiando-escuela-rural.mp4';
                 <!-- <a href="https://colombiando.co" target="_blank" rel="noopener noreferrer" class="text-sm underline">Política de privacidad</a> -->
             <!-- </div> -->
         </div>
-        <div class="flex flex-1 flex-col gap-2 h-64 lg:h-96">
+        <div class="flex flex-1 flex-col gap-2 min-h-64 lg:h-96">
             <!-- Mobile: Image with overlay, Desktop: Video with overlay -->
-            <div class="relative h-full min-h-[24rem] lg:min-h-[24rem] w-full">
+            <div class="relative lg:h-full lg:min-h-[24rem] w-full bg-gray-200">
                 <!-- Mobile background image -->
                 <img 
                     id="mobile-background"
                     src="/colombiando-salon-rural-min.jpeg" 
                     alt="Colombiando classroom" 
-                    class="h-full w-full object-cover absolute inset-0 bg-colombiando-blue z-0 lg:hidden"
+                    class="block lg:hidden h-96 w-full object-cover"
                 />
                 
                 <!-- Desktop fallback image (hidden by default, shown when video fails) -->
@@ -46,13 +46,14 @@ import footerVideo from '../assets/videos/colombiando-escuela-rural.mp4';
                     id="desktop-background-fallback"
                     src="/colombiando-salon-rural-min.jpeg" 
                     alt="Colombiando classroom" 
-                    class="h-full w-full object-cover absolute inset-0 bg-colombiando-blue z-0 hidden"
+                    class="hidden lg:block h-full w-full object-cover absolute inset-0 bg-colombiando-blue z-0"
+                    style="display: none;"
                 />
                 
                 <!-- Desktop video -->
                 <video 
                     id="footer-video"
-                    class="h-full w-full object-cover hidden lg:block" 
+                    class="hidden lg:block h-full w-full object-cover absolute inset-0 z-0" 
                     autoplay 
                     muted 
                     loop 
@@ -69,9 +70,10 @@ import footerVideo from '../assets/videos/colombiando-escuela-rural.mp4';
                 </video>
                 
                 <div class="flex flex-col gap-2 items-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                    <img src="/colombiando-logo.gif" alt="Colombiando logo" class="w-[80%] h-[80%]" />
+                    <img src="/colombiando-logo.gif" alt="Colombiando logo" class="w-[60%] h-[60%]" />
                     <img src="/colombiando-logo-blanco.png" alt="Colombiando logo" class="w-[90%] h-[60%]" />
                 </div>
+            </div>    
             </div>
         </div>
     </div>
@@ -80,6 +82,15 @@ import footerVideo from '../assets/videos/colombiando-escuela-rural.mp4';
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const video = document.getElementById('footer-video') as HTMLVideoElement | null;
+    const mobileImg = document.getElementById('mobile-background') as HTMLImageElement | null;
+    
+    console.log('Screen width:', window.innerWidth);
+    console.log('Mobile image element:', mobileImg);
+    if (mobileImg) {
+        console.log('Mobile image src:', mobileImg.src);
+        console.log('Mobile image classes:', mobileImg.className);
+        console.log('Mobile image display style:', window.getComputedStyle(mobileImg).display);
+    }
     
     if (video) {
         console.log('Video element found:', video);
@@ -103,8 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const fallbackImg = document.getElementById('desktop-background-fallback');
             if (fallbackImg) {
                 video.style.display = 'none';
-                fallbackImg.classList.remove('hidden');
-                fallbackImg.classList.add('lg:block');
+                fallbackImg.style.display = 'block';
                 console.log('Switched to fallback image on desktop');
             }
         });
