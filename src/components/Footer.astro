@@ -31,20 +31,28 @@ import footerVideo from '../assets/videos/colombiando-escuela-rural.mp4';
             <!-- </div> -->
         </div>
         <div class="flex flex-1 flex-col gap-2 h-64 lg:h-96">
-            <!-- Video Background -->
+            <!-- Mobile: Image with overlay, Desktop: Video with overlay -->
             <div class="relative h-full min-h-[24rem] lg:min-h-[24rem] w-full">
-                <!-- Fallback image for when video fails to load -->
+                <!-- Mobile background image -->
                 <img 
-                    id="video-fallback"
+                    id="mobile-background"
                     src="/colombiando-salon-rural-min.jpeg" 
                     alt="Colombiando classroom" 
-                    class="h-full w-full object-cover absolute inset-0 bg-colombiando-blue z-0"
-                    style="display: none;"
+                    class="h-full w-full object-cover absolute inset-0 bg-colombiando-blue z-0 lg:hidden"
                 />
                 
+                <!-- Desktop fallback image (hidden by default, shown when video fails) -->
+                <img 
+                    id="desktop-background-fallback"
+                    src="/colombiando-salon-rural-min.jpeg" 
+                    alt="Colombiando classroom" 
+                    class="h-full w-full object-cover absolute inset-0 bg-colombiando-blue z-0 hidden"
+                />
+                
+                <!-- Desktop video -->
                 <video 
                     id="footer-video"
-                    class="h-full w-full object-cover" 
+                    class="h-full w-full object-cover hidden lg:block" 
                     autoplay 
                     muted 
                     loop 
@@ -53,6 +61,7 @@ import footerVideo from '../assets/videos/colombiando-escuela-rural.mp4';
                     webkit-playsinline
                     x-webkit-airplay="allow"
                     disablepictureinpicture
+                    controls={false}
                 >
                     <source src={footerVideo} type="video/mp4">
                     <!-- Fallback for browsers that don't support video -->
@@ -71,25 +80,46 @@ import footerVideo from '../assets/videos/colombiando-escuela-rural.mp4';
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const video = document.getElementById('footer-video') as HTMLVideoElement | null;
-    const fallback = document.getElementById('video-fallback') as HTMLImageElement | null;
     
-    if (video && fallback) {
-        // Detect Chrome desktop specifically
-        const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-        const isDesktop = window.innerWidth >= 768;
-        const isChromeDesktop = isChrome && isDesktop;
+    if (video) {
+        console.log('Video element found:', video);
+        console.log('Video src attribute:', video.getAttribute('src'));
+        console.log('Video sources:', video.querySelectorAll('source'));
         
-        if (isChromeDesktop) {
-            // Show video on Chrome desktop
-            video.style.display = 'block';
-            fallback.style.display = 'none';
-            console.log('Chrome desktop detected: showing video');
-        } else {
-            // Show image everywhere else (other browsers, mobile, etc.)
-            video.style.display = 'none';
-            fallback.style.display = 'block';
-            console.log('Non-Chrome or mobile detected: showing image');
+        // Log the resolved source URL
+        const sourceElement = video.querySelector('source');
+        if (sourceElement) {
+            console.log('Source src:', sourceElement.src);
+            console.log('Source type:', sourceElement.type);
         }
+        // Handle video load errors
+        video.addEventListener('error', function(e) {
+            console.error('Video failed to load. Error details:', e);
+            console.error('Video error code:', video.error?.code);
+            console.error('Video error message:', video.error?.message);
+            console.error('Video src:', video.src || video.currentSrc);
+            
+            // Show fallback image when video fails
+            const fallbackImg = document.getElementById('desktop-background-fallback');
+            if (fallbackImg) {
+                video.style.display = 'none';
+                fallbackImg.classList.remove('hidden');
+                fallbackImg.classList.add('lg:block');
+                console.log('Switched to fallback image on desktop');
+            }
+        });
+        
+        // Handle cases where video doesn't start playing
+        video.addEventListener('loadstart', function() {
+            console.log('Video loading started');
+        });
+        
+        // Try to play the video (Safari sometimes needs explicit play call)
+        video.addEventListener('canplay', function() {
+            video.play().catch(function(error) {
+                console.log('Autoplay prevented:', error);
+            });
+        });
     }
 });
-</script> 
+</script>
