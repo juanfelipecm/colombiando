@@ -2,59 +2,40 @@
 // Redirect to default language
 ---
 
-<script is:inline>
-  // Check if user has a language preference stored
-  const savedLang = localStorage.getItem('preferred-language');
-  
-  // Get browser language
-  const browserLang = navigator.language.split('-')[0];
-  
-  // Determine which language to use
-  const lang = savedLang || (browserLang === 'en' ? 'en' : 'es');
-  
-  // Redirect to the appropriate language
-  window.location.href = `/${lang}/`;
-</script>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colombiando - Redirecting...</title>
+  <title>Colombiando</title>
+  <meta http-equiv="refresh" content="0;url=/es/">
+  <script is:inline>
+    // Immediate redirect with language detection
+    (function() {
+      // Check if user has a language preference stored
+      const savedLang = localStorage.getItem('preferred-language');
+      
+      // Get browser language
+      const browserLang = navigator.language.split('-')[0];
+      
+      // Determine which language to use
+      const lang = savedLang || (browserLang === 'en' ? 'en' : 'es');
+      
+      // Immediate redirect
+      window.location.replace(`/${lang}/`);
+    })();
+  </script>
   <style>
     body {
-      font-family: system-ui, -apple-system, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
       margin: 0;
-      background: linear-gradient(135deg, #0060BB 0%, #FFCB2D 100%);
-    }
-    .loader {
-      text-align: center;
-      color: white;
-    }
-    .spinner {
-      border: 4px solid rgba(255, 255, 255, 0.3);
-      border-radius: 50%;
-      border-top: 4px solid white;
-      width: 40px;
-      height: 40px;
-      animation: spin 1s linear infinite;
-      margin: 0 auto 20px;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      background: white;
     }
   </style>
 </head>
 <body>
-  <div class="loader">
-    <div class="spinner"></div>
-    <p>Redirigiendo / Redirecting...</p>
-  </div>
+  <!-- Fallback link in case JavaScript is disabled -->
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=/es/">
+  </noscript>
 </body>
 </html>
