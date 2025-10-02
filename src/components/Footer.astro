@@ -1,6 +1,24 @@
 ---
 // Import the video asset
 import footerVideo from '../assets/videos/colombiando-escuela-rural.mp4';
+import { getLangFromUrl, type Language } from '../i18n/config';
+import { useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Get the current route for language switching
+const getCurrentRoute = () => {
+  const parts = Astro.url.pathname.split('/').filter(Boolean);
+  if (parts.length > 1 && (parts[0] === 'es' || parts[0] === 'en')) {
+    return parts.slice(1).join('/');
+  }
+  return '';
+};
+
+const currentRoute = getCurrentRoute();
+const alternateLang: Language = lang === 'es' ? 'en' : 'es';
+const alternateUrl = currentRoute ? `/${alternateLang}/${currentRoute}` : `/${alternateLang}/`;
 ---
 
 <footer>		
@@ -9,11 +27,11 @@ import footerVideo from '../assets/videos/colombiando-escuela-rural.mp4';
             <img src="/logo-ColombiAndo.png" alt="ColombiAndo logo" class="h-12 w-auto" />
         </div>
         <div class="flex flex-1 flex-col gap-2 justify-start border-x-2 border-white lg:border-black px-10 h-52">
-            <h5 class="text-xl font-bold mt-8">Una plataforma de profes para profes</h5>
-            <p class="text-sm">Somos una comunidad de profesores multigrado que se apoya, se conecta, comparte buenas prácticas y visibiliza la educación rural.</p>
+            <h5 class="text-xl font-bold mt-8">{t('footer.tagline')}</h5>
+            <p class="text-sm">{t('footer.description')}</p>
         </div>
         <div class="flex flex-1 flex-col justify-start gap-2 px-10 h-52">
-            <h5 class="text-xl mt-8 font-bold">Información de contacto</h5>
+            <h5 class="text-xl mt-8 font-bold">{t('footer.contactInfo')}</h5>
             <p class="text-sm">hola@colombiando.co</p>
             <div class="flex gap-4 mt-2">
                 <a href="https://instagram.com/colombiandoporcolombia/" target="_blank" rel="noopener noreferrer" class="text-2xl">
@@ -24,7 +42,19 @@ import footerVideo from '../assets/videos/colombiando-escuela-rural.mp4';
                 </a>
             </div>
             <div class="flex flex-col gap-2 ">
-                <a href="/documentos" rel="noopener noreferrer" class="text-sm underline">Información RTE</a>
+                <a href={`/${lang}/${lang === 'es' ? 'documentos' : 'documentos'}`} rel="noopener noreferrer" class="text-sm underline">{t('footer.rteInfo')}</a>
+            </div>
+            
+            <!-- Language Switcher -->
+            <div class="mt-4">
+                <a href={alternateUrl} class="lang-switcher inline-flex items-center gap-2 px-4 py-2 text-sm font-bold border-2 border-black rounded-full hover:bg-black hover:text-white transition-colors duration-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    {alternateLang === 'es' ? 'Español' : 'English'}
+                </a>
             </div>
             <!-- <div class="flex flex-col gap-2"> -->
                 <!-- <a href="https://colombiando.co" target="_blank" rel="noopener noreferrer" class="text-sm underline">Política de privacidad</a> -->

@@ -1,0 +1,250 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "about": "Nosotras",
+    "joinUs": "Súmate"
+  },
+  "home": {
+    "hero": {
+      "title": "Somos el mejor aliado del profesor rural multigrado."
+    },
+    "teacherToTeacher": {
+      "title": "De profe a profe",
+      "description": "Una plataforma de profes para profes. Somos una comunidad de profesores multigrado que se apoya, se conecta, comparte buenas prácticas y visibiliza la educación rural."
+    },
+    "whoWeAre": {
+      "title": "Quiénes somos",
+      "description": "Colombiando es una organización sin ánimo de lucro que, desde el 2022, está investigando cómo ser el mejor aliado del profesor rural multigrado. Actualmente co-creamos proyectos educativos con profesores rurales de escuelas multigrado en zonas alejadas del país con el objetivo de ser un apoyo para ellos en su práctica docente."
+    },
+    "ruralClassroom": {
+      "title": "Te invitamos a descubrir esta aula rural multigrado",
+      "description": "Esta imagen refleja el corazón de una escuela rural multigrado: un aula viva donde se encuentran aprendizajes, retos y sueños, contados desde la voz de quienes enseñan cada día dentro de ella.",
+      "bubbles": {
+        "1": "Los estudiantes de todas las edades se apoyan mucho entre ellos",
+        "2": "Yo aca enseño como puedo las materias que no son mi fuerte",
+        "3": "Los estudiantes respetan los diferentes ritmos de aprendizaje",
+        "4": "La escuela es parte principal de la comunidad",
+        "5": "En recreos hay espacios de juego entre estudiantes de diferentes edades",
+        "6": "La primera en llegar y última en irme, la todera, la psicóloga además de ser la profesora",
+        "7": "Se cuidan mucho entre todos",
+        "8": "Debo planear clases de castellano, matemáticas, ciencias sociales, ciencias naturales, geografía, historia, cátedra de paz, cátedra afro, geometría, estadística, inglés, lecto-escritura, informática, religión…",
+        "9": "Existe mucho amor por la escuela e interés por aprender",
+        "10": "Seguimos sin baños en la escuela y tampoco tenemos luz",
+        "11": "Me reconocen por ser profesor",
+        "12": "Tengo estudiantes de Transición, 1°, 2°, 3°, 4°, 5°",
+        "13": "Yo nunca he recibido una capacitación en cómo enseñar un aula multigrado",
+        "14": "Estamos a marzo y no han llegado las cartillas de este año",
+        "15": "El rector no ha venido en los últimos 2 años",
+        "16": "El modelo de cartillas no existe para todas las clases"
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Colombiando somos todos"
+    },
+    "ourStory": {
+      "title": "Nuestra historia",
+      "intro": "Si queremos proponer, debemos entender. Por eso, Investigando propone un modelo de investigación - acción participativa. Como profesoras buscamos vivir y comprender lo que realmente sucede dentro del aula rural multigrado y caracterizar estos espacios. Actualmente existe un déficit de información accesible, clara y útil que defina cuáles son los factores habilitantes, barreras, necesidad de docentes y apoyo profesional. Este proceso lo hacemos en tres escalas diferentes:",
+      "timeline": {
+        "2022_1": {
+          "year": "2022",
+          "title": "Comienzos",
+          "description": "Comenzamos cuatro profesoras trabajando en un mismo colegio. Surge la pregunta ¿qué está pasando en la educación rural?"
+        },
+        "2022_2": {
+          "year": "2022",
+          "title": "Queríamos entender",
+          "description": "Viajamos al Carmen de Viborál queriendo entender las dinámicas de la educación en primera infancia en la ruralidad. La desigualdad en Colombia comienza desde la primera infancia."
+        },
+        "2023_1": {
+          "year": "2023",
+          "title": "Primer piloto",
+          "description": "Queriendo conectar las diferentes ludotecas y tener mayor alcance surge Leonor, la mula itinerante."
+        },
+        "2023_2": {
+          "year": "2023",
+          "title": "Queríamos conectar",
+          "description": "Comenzamos con vacaciones recreativas para diferentes escuelas en el Cañón del Río Santo Domingo y creando ludotecas en las escuelas."
+        },
+        "2023_3": {
+          "year": "2023",
+          "title": "Los primeros aliados",
+          "description": "Van llegando diferentes aliados para ir ejecutando los diferentes proyectos: J&J, Sanofi, Colegio Los Nogales"
+        },
+        "2024_1": {
+          "year": "2024",
+          "title": "Centro de Aprendizaje",
+          "description": "Tras conversaciones con la comunidad surge la idea de un centro de aprendizaje. Comienza el diseño participativo de La Casa de Leonor."
+        },
+        "2024_2": {
+          "year": "2024",
+          "title": "Comienzo de Investigando",
+          "description": "Queriendo realmente entender el reto de la educación rural multigrado, comienza una etapa de investigación: Investigando."
+        }
+      }
+    }
+  },
+  "projects": {
+    "hero": {
+      "title": "Nuestros Proyectos"
+    },
+    "investigating": {
+      "title": "Investigando",
+      "intro": "Si queremos proponer, debemos comprender. Investigando es el eje central de Colombiando. Buscamos innovar con sentido, tomar decisiones con evidencia y construir sobre lo que ya existe. Por eso investigamos en territorio, viviendo la escuela rural, y desde afuera, conectando datos y visibilizando las brechas de información sobre el aula multigrado.",
+      "inTerritory": {
+        "title": "En territorio",
+        "description": "Investigando en territorio es un modelo de investigación-acción participativa en el que una profesora de Colombiando vive en la comunidad rural y acompaña diariamente al docente y sus estudiantes, con el fin de apoyar, comprender las dinámicas del aula multigrado e identificar oportunidades para innovar con sentido."
+      },
+      "fromOutside": {
+        "title": "Desde afuera",
+        "description": "Nos encantan los datos, aunque no ha sido fácil encontrarlos. Por eso buscamos, recolectamos y analizamos información de bases de datos existentes. Además, mapeamos cada uno de los lugares visitados y analizamos lo observado en territorio. Finalmente, consolidamos alianzas estratégicas que fortalecen nuestra comprensión sobre el aula multigrado."
+      },
+      "quantitativeData": {
+        "title": "Datos cuantitativos",
+        "description": "Creemos en los datos. Nos enfocamos en encontrar y analizar información cuantitativa sobre la modalidad rural multigrado en Colombia. Es una modalidad única que merece ser analizada desde sus propios datos y sus metodologías particulares de enseñanza y aprendizaje.",
+        "stats": {
+          "days_palma": "Días",
+          "days_palma_desc": "en La Palma, Antioquia",
+          "days_junin": "Días",
+          "days_junin_desc": "en Junín, Cundinamarca",
+          "days_jovi": "Días",
+          "days_jovi_desc": "en Joví, Chocó",
+          "days_pajonal": "Días",
+          "days_pajonal_desc": "en Pajonal, Sucre",
+          "schools_visited": "Escuelas visitas",
+          "schools_visited_desc": "y 16 profesores",
+          "research_group": "Grupo de estudiantes",
+          "research_group_desc": "de La Universidad de los Andes investigando datos cuantitativos.",
+          "educators_seedbed": "Semillero",
+          "educators_seedbed_sub": "de Educadores",
+          "educators_seedbed_desc": "con estudiantes voluntarios Escuela Nueva y Programa Todos a Aprender",
+          "volunteers": "Voluntarios",
+          "volunteers_desc": "Consolidados en nuestro equipo",
+          "schools_accompanied": "Escuelas",
+          "schools_accompanied_desc": "acompañadas presencialmente programa Investigando",
+          "schools_visited_total": "Escuelas",
+          "schools_visited_total_desc": "visitadas",
+          "schools_connected": "Escuelas",
+          "schools_connected_desc": "conectadas por el programa Leonor (Cañón)",
+          "teachers_network": "Docentes",
+          "teachers_network_desc": "vinculados a la red",
+          "newsletters": "Boletines",
+          "newsletters_desc": "\"Boletiando\" publicados",
+          "students_benefited": "Estudiantes beneficiados",
+          "students_benefited_desc": "en actividades con aliados",
+          "partnerships": "Alianzas implementadas",
+          "partnerships_desc": " con Johnson & Johnson, Colegio Los Nogales, Sanofi, Alianza Educativa",
+          "support_hours": "Horas de apoyo",
+          "support_hours_desc": "presencial a profesores multigrado",
+          "rural_schools_percentage": "Escuelas",
+          "rural_schools_percentage_desc": "de Colombia son rurales",
+          "total_rural_schools": "Escuelas rurales",
+          "total_rural_schools_desc": "en Colombia"
+        }
+      }
+    },
+    "coCreating": {
+      "title": "Co-creando",
+      "intro": "Somos innovadoras. Nos encanta co-crear programas, pilotar y evaluarlos como proceso de investigación. Actualmente estamos en el Cañón del Río Santo Domingo con el programa Leonor y el Semillero de Educadores.",
+      "inCommunity": {
+        "title": "En comunidad",
+        "description": "Resultado del trabajo en conjunto con docentes, estudiantes y familias, y el apoyo de aliados estratégicos, han surgido iniciativas muy poderosas en el territorio.",
+        "programaLeonor": {
+          "title": "Programa Leonor",
+          "description": "Porque \"aprender es un honor\", es la mula educativa de Colombiando que se encarga de conectar las ocho escuelas del Cañón del Río Santo Domingo, Antioquia, mediante bibliotecas itinerantes una vez al mes en cada escuela."
+        },
+        "casaLeonor": {
+          "title": "Casa de Leonor",
+          "description": "Espacio de aprendizaje en la vereda La Palma donde la comunidad puede alquilar juegos, leer libros y participar en talleres."
+        },
+        "andoIngeniando": {
+          "title": "Programa Ando Ingeniando",
+          "description": "Programa para despertar y cultivar la curiosidad por las áreas STEM en 8 escuelas del Cañón del Río Santo Domingo, Antioquia"
+        },
+        "campamentoLectoescritura": {
+          "title": "Campamento Lectoescritura",
+          "description": "Programa de fortalecimiento del proceso lectoescritor en la vereda Buenaventura en Pajonal, Sucre."
+        }
+      },
+      "boletiando": {
+        "title": "Boletiando",
+        "description": "El boletín Colombiando Red de 46 profesores rurales multigrado. Un espacio para encontrar recursos, mensajes, ideas, preguntas y buenas prácticas que entre profes multigrado queremos compartir."
+      },
+      "educatorsSeedbed": {
+        "title": "Semillero de Educadores",
+        "description1": "Actualmente en Colombiando promovemos espacios para la construcción de puentes entre comunidades mediante la co-creación de proyectos educativos que fortalezcan el aprendizaje mutuo, el trabajo colaborativo y el compromiso social.",
+        "description2": "Queremos despertar el interés y compromiso en los jóvenes de los colegios privados en la ciudad por la educación y la ruralidad en Colombia."
+      }
+    }
+  },
+  "joinUs": {
+    "hero": {
+      "title": "Súmate"
+    },
+    "main": {
+      "title": "Súmate a Colombiando",
+      "description": "Una fundación con las puertas abiertas. Aporta a la educación rural multigrado con una donación, una idea, una mensaje de apoyo."
+    },
+    "donation": {
+      "title": "Donación",
+      "description": "Si quieres hacer una donación ya completa éste formulario.",
+      "points": {
+        "1": "Temporalmente tenemos habilitada las donaciones via transferencia bancaria en Bancolombia.",
+        "2": "Llena el formulario para acceder a los datos de la cuenta bancaria.",
+        "3": "Pide que te contactemos para donaciones corporativas, dudas y soporte."
+      },
+      "button": "Donar"
+    },
+    "contact": {
+      "title": "Contacto",
+      "description": "¿Tienes preguntas? ¿Quieres colaborar? Nos encanta conocer personas comprometidas con la educación rural. Escríbenos y conversemos sobre cómo puedes sumarte a nuestra misión.",
+      "button": "Escríbenos",
+      "contactInfo": {
+        "title": "Información de contacto",
+        "email": "Email:",
+        "whatsapp": "WhatsApp:"
+      },
+      "socialMedia": {
+        "title": "Redes sociales",
+        "instagram": "Instagram:",
+        "linkedin": "LinkedIn:"
+      },
+      "waysToCollaborate": {
+        "title": "Formas de colaborar:",
+        "volunteer": "Voluntariado en programas educativos",
+        "partnerships": "Alianzas estratégicas",
+        "materials": "Donación de materiales educativos",
+        "professional": "Apoyo profesional especializado",
+        "spread": "Difusión de nuestra causa"
+      }
+    }
+  },
+  "documents": {
+    "hero": {
+      "title": "Documentos de interés"
+    },
+    "viewPdf": "Ver PDF",
+    "items": {
+      "constitutionAct": "Acta de Constitución",
+      "legalCertificate": "Certificado de existencia y representación legal",
+      "salaryCertificate": "Certificado de pagos salariales de los cuerpos directivos",
+      "complianceCertificate": "Certificado de cumplimiento de requisitos",
+      "openingFinancials": "E.E.F.F de apertura",
+      "meritoriousActivity": "Descripción de la actividad meritoria",
+      "projectReports": "Informes de proyectos en curso",
+      "criminalRecord": "Certificado de antecedentes penales"
+    }
+  },
+  "footer": {
+    "tagline": "Una plataforma de profes para profes",
+    "description": "Somos una comunidad de profesores multigrado que se apoya, se conecta, comparte buenas prácticas y visibiliza la educación rural.",
+    "contactInfo": "Información de contacto",
+    "rteInfo": "Información RTE"
+  },
+  "newsletter": {
+    "button": "Recibe el Boletín"
+  }
+}
+

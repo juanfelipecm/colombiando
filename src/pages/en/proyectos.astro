@@ -1,51 +1,53 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Accordion from '../components/Accordion.astro';
-import AccordionItem from '../components/AccordionItem.astro';
+import Layout from '../../layouts/Layout.astro';
+import Accordion from '../../components/Accordion.astro';
+import AccordionItem from '../../components/AccordionItem.astro';
 import { Image } from 'astro:assets';
-import img1 from '../assets/images/colombiando-1.jpg';
-import img2 from '../assets/images/colombiando-2.jpg';
-import img3 from '../assets/images/colombiando-3.jpg';
-import img4 from '../assets/images/colombiando-4.jpg';
-import InfoCard from '../components/InfoCard.astro';
-import NewsletterSignup from '../components/NewsletterSignup.astro';
-import programaLeonor1 from '../assets/images/programa-leonor/programa-leonor-colombiando-1.jpg';
-import programaLeonor2 from '../assets/images/programa-leonor/programa-leonor-colombiando-2.jpg';
-import programaLeonor3 from '../assets/images/programa-leonor/programa-leonor-colombiando-3.jpg';
-import programaLeonor4 from '../assets/images/programa-leonor/programa-leonor-colombiando-4.jpg';
-import programaLeonor5 from '../assets/images/programa-leonor/programa-leonor-colombiando-5.jpg';
-import casaLeonor1 from '../assets/images/casa-de-leonor/casa-de-leonor-colombiando-1.jpg';
-import casaLeonor2 from '../assets/images/casa-de-leonor/casa-de-leonor-colombiando-2.jpg';
-import casaLeonor3 from '../assets/images/casa-de-leonor/casa-de-leonor-colombiando-3.jpg';
-import casaLeonor4 from '../assets/images/casa-de-leonor/casa-de-leonor-colombiando-4.jpg';
-import casaLeonor5 from '../assets/images/casa-de-leonor/casa-de-leonor-colombiando-5.jpg';
-import casaLeonor6 from '../assets/images/casa-de-leonor/casa-de-leonor-colombiando-6.jpg';
-import boletinColombiando from '../assets/images/boletin-colombiando.png';
-import boletinColombiando2 from '../assets/images/boletin-colombiando-2.png';
-import boletinColombiando3 from '../assets/images/boletin-colombiando-3.png';
-import semilleroEducadores1 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-1.jpg';
-import semilleroEducadores2 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-2.jpg';
-import semilleroEducadores3 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-3.jpg';
-import semilleroEducadores4 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-4.jpg';
-import semilleroEducadores5 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-5.jpg';
-import semilleroEducadores6 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-6.jpg';
-import semilleroEducadores7 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-7.jpg';
-import semilleroEducadores8 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-8.jpg';
-import semilleroEducadores9 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-9.jpg';
-import semilleroEducadores10 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-10.jpg';
-import andoIngeniando1 from '../assets/images/ando-ingeniando/ando-ingeniando-1.jpg';
-import andoIngeniando2 from '../assets/images/ando-ingeniando/ando-ingeniando-2.jpg';
-import andoIngeniando3 from '../assets/images/ando-ingeniando/ando-ingeniando-3.jpg';
-import andoIngeniando4 from '../assets/images/ando-ingeniando/ando-ingeniando-4.jpg';
-import andoIngeniando5 from '../assets/images/ando-ingeniando/ando-ingeniando-5.jpg';
-import bgImage from '../assets/images/colombiando-3.jpg';
-import desdeAfuera1 from '../assets/images/desde-afuera/colombiando-desde-afuera-1.jpeg';
-import desdeAfuera2 from '../assets/images/desde-afuera/colombiando-desde-afuera-2.jpeg';
-import desdeAfuera3 from '../assets/images/desde-afuera/colombiando-desde-afuera-3.jpeg';
-import lectoescritura1 from '../assets/images/campamento-lecto-escritura/colombiando-campamento-lecto-escritura-1.jpeg';
-import lectoescritura2 from '../assets/images/campamento-lecto-escritura/colombiando-campamento-lecto-escritura-2.jpeg';
-import lectoescritura3 from '../assets/images/campamento-lecto-escritura/colombiando-campamento-lecto-escritura-3.jpeg';
-import lectoescritura4 from '../assets/images/campamento-lecto-escritura/colombiando-campamento-lecto-escritura-4.jpeg';
+import img1 from '../../assets/images/colombiando-1.jpg';
+import img2 from '../../assets/images/colombiando-2.jpg';
+import img3 from '../../assets/images/colombiando-3.jpg';
+import InfoCard from '../../components/InfoCard.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import programaLeonor1 from '../../assets/images/programa-leonor/programa-leonor-colombiando-1.jpg';
+import programaLeonor2 from '../../assets/images/programa-leonor/programa-leonor-colombiando-2.jpg';
+import programaLeonor3 from '../../assets/images/programa-leonor/programa-leonor-colombiando-3.jpg';
+import programaLeonor4 from '../../assets/images/programa-leonor/programa-leonor-colombiando-4.jpg';
+import programaLeonor5 from '../../assets/images/programa-leonor/programa-leonor-colombiando-5.jpg';
+import casaLeonor1 from '../../assets/images/casa-de-leonor/casa-de-leonor-colombiando-1.jpg';
+import casaLeonor2 from '../../assets/images/casa-de-leonor/casa-de-leonor-colombiando-2.jpg';
+import casaLeonor3 from '../../assets/images/casa-de-leonor/casa-de-leonor-colombiando-3.jpg';
+import casaLeonor4 from '../../assets/images/casa-de-leonor/casa-de-leonor-colombiando-4.jpg';
+import casaLeonor5 from '../../assets/images/casa-de-leonor/casa-de-leonor-colombiando-5.jpg';
+import casaLeonor6 from '../../assets/images/casa-de-leonor/casa-de-leonor-colombiando-6.jpg';
+import boletinColombiando from '../../assets/images/boletin-colombiando.png';
+import boletinColombiando2 from '../../assets/images/boletin-colombiando-2.png';
+import boletinColombiando3 from '../../assets/images/boletin-colombiando-3.png';
+import semilleroEducadores1 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-1.jpg';
+import semilleroEducadores2 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-2.jpg';
+import semilleroEducadores3 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-3.jpg';
+import semilleroEducadores4 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-4.jpg';
+import semilleroEducadores5 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-5.jpg';
+import semilleroEducadores6 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-6.jpg';
+import semilleroEducadores7 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-7.jpg';
+import semilleroEducadores8 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-8.jpg';
+import semilleroEducadores9 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-9.jpg';
+import semilleroEducadores10 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-10.jpg';
+import andoIngeniando1 from '../../assets/images/ando-ingeniando/ando-ingeniando-1.jpg';
+import andoIngeniando2 from '../../assets/images/ando-ingeniando/ando-ingeniando-2.jpg';
+import andoIngeniando3 from '../../assets/images/ando-ingeniando/ando-ingeniando-3.jpg';
+import andoIngeniando4 from '../../assets/images/ando-ingeniando/ando-ingeniando-4.jpg';
+import andoIngeniando5 from '../../assets/images/ando-ingeniando/ando-ingeniando-5.jpg';
+import bgImage from '../../assets/images/colombiando-3.jpg';
+import desdeAfuera1 from '../../assets/images/desde-afuera/colombiando-desde-afuera-1.jpeg';
+import desdeAfuera2 from '../../assets/images/desde-afuera/colombiando-desde-afuera-2.jpeg';
+import desdeAfuera3 from '../../assets/images/desde-afuera/colombiando-desde-afuera-3.jpeg';
+import lectoescritura1 from '../../assets/images/campamento-lecto-escritura/colombiando-campamento-lecto-escritura-1.jpeg';
+import lectoescritura2 from '../../assets/images/campamento-lecto-escritura/colombiando-campamento-lecto-escritura-2.jpeg';
+import lectoescritura3 from '../../assets/images/campamento-lecto-escritura/colombiando-campamento-lecto-escritura-3.jpeg';
+import lectoescritura4 from '../../assets/images/campamento-lecto-escritura/colombiando-campamento-lecto-escritura-4.jpeg';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('en');
 ---
 
 <Layout>
@@ -54,19 +56,19 @@ import lectoescritura4 from '../assets/images/campamento-lecto-escritura/colombi
 		style={`background-image: url(${bgImage.src});`}
 	>
   <div class="mx-4 w-full bg-colombiando-yellow rounded-lg p-14 translate-y-16">
-    <h1 class="text-3xl md:text-7xl font-semibold text-white">Nuestros Proyectos</h1>
+    <h1 class="text-3xl md:text-7xl font-semibold text-white">{t('projects.hero.title')}</h1>
   </div>
 	</section> 
 
   <section class="bg-white py-16 mt-20">     
     <div class="max-w-8xl mx-auto px-5 flex flex-col lg:flex-row">
       <div class="border border-[#0060BB] md:border-r-0 flex flex-col justify-center p-20 lg:w-2/5 lg:flex-shrink-0">          
-        <h2 class="text-3xl lg:text-4xl font-bold text-colombiando-blue border-b-3 border-[#0060BB] pb-4 mb-4 w-fit">Investigando</h2>
-        <p class="text-sm max-w-xl"><span class="font-bold">Si queremos proponer, debemos comprender. </span> Investigando es el eje central de Colombiando. Buscamos innovar con sentido, tomar decisiones con evidencia y construir sobre lo que ya existe. Por eso investigamos en territorio, viviendo la escuela rural, y desde afuera, conectando datos y visibilizando las brechas de información sobre el aula multigrado.</p>
+        <h2 class="text-3xl lg:text-4xl font-bold text-colombiando-blue border-b-3 border-[#0060BB] pb-4 mb-4 w-fit">{t('projects.investigating.title')}</h2>
+        <p class="text-sm max-w-xl"><span class="font-bold">Si queremos proponer, debemos comprender. </span>{t('projects.investigating.intro')}</p>
       </div>
     <Accordion class="lg:w-3/5">
-      <AccordionItem title="En territorio" color="blue">
-          <p class="text-sm"><span class="font-bold">Investigando en territorio</span> es un modelo de investigación-acción participativa en el que una profesora de Colombiando vive en la comunidad rural y acompaña diariamente al docente y sus estudiantes, con el fin de apoyar, comprender las dinámicas del aula multigrado e identificar oportunidades para innovar con sentido.</p>
+      <AccordionItem title={t('projects.investigating.inTerritory.title')} color="blue">
+          <p class="text-sm"><span class="font-bold">Investigando en territorio</span> {t('projects.investigating.inTerritory.description')}</p>
           <div class="gallery flex gap-4 h-[200px] mt-6">
             <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
               <Image src={img1} alt="Colombiando 1" class="object-cover w-full h-full" />
@@ -80,8 +82,8 @@ import lectoescritura4 from '../assets/images/campamento-lecto-escritura/colombi
           </div>
       </AccordionItem>
 
-      <AccordionItem title="Desde afuera" color="blue">
-        <p class="text-sm"><span class="font-bold">Nos encantan los datos, aunque no ha sido fácil encontrarlos.</span> Por eso buscamos, recolectamos y analizamos información de bases de datos existentes. Además, mapeamos cada uno de los lugares visitados y analizamos lo observado en territorio. Finalmente, consolidamos alianzas estratégicas que fortalecen nuestra comprensión sobre el aula multigrado.</p>
+      <AccordionItem title={t('projects.investigating.fromOutside.title')} color="blue">
+        <p class="text-sm"><span class="font-bold">Nos encantan los datos, aunque no ha sido fácil encontrarlos.</span> {t('projects.investigating.fromOutside.description')}</p>
         <div class="gallery flex gap-4 h-[200px] mt-6">
           <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
             <Image src={desdeAfuera1} alt="Colombiando Desde afuera 1" class="object-cover w-full h-full" />
@@ -95,28 +97,28 @@ import lectoescritura4 from '../assets/images/campamento-lecto-escritura/colombi
         </div>
     </AccordionItem>      
 
-      <AccordionItem title="Datos cuantitativos" color="blue">
-        <p class="text-sm"><span class="font-bold">Creemos en los datos.</span> Nos enfocamos en encontrar y analizar información cuantitativa sobre la modalidad rural multigrado en Colombia. Es una modalidad única que merece ser analizada desde sus propios datos y sus metodologías particulares de enseñanza y aprendizaje.</p>
+      <AccordionItem title={t('projects.investigating.quantitativeData.title')} color="blue">
+        <p class="text-sm"><span class="font-bold">Creemos en los datos.</span> {t('projects.investigating.quantitativeData.description')}</p>
         
         <div class="flex flex-row overflow-x-scroll gap-4 mt-6 pb-4">
-          <InfoCard title="103" subtitle="Días" description="en La Palma, Antioquia" />
-          <InfoCard title="35" subtitle="Días" description="en Junín, Cundinamarca" />
-          <InfoCard title="16" subtitle="Días" description="en Joví, Chocó" />
-          <InfoCard title="72" subtitle="Días" description="en Pajonal, Sucre" />
-          <InfoCard title="13" subtitle="Escuelas visitas" description="y 16 profesores" />
-          <InfoCard title="1" subtitle="Grupo de estudiantes" description="de La Universidad de los Andes investigando datos cuantitativos." />
-          <InfoCard title="Semillero" subtitle="de Educadores" description="con estudiantes voluntarios Escuela Nueva y Programa Todos a Aprender" />
-          <InfoCard title="6" subtitle="Voluntarios" description="Consolidados en nuestro equipo" />
-          <InfoCard title="4" subtitle="Escuelas" description="acompañadas presencialmente programa Investigando" />
-          <InfoCard title="15" subtitle="Escuelas" description="visitadas" />
-          <InfoCard title="9" subtitle="Escuelas" description="conectadas por el programa Leonor (Cañón)" />
-          <InfoCard title="36" subtitle="Docentes" description="vinculados a la red" />
-          <InfoCard title="6" subtitle="Boletines" description="“Boletiando” publicados" />
-          <InfoCard title="287" subtitle="Estudiantes beneficiados" description="en actividades con aliados" />
-          <InfoCard title="4" subtitle="Alianzas implementadas" description=" con Johnson & Johnson, Colegio Los Nogales, Sanofi, Alianza Educativa" />
-          <InfoCard title="2520" subtitle="Horas de apoyo" description="presencial a profesores multigrado" />
-          <InfoCard title="81%" subtitle="Escuelas" description="de Colombia son rurales" />
-          <InfoCard title="+45.000" subtitle="Escuelas rurales" description="en Colombia" />
+          <InfoCard title="103" subtitle={t('projects.investigating.quantitativeData.stats.days_palma')} description={t('projects.investigating.quantitativeData.stats.days_palma_desc')} />
+          <InfoCard title="35" subtitle={t('projects.investigating.quantitativeData.stats.days_junin')} description={t('projects.investigating.quantitativeData.stats.days_junin_desc')} />
+          <InfoCard title="16" subtitle={t('projects.investigating.quantitativeData.stats.days_jovi')} description={t('projects.investigating.quantitativeData.stats.days_jovi_desc')} />
+          <InfoCard title="72" subtitle={t('projects.investigating.quantitativeData.stats.days_pajonal')} description={t('projects.investigating.quantitativeData.stats.days_pajonal_desc')} />
+          <InfoCard title="13" subtitle={t('projects.investigating.quantitativeData.stats.schools_visited')} description={t('projects.investigating.quantitativeData.stats.schools_visited_desc')} />
+          <InfoCard title="1" subtitle={t('projects.investigating.quantitativeData.stats.research_group')} description={t('projects.investigating.quantitativeData.stats.research_group_desc')} />
+          <InfoCard title={t('projects.investigating.quantitativeData.stats.educators_seedbed')} subtitle={t('projects.investigating.quantitativeData.stats.educators_seedbed_sub')} description={t('projects.investigating.quantitativeData.stats.educators_seedbed_desc')} />
+          <InfoCard title="6" subtitle={t('projects.investigating.quantitativeData.stats.volunteers')} description={t('projects.investigating.quantitativeData.stats.volunteers_desc')} />
+          <InfoCard title="4" subtitle={t('projects.investigating.quantitativeData.stats.schools_accompanied')} description={t('projects.investigating.quantitativeData.stats.schools_accompanied_desc')} />
+          <InfoCard title="15" subtitle={t('projects.investigating.quantitativeData.stats.schools_visited_total')} description={t('projects.investigating.quantitativeData.stats.schools_visited_total_desc')} />
+          <InfoCard title="9" subtitle={t('projects.investigating.quantitativeData.stats.schools_connected')} description={t('projects.investigating.quantitativeData.stats.schools_connected_desc')} />
+          <InfoCard title="36" subtitle={t('projects.investigating.quantitativeData.stats.teachers_network')} description={t('projects.investigating.quantitativeData.stats.teachers_network_desc')} />
+          <InfoCard title="6" subtitle={t('projects.investigating.quantitativeData.stats.newsletters')} description={t('projects.investigating.quantitativeData.stats.newsletters_desc')} />
+          <InfoCard title="287" subtitle={t('projects.investigating.quantitativeData.stats.students_benefited')} description={t('projects.investigating.quantitativeData.stats.students_benefited_desc')} />
+          <InfoCard title="4" subtitle={t('projects.investigating.quantitativeData.stats.partnerships')} description={t('projects.investigating.quantitativeData.stats.partnerships_desc')} />
+          <InfoCard title="2520" subtitle={t('projects.investigating.quantitativeData.stats.support_hours')} description={t('projects.investigating.quantitativeData.stats.support_hours_desc')} />
+          <InfoCard title="81%" subtitle={t('projects.investigating.quantitativeData.stats.rural_schools_percentage')} description={t('projects.investigating.quantitativeData.stats.rural_schools_percentage_desc')} />
+          <InfoCard title="+45.000" subtitle={t('projects.investigating.quantitativeData.stats.total_rural_schools')} description={t('projects.investigating.quantitativeData.stats.total_rural_schools_desc')} />
         </div>
       </AccordionItem>
 
@@ -128,22 +130,22 @@ import lectoescritura4 from '../assets/images/campamento-lecto-escritura/colombi
   <section class="bg-white py-16 -mt-20">     
     <div class="max-w-8xl mx-auto px-5 flex flex-col lg:flex-row">
       <div class="border border-[#D00000] md:border-r-0 flex flex-col justify-center p-20 lg:w-2/5 lg:flex-shrink-0">          
-        <h2 class="text-3xl lg:text-4xl font-bold border-b-3 text-colombiando-red border-[#D00000] pb-4 mb-4 w-fit">Co-creando</h2>
-        <p class="text-sm max-w-xl"><span class="font-bold">Somos innovadoras.</span> Nos encanta co-crear programas, pilotar y evaluarlos como proceso de investigación. Actualmente estamos en el Cañón del Río Santo Domingo con el programa Leonor y el Semillero de Educadores.</p>
+        <h2 class="text-3xl lg:text-4xl font-bold border-b-3 text-colombiando-red border-[#D00000] pb-4 mb-4 w-fit">{t('projects.coCreating.title')}</h2>
+        <p class="text-sm max-w-xl"><span class="font-bold">Somos innovadoras.</span> {t('projects.coCreating.intro')}</p>
       </div>
     <Accordion class="lg:w-3/5">
-      <AccordionItem title="En comunidad" color="red">
+      <AccordionItem title={t('projects.coCreating.inCommunity.title')} color="red">
         <div class="flex flex-col gap-4 mb-4">
-          <p class="text-sm max-w-3xl">Resultado del trabajo en conjunto con docentes, estudiantes y familias, y el apoyo de aliados estratégicos, han surgido iniciativas muy poderosas en el territorio.</p>
+          <p class="text-sm max-w-3xl">{t('projects.coCreating.inCommunity.description')}</p>
         </div>
         <div class="flex overflow-x-scroll gap-4 p-4">
 
            <!-- Card Programa Leonor -->
-           <div class="bg-white border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] p-7 max-w-[450px] min-w-[400px] mx-auto relative   overflow-hidden">
+           <div class="bg-white border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] p-7 max-w-[450px] min-w-[400px] mx-auto relative overflow-hidden">
              <div class="flex flex-col">
-               <h2 class="text-2xl font-bold text-colombiando-red">Programa Leonor</h2>
+               <h2 class="text-2xl font-bold text-colombiando-red">{t('projects.coCreating.inCommunity.programaLeonor.title')}</h2>
                <div class="h-0.5 bg-colombiando-red w-full mt-2 mb-6"></div>
-               <p class="text-xs"><span class="font-bold">Porque "aprender es un honor"</span>, es la <span class="font-bold">mula educativa</span> de Colombiando que se encarga de conectar las ocho escuelas del Cañón del Río Santo Domingo, Antioquia, mediante bibliotecas itinerantes una vez al mes en cada escuela.</p>
+               <p class="text-xs">{t('projects.coCreating.inCommunity.programaLeonor.description')}</p>
                 <div class="gallery flex gap-4 h-[200px] mt-6 pb-4 overflow-x-scroll px-4">
                   <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
                     <Image src={programaLeonor1} alt="Programa Leonor 1" class="object-cover w-full h-full" />
@@ -164,11 +166,11 @@ import lectoescritura4 from '../assets/images/campamento-lecto-escritura/colombi
               </div>            
             </div>
            <!-- Card Casa de Leonor -->
-           <div class="bg-white border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] p-7 min-w-[400px] max-w-[450px] mx-auto relative   overflow-hidden">
+           <div class="bg-white border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] p-7 min-w-[400px] max-w-[450px] mx-auto relative overflow-hidden">
             <div class="flex flex-col">
-              <h2 class="text-2xl font-bold text-colombiando-red">Casa de Leonor</h2>
+              <h2 class="text-2xl font-bold text-colombiando-red">{t('projects.coCreating.inCommunity.casaLeonor.title')}</h2>
               <div class="h-0.5 bg-colombiando-red w-full mt-2 mb-6"></div>
-              <p class="text-xs">Espacio de aprendizaje en la vereda La Palma donde la comunidad puede alquilar juegos, leer libros y participar en talleres.</p>              
+              <p class="text-xs">{t('projects.coCreating.inCommunity.casaLeonor.description')}</p>              
                <div class="gallery flex gap-4 h-[200px] mt-6 pb-4 overflow-x-scroll">
                  <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
                    <Image src={casaLeonor1} alt="Casa de Leonor 1" class="object-cover w-full h-full" />
@@ -193,11 +195,11 @@ import lectoescritura4 from '../assets/images/campamento-lecto-escritura/colombi
            </div>        
 
            <!-- Card Programa Ando Ingeniando -->
-           <div class="bg-white border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] p-7 min-w-[400px] max-w-[450px] mx-auto relative   overflow-hidden">
+           <div class="bg-white border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] p-7 min-w-[400px] max-w-[450px] mx-auto relative overflow-hidden">
             <div class="flex flex-col">
-              <h2 class="text-2xl font-bold text-colombiando-red">Programa Ando Ingeniando</h2>
+              <h2 class="text-2xl font-bold text-colombiando-red">{t('projects.coCreating.inCommunity.andoIngeniando.title')}</h2>
               <div class="h-0.5 bg-colombiando-red w-full mt-2 mb-6"></div>
-              <p class="text-xs">Programa para despertar y cultivar la curiosidad por las áreas STEM en 8 escuelas del Cañón del Río Santo Domingo, Antioquia</p>              
+              <p class="text-xs">{t('projects.coCreating.inCommunity.andoIngeniando.description')}</p>              
                <div class="gallery flex gap-4 h-[200px] mt-6 pb-4 overflow-x-scroll">
                  <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
                    <Image src={andoIngeniando1} alt="Ando Ingeniando 1" class="object-cover w-full h-full" />
@@ -219,12 +221,11 @@ import lectoescritura4 from '../assets/images/campamento-lecto-escritura/colombi
            </div>
            
            <!-- Card Campamento Lectoescritura -->
-           <div class="bg-white border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] p-7 min-w-[400px] max-w-[450px] mx-auto relative   overflow-hidden">
+           <div class="bg-white border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] p-7 min-w-[400px] max-w-[450px] mx-auto relative overflow-hidden">
             <div class="flex flex-col">
-              <h2 class="text-2xl font-bold text-colombiando-red">Campamento Lectoescritura</h2>
+              <h2 class="text-2xl font-bold text-colombiando-red">{t('projects.coCreating.inCommunity.campamentoLectoescritura.title')}</h2>
               <div class="h-0.5 bg-colombiando-red w-full mt-2 mb-6"></div>
-              <p class="text-xs">Programa de fortalecimiento del 
-                proceso lectoescritor en la vereda Buenaventura en Pajonal, Sucre.</p>              
+              <p class="text-xs">{t('projects.coCreating.inCommunity.campamentoLectoescritura.description')}</p>              
                <div class="gallery flex gap-4 h-[200px] mt-6 pb-4 overflow-x-scroll">
                  <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
                    <Image src={lectoescritura1} alt="Campamento Lectoescritura 1" class="object-cover w-full h-full" />
@@ -245,32 +246,32 @@ import lectoescritura4 from '../assets/images/campamento-lecto-escritura/colombi
         </div>
       </AccordionItem>
 
-      <AccordionItem title="Boletiando" color="red">
+      <AccordionItem title={t('projects.coCreating.boletiando.title')} color="red">
         <div class="flex flex-col gap-4 p-4">
           <div class="flex flex-col">
-            <p class="text-sm"><span class="font-bold">El boletín Colombiando</span> Red de 46 profesores rurales multigrado. Un espacio para encontrar recursos, mensajes, ideas, preguntas y buenas prácticas que entre profes multigrado queremos compartir. 
+            <p class="text-sm"><span class="font-bold">El boletín Colombiando</span> {t('projects.coCreating.boletiando.description')}
             </p>
             <div class="mt-4">
               <NewsletterSignup variant="red" />
             </div>
           </div>
           <div class="flex flex-row overflow-auto gap-4">
-            <div class="flex flex-col border border-black rounded-2xl shadow- [2px_2px_0px_0px_#000000] overflow-hidden w-xs">
-              <Image src={boletinColombiando2} alt="Boletín Colombiando 2"   class="object-cover w-full h-full" />
+            <div class="flex flex-col border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] overflow-hidden w-xs">
+              <Image src={boletinColombiando2} alt="Boletín Colombiando 2" class="object-cover w-full h-full" />
             </div>
-            <div class="flex flex-col border border-black rounded-2xl shadow- [2px_2px_0px_0px_#000000] overflow-hidden w-xs">
-              <Image src={boletinColombiando3} alt="Boletín Colombiando 3"   class="object-cover w-full h-full" />
+            <div class="flex flex-col border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] overflow-hidden w-xs">
+              <Image src={boletinColombiando3} alt="Boletín Colombiando 3" class="object-cover w-full h-full" />
             </div>
-            <div class="flex flex-col border border-black rounded-2xl shadow- [2px_2px_0px_0px_#000000] overflow-hidden w-xs">
-              <Image src={boletinColombiando} alt="Boletín Colombiando"   class="object-cover w-full h-full" />
+            <div class="flex flex-col border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] overflow-hidden w-xs">
+              <Image src={boletinColombiando} alt="Boletín Colombiando" class="object-cover w-full h-full" />
             </div>                        
            </div> 
         </div>  
       </AccordionItem>
 
-      <AccordionItem title="Semillero de Educadores" color="red">
-        <p class="text-xs mb-2">Actualmente en Colombiando promovemos espacios para la construcción de puentes entre comunidades mediante la co-creación de proyectos educativos que fortalezcan el aprendizaje mutuo, el trabajo colaborativo y el compromiso social.</p>
-        <p class="text-xs">Queremos despertar el interés y compromiso en los jóvenes de los colegios privados en la ciudad por la educación y la ruralidad en Colombia. </p>
+      <AccordionItem title={t('projects.coCreating.educatorsSeedbed.title')} color="red">
+        <p class="text-xs mb-2">{t('projects.coCreating.educatorsSeedbed.description1')}</p>
+        <p class="text-xs">{t('projects.coCreating.educatorsSeedbed.description2')}</p>
         <div class="gallery flex gap-4 h-[200px] mt-6 pb-4 overflow-x-scroll">
           <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
             <Image src={semilleroEducadores1} alt="Semillero de Educadores 1" class="object-cover w-full h-full" />
@@ -318,4 +319,5 @@ import lectoescritura4 from '../assets/images/campamento-lecto-escritura/colombi
     flex: 2.5 !important;
     z-index: 10;
   }
-  </style>          
+</style>
+

@@ -1,0 +1,99 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Accordion from '../../components/Accordion.astro';
+import AccordionItem from '../../components/AccordionItem.astro';
+import bgImage from '../../assets/images/hero-colombiando-nosotras.jpg';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('es');
+---
+
+<Layout>
+	<section
+		class="relative w-full h-[98vh] bg-cover bg-center flex items-end justify-center p-10 pb-20 lg:pb-0"
+		style={`background-image: url(${bgImage.src});`}
+	>
+  <div class="mx-4 w-full bg-colombiando-yellow rounded-lg p-14 translate-y-16">
+    <h1 class="text-3xl md:text-7xl font-semibold text-white">{t('joinUs.hero.title')}</h1>
+  </div>
+	</section>
+
+  <section class="bg-white py-16 mt-20">     
+    <div class="max-w-8xl mx-auto px-5 flex flex-col lg:flex-row">
+      <div class="border border-[#0060BB] md:border-r-0 flex flex-col justify-center p-20 lg:w-2/5 lg:flex-shrink-0">          
+        <h2 class="text-3xl lg:text-4xl font-bold text-colombiando-blue border-b-3 border-[#0060BB] pb-4 mb-4 w-fit">{t('joinUs.main.title')}</h2>
+        <p class="text-sm max-w-xl"><span class="font-bold">Una fundación con las puertas abiertas. </span>{t('joinUs.main.description')}</p>
+      </div>
+    <Accordion class="lg:w-3/5">
+      <AccordionItem title={t('joinUs.donation.title')} color="blue">
+        <div class="flex flex-col gap-4">
+          <p class="text-sm">
+            {t('joinUs.donation.description')}
+          </p>
+          <ul class="text-sm list-disc list-inside space-y-2 ml-4">
+            <li>{t('joinUs.donation.points.1')}</li>
+            <li>{t('joinUs.donation.points.2')}</li>
+            <li>{t('joinUs.donation.points.3')}</li>
+          </ul>
+          <div class="mt-4">
+            <NewsletterSignup variant="yellow" formId="3XXq4V" buttonText={t('joinUs.donation.button')} />
+          </div>                    
+        </div>
+      </AccordionItem>
+
+      <AccordionItem title={t('joinUs.contact.title')} color="blue">
+        <div class="flex flex-col gap-4">
+          <p class="text-sm">
+            <span class="font-bold">¿Tienes preguntas? ¿Quieres colaborar?</span> {t('joinUs.contact.description')}
+          </p>
+
+          <div class="mt-4">
+            <NewsletterSignup variant="yellow" formId="wLl07O" buttonText={t('joinUs.contact.button')} />
+          </div>          
+
+          <div class="grid md:grid-cols-2 gap-6 mt-4">
+            <div class="bg-gray-50 p-6 rounded-xl">
+              <h4 class="font-bold text-sm mb-3">{t('joinUs.contact.contactInfo.title')}</h4>
+              <div class="space-y-2 text-sm">
+                <p><span class="font-semibold">{t('joinUs.contact.contactInfo.email')}</span> hola@colombiando.org</p>
+                <p><span class="font-semibold">{t('joinUs.contact.contactInfo.whatsapp')}</span> +57 317 538 4935</p>
+              </div>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-xl">
+              <h4 class="font-bold text-sm mb-3">{t('joinUs.contact.socialMedia.title')}</h4>
+              <div class="space-y-2 text-sm">
+                <p><span class="font-semibold">{t('joinUs.contact.socialMedia.instagram')}</span> @colombiandoporcolombia</p>
+                <p><span class="font-semibold">{t('joinUs.contact.socialMedia.linkedin')}</span> ColombiAndo</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6">
+            <h4 class="font-bold text-sm mb-3">{t('joinUs.contact.waysToCollaborate.title')}</h4>
+            <ul class="text-sm list-disc list-inside space-y-1 ml-4">
+              <li>{t('joinUs.contact.waysToCollaborate.volunteer')}</li>
+              <li>{t('joinUs.contact.waysToCollaborate.partnerships')}</li>
+              <li>{t('joinUs.contact.waysToCollaborate.materials')}</li>
+              <li>{t('joinUs.contact.waysToCollaborate.professional')}</li>
+              <li>{t('joinUs.contact.waysToCollaborate.spread')}</li>
+            </ul>
+          </div>
+        </div>
+      </AccordionItem>
+    </Accordion>
+    </div>
+  </section>
+</Layout>
+
+<style scoped>
+  .gallery:hover .gallery-item {
+    flex: 1;
+  }
+  .gallery-item:hover {
+    flex: 2.5 !important;
+    z-index: 10;
+  }
+</style>
+

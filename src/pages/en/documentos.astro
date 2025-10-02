@@ -1,6 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import heroNosotrasImage from '../assets/images/colombiando-2.jpg';
+import Layout from '../../layouts/Layout.astro';
+import heroNosotrasImage from '../../assets/images/colombiando-2.jpg';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('en');
 ---
 
 <Layout>
@@ -9,7 +12,7 @@ import heroNosotrasImage from '../assets/images/colombiando-2.jpg';
 		style={`background-image: url(${heroNosotrasImage.src});`}
 	>
     <div class="mx-4 w-full bg-colombiando-red rounded-lg p-14 translate-y-16">
-      <h1 class="text-3xl md:text-7xl font-semibold text-white">Documentos de interés</h1>
+      <h1 class="text-3xl md:text-7xl font-semibold text-white">{t('documents.hero.title')}</h1>
     </div>
 	</section>
   
@@ -17,107 +20,108 @@ import heroNosotrasImage from '../assets/images/colombiando-2.jpg';
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
       <!-- Acta de Constitución -->
       <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-200">
-        <h3 class="text-lg font-semibold text-gray-800 mb-4">Acta de Constitución</h3>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">{t('documents.items.constitutionAct')}</h3>
         <a 
           href="https://drive.google.com/file/d/1Cpo7KmvKSkbG9994YYBSw--BsiDJUDjT/view"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 bg-colombiando-red text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200"
         >
-          Ver PDF ↗
+          {t('documents.viewPdf')} ↗
         </a>
       </div>
 
       <!-- Certificado de existencia y representación legal -->
       <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-200">
-        <h3 class="text-lg font-semibold text-gray-800 mb-4">Certificado de existencia y representación legal</h3>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">{t('documents.items.legalCertificate')}</h3>
         <a 
           href="https://drive.google.com/file/d/1AB57pJtkvVWcnXdHq1pI6_R_gEnE04eS/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 bg-colombiando-red text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200"
         >
-          Ver PDF ↗
+          {t('documents.viewPdf')} ↗
         </a>
       </div>
 
       <!-- Certificado de pagos salariales de los cuerpos directivos -->
       <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-200">
-        <h3 class="text-lg font-semibold text-gray-800 mb-4">Certificado de pagos salariales de los cuerpos directivos</h3>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">{t('documents.items.salaryCertificate')}</h3>
         <a 
           href="https://drive.google.com/file/d/12bTVR5m4tEu-8mrPBPqgs77fZm2igDD6/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 bg-colombiando-red text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200"
         >
-          Ver PDF ↗
+          {t('documents.viewPdf')} ↗
         </a>
       </div>
 
       <!-- Certificado de cumplimiento de requisitos -->
       <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-200">
-        <h3 class="text-lg font-semibold text-gray-800 mb-4">Certificado de cumplimiento de requisitos</h3>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">{t('documents.items.complianceCertificate')}</h3>
         <a 
           href="https://drive.google.com/file/d/152puTwGBH2LovIYQqy-yrMLDr5Fyu3Zg/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 bg-colombiando-red text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200"
         >
-          Ver PDF ↗
+          {t('documents.viewPdf')} ↗
         </a>
       </div>
 
       <!-- E.E.F.F de apertura -->
       <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-200">
-        <h3 class="text-lg font-semibold text-gray-800 mb-4">E.E.F.F de apertura</h3>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">{t('documents.items.openingFinancials')}</h3>
         <a 
           href="https://drive.google.com/file/d/1ax5ftSBQ9zcSvFQWB7hJI53ZvpOe7l5X/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 bg-colombiando-red text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200"
         >
-          Ver PDF ↗
+          {t('documents.viewPdf')} ↗
         </a>
       </div>
 
       <!-- Descripción de la actividad meritoria -->
       <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-200">
-        <h3 class="text-lg font-semibold text-gray-800 mb-4">Descripción de la actividad meritoria</h3>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">{t('documents.items.meritoriousActivity')}</h3>
         <a 
           href="https://drive.google.com/file/d/1r0-qieW6p4pkx5o2IjsBoa9cPzmx0Rrj/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 bg-colombiando-red text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200"
         >
-          Ver PDF ↗
+          {t('documents.viewPdf')} ↗
         </a>
       </div>
 
       <!-- Informes de proyectos en curso -->
       <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-200">
-        <h3 class="text-lg font-semibold text-gray-800 mb-4">Informes de proyectos en curso</h3>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">{t('documents.items.projectReports')}</h3>
         <a 
           href="https://drive.google.com/file/d/1B6KTuj4BwEm20QwlTZPlv9SKqH6nqw3e/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 bg-colombiando-red text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200"
         >
-          Ver PDF ↗
+          {t('documents.viewPdf')} ↗
         </a>
       </div>
 
       <!-- Certificado de antecedentes penales -->
       <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-200">
-        <h3 class="text-lg font-semibold text-gray-800 mb-4">Certificado de antecedentes penales</h3>
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">{t('documents.items.criminalRecord')}</h3>
         <a 
           href="https://drive.google.com/file/d/1xNBMJK9l8xUs0AF4QHmkfnjEYyXS6dgB/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 bg-colombiando-red text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200"
         >
-          Ver PDF ↗
+          {t('documents.viewPdf')} ↗
         </a>
       </div>
     </div>
   </section>
-</Layout> 
+</Layout>
+

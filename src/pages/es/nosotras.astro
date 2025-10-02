@@ -1,0 +1,183 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import heroNosotrasImage from '../../assets/images/colombiando-2.jpg';
+import { Image } from 'astro:assets';
+import colombiando1 from '../../assets/images/colombiando-1.jpg';
+import colombiando2 from '../../assets/images/programa-leonor/programa-leonor-colombiando-1.jpg';
+import colombiando3 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-1.jpg';
+import colombiando4 from '../../assets/images/colombiando-2.jpg';
+import colombiando5 from '../../assets/images/colombiando-3.jpg';
+import colombiando6 from '../../assets/images/colombiando-diana-sara.jpg';
+import colombiando7 from '../../assets/images/colombiando-4.jpg';
+import CardNuestraHistoria from '../../components/CardNuestraHistoria.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('es');
+
+// Dynamically import all gallery images
+const imageImports = await Promise.all(
+  Array.from({ length: 49 }).map(async (_, i) => {
+    const imageNumber = i + 1;
+    return import(`../../assets/images/nosotras/colombiando-somos-todos-${imageNumber}.jpg`);
+  })
+);
+---
+
+<Layout>
+	<section
+		class="relative w-full h-[98vh] bg-cover bg-center flex items-end justify-center p-10 pb-20 lg:pb-0"
+		style={`background-image: url(${heroNosotrasImage.src});`}
+	>
+    <div class="mx-4 w-full bg-colombiando-red rounded-lg p-14 translate-y-16">
+      <h1 class="text-3xl md:text-7xl font-semibold text-white">{t('about.hero.title')}</h1>
+    </div>
+	</section>
+  
+  <section class="container mx-auto px-4 pt-32 pb-20">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 grid-flow-dense" id="gallery-grid">
+      {imageImports.map((imageModule, i) => (
+        <div class="image-container group overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 h-64 cursor-pointer">
+          <Image 
+            src={imageModule.default}
+            alt={`Colombiando somos todos ${i + 1}`}
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            data-index={i}
+            id={`gallery-img-${i}`}
+          />
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="flex flex-col gap-4 md:gap-8 justify-between md:flex-row px-4 md:px-6 border border-[#0060BB] mx-4 md:m-10 max-w-8xl md:max-h-[80vh]">
+    <div class="flex flex-2 flex-col gap-2 my-4 md:my-auto mx-4 md:mx-10">
+      <h2 class="text-lg md:text-xl lg:text-3xl font-bold text-colombiando-red border-b-3 border-[#D00000] pb-2 md:pb-4 w-fit">{t('about.ourStory.title')}</h2>
+      <p class="text-xs md:text-sm max-w-xl leading-relaxed">
+        <span class="font-bold">Si queremos proponer, debemos entender.</span> {t('about.ourStory.intro')}
+      </p>
+    </div>
+    <div class="flex flex-2 flex-col md:max-h-none md:overflow-y-scroll pr-2">
+      <CardNuestraHistoria image={colombiando1} alt="Colombiando 1" variant="yellow" ano={t('about.ourStory.timeline.2022_1.year')} titulo={t('about.ourStory.timeline.2022_1.title')} parrafo={t('about.ourStory.timeline.2022_1.description')} />
+      <CardNuestraHistoria image={colombiando2} alt="Colombiando 2" variant="blue" ano={t('about.ourStory.timeline.2022_2.year')} titulo={t('about.ourStory.timeline.2022_2.title')} parrafo={t('about.ourStory.timeline.2022_2.description')} />
+      <CardNuestraHistoria image={colombiando3} alt="Colombiando 3" variant="red" ano={t('about.ourStory.timeline.2023_1.year')} titulo={t('about.ourStory.timeline.2023_1.title')} parrafo={t('about.ourStory.timeline.2023_1.description')} />
+      <CardNuestraHistoria image={colombiando4} alt="Colombiando 4" variant="yellow" ano={t('about.ourStory.timeline.2023_2.year')} titulo={t('about.ourStory.timeline.2023_2.title')} parrafo={t('about.ourStory.timeline.2023_2.description')} />
+      <CardNuestraHistoria image={colombiando5} alt="Colombiando 5" variant="blue" ano={t('about.ourStory.timeline.2023_3.year')} titulo={t('about.ourStory.timeline.2023_3.title')} parrafo={t('about.ourStory.timeline.2023_3.description')} />
+      <CardNuestraHistoria image={colombiando6} alt="Colombiando 6" variant="red" ano={t('about.ourStory.timeline.2024_1.year')} titulo={t('about.ourStory.timeline.2024_1.title')} parrafo={t('about.ourStory.timeline.2024_1.description')} />
+      <CardNuestraHistoria image={colombiando7} alt="Colombiando 7" variant="yellow" ano={t('about.ourStory.timeline.2024_2.year')} titulo={t('about.ourStory.timeline.2024_2.title')} parrafo={t('about.ourStory.timeline.2024_2.description')} />
+    </div>
+  </section>
+
+  <!-- Lightbox Gallery -->
+  <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex items-center justify-center">
+    <button id="close-lightbox" class="absolute top-5 right-5 text-white text-4xl cursor-pointer">&times;</button>
+    <button id="prev-button" class="absolute left-5 text-white text-4xl cursor-pointer">&larr;</button>
+    <button id="next-button" class="absolute right-5 text-white text-4xl cursor-pointer">&rarr;</button>
+    <div class="max-w-[90vw] max-h-[90vh]">
+      <img id="lightbox-img" class="max-w-full max-h-[90vh] object-contain" src="" alt="Lightbox image">
+    </div>
+  </div>
+
+  <script>
+    function checkOrientation(img: HTMLImageElement) {
+      if (img.complete) {
+        applyOrientation(img);
+      } else {
+        img.onload = () => applyOrientation(img);
+      }
+    }
+
+    function applyOrientation(img: HTMLImageElement) {
+      const container = img.closest('.image-container');
+      
+      if (!container) return;
+      
+      if (img.naturalWidth > img.naturalHeight) {
+        container.classList.add('landscape');
+        (container as HTMLElement).style.gridColumn = 'span 2';
+      } else {
+        container.classList.add('portrait');
+        (container as HTMLElement).style.gridColumn = 'span 1';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.type === 'childList') {
+            document.querySelectorAll('.image-container img').forEach(img => {
+              checkOrientation(img as HTMLImageElement);
+            });
+          }
+        });
+      });
+      
+      const galleryGrid = document.getElementById('gallery-grid');
+      if (galleryGrid) {
+        observer.observe(galleryGrid, { childList: true, subtree: true });
+      }
+      
+      document.querySelectorAll('.image-container img').forEach(img => {
+        checkOrientation(img as HTMLImageElement);
+      });
+
+      // Lightbox functionality
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+      const closeBtn = document.getElementById('close-lightbox');
+      const prevBtn = document.getElementById('prev-button');
+      const nextBtn = document.getElementById('next-button');
+      const galleryImages = document.querySelectorAll('.image-container img');
+      let currentIndex = 0;
+
+      galleryImages.forEach((img, index) => {
+        img.addEventListener('click', () => {
+          lightboxImg.src = (img as HTMLImageElement).src;
+          lightboxImg.alt = (img as HTMLImageElement).alt;
+          currentIndex = index;
+          lightbox?.classList.remove('hidden');
+          lightbox?.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      closeBtn?.addEventListener('click', () => {
+        lightbox?.classList.add('hidden');
+        lightbox?.classList.remove('flex');
+        document.body.style.overflow = '';
+      });
+
+      prevBtn?.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        lightboxImg.src = (galleryImages[currentIndex] as HTMLImageElement).src;
+        lightboxImg.alt = (galleryImages[currentIndex] as HTMLImageElement).alt;
+      });
+
+      nextBtn?.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        lightboxImg.src = (galleryImages[currentIndex] as HTMLImageElement).src;
+        lightboxImg.alt = (galleryImages[currentIndex] as HTMLImageElement).alt;
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !lightbox?.classList.contains('hidden')) {
+          lightbox?.classList.add('hidden');
+          lightbox?.classList.remove('flex');
+          document.body.style.overflow = '';
+        } else if (e.key === 'ArrowLeft') {
+          prevBtn?.click();
+        } else if (e.key === 'ArrowRight') {
+          nextBtn?.click();
+        }
+      });
+
+      lightbox?.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.add('hidden');
+          lightbox.classList.remove('flex');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+  </script>
+</Layout>
+

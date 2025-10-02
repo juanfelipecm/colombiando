@@ -1,21 +1,24 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import heroNosotrasImage from '../assets/images/colombiando-2.jpg';
+import Layout from '../../layouts/Layout.astro';
+import heroNosotrasImage from '../../assets/images/colombiando-2.jpg';
 import { Image } from 'astro:assets';
-import colombiando1 from '../assets/images/colombiando-1.jpg';
-import colombiando2 from '../assets/images/programa-leonor/programa-leonor-colombiando-1.jpg';
-import colombiando3 from '../assets/images/semillero-educadores/semillero-educadores-colombiando-1.jpg';
-import colombiando4 from '../assets/images/colombiando-2.jpg';
-import colombiando5 from '../assets/images/colombiando-3.jpg';
-import colombiando6 from '../assets/images/colombiando-diana-sara.jpg';
-import colombiando7 from '../assets/images/colombiando-4.jpg';
-import CardNuestraHistoria from '../components/CardNuestraHistoria.astro';
+import colombiando1 from '../../assets/images/colombiando-1.jpg';
+import colombiando2 from '../../assets/images/programa-leonor/programa-leonor-colombiando-1.jpg';
+import colombiando3 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-1.jpg';
+import colombiando4 from '../../assets/images/colombiando-2.jpg';
+import colombiando5 from '../../assets/images/colombiando-3.jpg';
+import colombiando6 from '../../assets/images/colombiando-diana-sara.jpg';
+import colombiando7 from '../../assets/images/colombiando-4.jpg';
+import CardNuestraHistoria from '../../components/CardNuestraHistoria.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('en');
 
 // Dynamically import all gallery images
 const imageImports = await Promise.all(
   Array.from({ length: 49 }).map(async (_, i) => {
     const imageNumber = i + 1;
-    return import(`../assets/images/nosotras/colombiando-somos-todos-${imageNumber}.jpg`);
+    return import(`../../assets/images/nosotras/colombiando-somos-todos-${imageNumber}.jpg`);
   })
 );
 ---
@@ -26,7 +29,7 @@ const imageImports = await Promise.all(
 		style={`background-image: url(${heroNosotrasImage.src});`}
 	>
     <div class="mx-4 w-full bg-colombiando-red rounded-lg p-14 translate-y-16">
-      <h1 class="text-3xl md:text-7xl font-semibold text-white">Colombiando somos todos</h1>
+      <h1 class="text-3xl md:text-7xl font-semibold text-white">{t('about.hero.title')}</h1>
     </div>
 	</section>
   
@@ -48,19 +51,19 @@ const imageImports = await Promise.all(
 
   <section class="flex flex-col gap-4 md:gap-8 justify-between md:flex-row px-4 md:px-6 border border-[#0060BB] mx-4 md:m-10 max-w-8xl md:max-h-[80vh]">
     <div class="flex flex-2 flex-col gap-2 my-4 md:my-auto mx-4 md:mx-10">
-      <h2 class="text-lg md:text-xl lg:text-3xl font-bold text-colombiando-red border-b-3 border-[#D00000] pb-2 md:pb-4 w-fit">Nuestra historia</h2>
+      <h2 class="text-lg md:text-xl lg:text-3xl font-bold text-colombiando-red border-b-3 border-[#D00000] pb-2 md:pb-4 w-fit">{t('about.ourStory.title')}</h2>
       <p class="text-xs md:text-sm max-w-xl leading-relaxed">
-        <span class="font-bold">Si queremos proponer, debemos entender.</span> Por eso, Investigando propone un modelo de investigación - acción participativa. Como profesoras buscamos vivir y comprender lo que realmente sucede dentro del aula rural multigrado y caracterizar estos espacios. Actualmente existe un déficit de información accesible, clara y útil que defina cuáles son los factores habilitantes, barreras, necesidad de docentes y apoyo profesional. Este proceso lo hacemos en tres escalas diferentes:
+        <span class="font-bold">Si queremos proponer, debemos entender.</span> {t('about.ourStory.intro')}
       </p>
     </div>
     <div class="flex flex-2 flex-col md:max-h-none md:overflow-y-scroll pr-2">
-      <CardNuestraHistoria image={colombiando1} alt="Colombiando 1" variant="yellow" ano="2022" titulo="Comienzos" parrafo="Comenzamos cuatro profesoras trabajando en un mismo colegio. Surge la pregunta ¿qué está pasando en la educación rural?" />
-      <CardNuestraHistoria image={colombiando2} alt="Colombiando 1" variant="blue" ano="2022" titulo="Queríamos entender" parrafo="Viajamos al Carmen de Viborál queriendo entender las dinámicas de la educación en primera infancia en la ruralidad. La desigualdad en Colombia comienza desde la primera infancia." />
-      <CardNuestraHistoria image={colombiando3} alt="Colombiando 1" variant="red" ano="2023" titulo="Primer piloto" parrafo="Queriendo conectar las diferentes ludotecas y tener mayor alcance surge Leonor, la mula itinerante." />
-      <CardNuestraHistoria image={colombiando4} alt="Colombiando 1" variant="yellow" ano="2023" titulo="Queríamos conectar" parrafo="Comenzamos con vacaciones recreativas para diferentes escuelas en el Cañón del Río Santo Domingo y creando ludotecas en las escuelas." />
-      <CardNuestraHistoria image={colombiando5} alt="Colombiando 1" variant="blue" ano="2023" titulo="Los primeros aliados" parrafo="Van llegando diferentes aliados para ir ejecutando los diferentes proyectos: J&J, Sanofi, Colegio Los Nogales" />
-      <CardNuestraHistoria image={colombiando6} alt="Colombiando 1" variant="red" ano="2024" titulo="Centro de Aprendizaje" parrafo="Tras conversaciones con la comunidad surge la idea de un centro de aprendizaje. Comienza el diseño participativo de La Casa de Leonor." />
-      <CardNuestraHistoria image={colombiando7} alt="Colombiando 1" variant="yellow" ano="2024" titulo="Comienzo de Investigando" parrafo="Queriendo realmente entender el reto de la educación rural multigrado, comienza una etapa de investigación: Investigando." />
+      <CardNuestraHistoria image={colombiando1} alt="Colombiando 1" variant="yellow" ano={t('about.ourStory.timeline.2022_1.year')} titulo={t('about.ourStory.timeline.2022_1.title')} parrafo={t('about.ourStory.timeline.2022_1.description')} />
+      <CardNuestraHistoria image={colombiando2} alt="Colombiando 2" variant="blue" ano={t('about.ourStory.timeline.2022_2.year')} titulo={t('about.ourStory.timeline.2022_2.title')} parrafo={t('about.ourStory.timeline.2022_2.description')} />
+      <CardNuestraHistoria image={colombiando3} alt="Colombiando 3" variant="red" ano={t('about.ourStory.timeline.2023_1.year')} titulo={t('about.ourStory.timeline.2023_1.title')} parrafo={t('about.ourStory.timeline.2023_1.description')} />
+      <CardNuestraHistoria image={colombiando4} alt="Colombiando 4" variant="yellow" ano={t('about.ourStory.timeline.2023_2.year')} titulo={t('about.ourStory.timeline.2023_2.title')} parrafo={t('about.ourStory.timeline.2023_2.description')} />
+      <CardNuestraHistoria image={colombiando5} alt="Colombiando 5" variant="blue" ano={t('about.ourStory.timeline.2023_3.year')} titulo={t('about.ourStory.timeline.2023_3.title')} parrafo={t('about.ourStory.timeline.2023_3.description')} />
+      <CardNuestraHistoria image={colombiando6} alt="Colombiando 6" variant="red" ano={t('about.ourStory.timeline.2024_1.year')} titulo={t('about.ourStory.timeline.2024_1.title')} parrafo={t('about.ourStory.timeline.2024_1.description')} />
+      <CardNuestraHistoria image={colombiando7} alt="Colombiando 7" variant="yellow" ano={t('about.ourStory.timeline.2024_2.year')} titulo={t('about.ourStory.timeline.2024_2.title')} parrafo={t('about.ourStory.timeline.2024_2.description')} />
     </div>
   </section>
 
@@ -76,7 +79,6 @@ const imageImports = await Promise.all(
 
   <script>
     function checkOrientation(img: HTMLImageElement) {
-      // Wait for the image to load
       if (img.complete) {
         applyOrientation(img);
       } else {
@@ -89,21 +91,16 @@ const imageImports = await Promise.all(
       
       if (!container) return;
       
-      // Check if image is landscape (wider than tall)
       if (img.naturalWidth > img.naturalHeight) {
-        // Make landscape images span 2 columns
         container.classList.add('landscape');
         (container as HTMLElement).style.gridColumn = 'span 2';
       } else {
-        // Portrait images stay as 1 column
         container.classList.add('portrait');
         (container as HTMLElement).style.gridColumn = 'span 1';
       }
     }
 
-    // Process all images when page loads
     document.addEventListener('DOMContentLoaded', () => {
-      // Use mutation observer to detect when images are loaded by Astro
       const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
           if (mutation.type === 'childList') {
@@ -114,13 +111,11 @@ const imageImports = await Promise.all(
         });
       });
       
-      // Start observing the gallery grid for changes
       const galleryGrid = document.getElementById('gallery-grid');
       if (galleryGrid) {
         observer.observe(galleryGrid, { childList: true, subtree: true });
       }
       
-      // Also check immediately for any images already loaded
       document.querySelectorAll('.image-container img').forEach(img => {
         checkOrientation(img as HTMLImageElement);
       });
@@ -134,7 +129,6 @@ const imageImports = await Promise.all(
       const galleryImages = document.querySelectorAll('.image-container img');
       let currentIndex = 0;
 
-      // Open lightbox when an image is clicked
       galleryImages.forEach((img, index) => {
         img.addEventListener('click', () => {
           lightboxImg.src = (img as HTMLImageElement).src;
@@ -142,32 +136,28 @@ const imageImports = await Promise.all(
           currentIndex = index;
           lightbox?.classList.remove('hidden');
           lightbox?.classList.add('flex');
-          document.body.style.overflow = 'hidden'; // Prevent scrolling
+          document.body.style.overflow = 'hidden';
         });
       });
 
-      // Close lightbox
       closeBtn?.addEventListener('click', () => {
         lightbox?.classList.add('hidden');
         lightbox?.classList.remove('flex');
         document.body.style.overflow = '';
       });
 
-      // Navigate to previous image
       prevBtn?.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
         lightboxImg.src = (galleryImages[currentIndex] as HTMLImageElement).src;
         lightboxImg.alt = (galleryImages[currentIndex] as HTMLImageElement).alt;
       });
 
-      // Navigate to next image
       nextBtn?.addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % galleryImages.length;
         lightboxImg.src = (galleryImages[currentIndex] as HTMLImageElement).src;
         lightboxImg.alt = (galleryImages[currentIndex] as HTMLImageElement).alt;
       });
 
-      // Close lightbox on Escape key
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && !lightbox?.classList.contains('hidden')) {
           lightbox?.classList.add('hidden');
@@ -180,7 +170,6 @@ const imageImports = await Promise.all(
         }
       });
 
-      // Close on click outside the image
       lightbox?.addEventListener('click', (e) => {
         if (e.target === lightbox) {
           lightbox.classList.add('hidden');
@@ -191,3 +180,4 @@ const imageImports = await Promise.all(
     });
   </script>
 </Layout>
+

@@ -3,6 +3,7 @@ import '../styles/global.css'
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import heroImage from '../assets/images/hero-home.jpg';
+import { getLangFromUrl, type Language } from '../i18n/config';
 
 // Define the interface for social metadata props
 interface Props {
@@ -10,7 +11,11 @@ interface Props {
 	description?: string;
 	image?: string;
 	url?: string;
+	lang?: Language;
 }
+
+// Get language from URL
+const lang = getLangFromUrl(Astro.url);
 
 // Default values
 const {
@@ -25,7 +30,7 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -60,9 +65,9 @@ const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : Astr
 		<meta property="twitter:image" content={new URL(image, Astro.site)} />
 	</head>
 	<body>
-		<Header />
+		<Header lang={lang} />
 		<slot />
-		<Footer />
+		<Footer lang={lang} />
 	</body>
 </html>
 

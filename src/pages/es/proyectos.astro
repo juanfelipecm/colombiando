@@ -1,0 +1,323 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Accordion from '../../components/Accordion.astro';
+import AccordionItem from '../../components/AccordionItem.astro';
+import { Image } from 'astro:assets';
+import img1 from '../../assets/images/colombiando-1.jpg';
+import img2 from '../../assets/images/colombiando-2.jpg';
+import img3 from '../../assets/images/colombiando-3.jpg';
+import InfoCard from '../../components/InfoCard.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+import programaLeonor1 from '../../assets/images/programa-leonor/programa-leonor-colombiando-1.jpg';
+import programaLeonor2 from '../../assets/images/programa-leonor/programa-leonor-colombiando-2.jpg';
+import programaLeonor3 from '../../assets/images/programa-leonor/programa-leonor-colombiando-3.jpg';
+import programaLeonor4 from '../../assets/images/programa-leonor/programa-leonor-colombiando-4.jpg';
+import programaLeonor5 from '../../assets/images/programa-leonor/programa-leonor-colombiando-5.jpg';
+import casaLeonor1 from '../../assets/images/casa-de-leonor/casa-de-leonor-colombiando-1.jpg';
+import casaLeonor2 from '../../assets/images/casa-de-leonor/casa-de-leonor-colombiando-2.jpg';
+import casaLeonor3 from '../../assets/images/casa-de-leonor/casa-de-leonor-colombiando-3.jpg';
+import casaLeonor4 from '../../assets/images/casa-de-leonor/casa-de-leonor-colombiando-4.jpg';
+import casaLeonor5 from '../../assets/images/casa-de-leonor/casa-de-leonor-colombiando-5.jpg';
+import casaLeonor6 from '../../assets/images/casa-de-leonor/casa-de-leonor-colombiando-6.jpg';
+import boletinColombiando from '../../assets/images/boletin-colombiando.png';
+import boletinColombiando2 from '../../assets/images/boletin-colombiando-2.png';
+import boletinColombiando3 from '../../assets/images/boletin-colombiando-3.png';
+import semilleroEducadores1 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-1.jpg';
+import semilleroEducadores2 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-2.jpg';
+import semilleroEducadores3 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-3.jpg';
+import semilleroEducadores4 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-4.jpg';
+import semilleroEducadores5 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-5.jpg';
+import semilleroEducadores6 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-6.jpg';
+import semilleroEducadores7 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-7.jpg';
+import semilleroEducadores8 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-8.jpg';
+import semilleroEducadores9 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-9.jpg';
+import semilleroEducadores10 from '../../assets/images/semillero-educadores/semillero-educadores-colombiando-10.jpg';
+import andoIngeniando1 from '../../assets/images/ando-ingeniando/ando-ingeniando-1.jpg';
+import andoIngeniando2 from '../../assets/images/ando-ingeniando/ando-ingeniando-2.jpg';
+import andoIngeniando3 from '../../assets/images/ando-ingeniando/ando-ingeniando-3.jpg';
+import andoIngeniando4 from '../../assets/images/ando-ingeniando/ando-ingeniando-4.jpg';
+import andoIngeniando5 from '../../assets/images/ando-ingeniando/ando-ingeniando-5.jpg';
+import bgImage from '../../assets/images/colombiando-3.jpg';
+import desdeAfuera1 from '../../assets/images/desde-afuera/colombiando-desde-afuera-1.jpeg';
+import desdeAfuera2 from '../../assets/images/desde-afuera/colombiando-desde-afuera-2.jpeg';
+import desdeAfuera3 from '../../assets/images/desde-afuera/colombiando-desde-afuera-3.jpeg';
+import lectoescritura1 from '../../assets/images/campamento-lecto-escritura/colombiando-campamento-lecto-escritura-1.jpeg';
+import lectoescritura2 from '../../assets/images/campamento-lecto-escritura/colombiando-campamento-lecto-escritura-2.jpeg';
+import lectoescritura3 from '../../assets/images/campamento-lecto-escritura/colombiando-campamento-lecto-escritura-3.jpeg';
+import lectoescritura4 from '../../assets/images/campamento-lecto-escritura/colombiando-campamento-lecto-escritura-4.jpeg';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('es');
+---
+
+<Layout>
+	<section
+		class="relative w-full h-[98vh] bg-cover bg-center flex items-end justify-center p-10 pb-20 lg:pb-0"
+		style={`background-image: url(${bgImage.src});`}
+	>
+  <div class="mx-4 w-full bg-colombiando-yellow rounded-lg p-14 translate-y-16">
+    <h1 class="text-3xl md:text-7xl font-semibold text-white">{t('projects.hero.title')}</h1>
+  </div>
+	</section> 
+
+  <section class="bg-white py-16 mt-20">     
+    <div class="max-w-8xl mx-auto px-5 flex flex-col lg:flex-row">
+      <div class="border border-[#0060BB] md:border-r-0 flex flex-col justify-center p-20 lg:w-2/5 lg:flex-shrink-0">          
+        <h2 class="text-3xl lg:text-4xl font-bold text-colombiando-blue border-b-3 border-[#0060BB] pb-4 mb-4 w-fit">{t('projects.investigating.title')}</h2>
+        <p class="text-sm max-w-xl"><span class="font-bold">Si queremos proponer, debemos comprender. </span>{t('projects.investigating.intro')}</p>
+      </div>
+    <Accordion class="lg:w-3/5">
+      <AccordionItem title={t('projects.investigating.inTerritory.title')} color="blue">
+          <p class="text-sm"><span class="font-bold">Investigando en territorio</span> {t('projects.investigating.inTerritory.description')}</p>
+          <div class="gallery flex gap-4 h-[200px] mt-6">
+            <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
+              <Image src={img1} alt="Colombiando 1" class="object-cover w-full h-full" />
+            </div>
+            <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
+              <Image src={img2} alt="Colombiando 2" class="object-cover w-full h-full" />
+            </div>
+            <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
+                <Image src={img3} alt="Colombiando 3" class="object-cover w-full h-full" />
+            </div>
+          </div>
+      </AccordionItem>
+
+      <AccordionItem title={t('projects.investigating.fromOutside.title')} color="blue">
+        <p class="text-sm"><span class="font-bold">Nos encantan los datos, aunque no ha sido fácil encontrarlos.</span> {t('projects.investigating.fromOutside.description')}</p>
+        <div class="gallery flex gap-4 h-[200px] mt-6">
+          <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
+            <Image src={desdeAfuera1} alt="Colombiando Desde afuera 1" class="object-cover w-full h-full" />
+          </div>
+          <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
+            <Image src={desdeAfuera2} alt="Colombiando Desde afuera 2" class="object-cover w-full h-full" />
+          </div>
+          <div class="gallery-item flex-1 transition-all duration-500 overflow-hidden rounded-xl cursor-pointer">
+              <Image src={desdeAfuera3} alt="Colombiando Desde afuera 3" class="object-cover w-full h-full" />
+          </div>
+        </div>
+    </AccordionItem>      
+
+      <AccordionItem title={t('projects.investigating.quantitativeData.title')} color="blue">
+        <p class="text-sm"><span class="font-bold">Creemos en los datos.</span> {t('projects.investigating.quantitativeData.description')}</p>
+        
+        <div class="flex flex-row overflow-x-scroll gap-4 mt-6 pb-4">
+          <InfoCard title="103" subtitle={t('projects.investigating.quantitativeData.stats.days_palma')} description={t('projects.investigating.quantitativeData.stats.days_palma_desc')} />
+          <InfoCard title="35" subtitle={t('projects.investigating.quantitativeData.stats.days_junin')} description={t('projects.investigating.quantitativeData.stats.days_junin_desc')} />
+          <InfoCard title="16" subtitle={t('projects.investigating.quantitativeData.stats.days_jovi')} description={t('projects.investigating.quantitativeData.stats.days_jovi_desc')} />
+          <InfoCard title="72" subtitle={t('projects.investigating.quantitativeData.stats.days_pajonal')} description={t('projects.investigating.quantitativeData.stats.days_pajonal_desc')} />
+          <InfoCard title="13" subtitle={t('projects.investigating.quantitativeData.stats.schools_visited')} description={t('projects.investigating.quantitativeData.stats.schools_visited_desc')} />
+          <InfoCard title="1" subtitle={t('projects.investigating.quantitativeData.stats.research_group')} description={t('projects.investigating.quantitativeData.stats.research_group_desc')} />
+          <InfoCard title={t('projects.investigating.quantitativeData.stats.educators_seedbed')} subtitle={t('projects.investigating.quantitativeData.stats.educators_seedbed_sub')} description={t('projects.investigating.quantitativeData.stats.educators_seedbed_desc')} />
+          <InfoCard title="6" subtitle={t('projects.investigating.quantitativeData.stats.volunteers')} description={t('projects.investigating.quantitativeData.stats.volunteers_desc')} />
+          <InfoCard title="4" subtitle={t('projects.investigating.quantitativeData.stats.schools_accompanied')} description={t('projects.investigating.quantitativeData.stats.schools_accompanied_desc')} />
+          <InfoCard title="15" subtitle={t('projects.investigating.quantitativeData.stats.schools_visited_total')} description={t('projects.investigating.quantitativeData.stats.schools_visited_total_desc')} />
+          <InfoCard title="9" subtitle={t('projects.investigating.quantitativeData.stats.schools_connected')} description={t('projects.investigating.quantitativeData.stats.schools_connected_desc')} />
+          <InfoCard title="36" subtitle={t('projects.investigating.quantitativeData.stats.teachers_network')} description={t('projects.investigating.quantitativeData.stats.teachers_network_desc')} />
+          <InfoCard title="6" subtitle={t('projects.investigating.quantitativeData.stats.newsletters')} description={t('projects.investigating.quantitativeData.stats.newsletters_desc')} />
+          <InfoCard title="287" subtitle={t('projects.investigating.quantitativeData.stats.students_benefited')} description={t('projects.investigating.quantitativeData.stats.students_benefited_desc')} />
+          <InfoCard title="4" subtitle={t('projects.investigating.quantitativeData.stats.partnerships')} description={t('projects.investigating.quantitativeData.stats.partnerships_desc')} />
+          <InfoCard title="2520" subtitle={t('projects.investigating.quantitativeData.stats.support_hours')} description={t('projects.investigating.quantitativeData.stats.support_hours_desc')} />
+          <InfoCard title="81%" subtitle={t('projects.investigating.quantitativeData.stats.rural_schools_percentage')} description={t('projects.investigating.quantitativeData.stats.rural_schools_percentage_desc')} />
+          <InfoCard title="+45.000" subtitle={t('projects.investigating.quantitativeData.stats.total_rural_schools')} description={t('projects.investigating.quantitativeData.stats.total_rural_schools_desc')} />
+        </div>
+      </AccordionItem>
+
+    </Accordion>
+    </div>
+    
+  </section>
+  
+  <section class="bg-white py-16 -mt-20">     
+    <div class="max-w-8xl mx-auto px-5 flex flex-col lg:flex-row">
+      <div class="border border-[#D00000] md:border-r-0 flex flex-col justify-center p-20 lg:w-2/5 lg:flex-shrink-0">          
+        <h2 class="text-3xl lg:text-4xl font-bold border-b-3 text-colombiando-red border-[#D00000] pb-4 mb-4 w-fit">{t('projects.coCreating.title')}</h2>
+        <p class="text-sm max-w-xl"><span class="font-bold">Somos innovadoras.</span> {t('projects.coCreating.intro')}</p>
+      </div>
+    <Accordion class="lg:w-3/5">
+      <AccordionItem title={t('projects.coCreating.inCommunity.title')} color="red">
+        <div class="flex flex-col gap-4 mb-4">
+          <p class="text-sm max-w-3xl">{t('projects.coCreating.inCommunity.description')}</p>
+        </div>
+        <div class="flex overflow-x-scroll gap-4 p-4">
+
+           <!-- Card Programa Leonor -->
+           <div class="bg-white border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] p-7 max-w-[450px] min-w-[400px] mx-auto relative overflow-hidden">
+             <div class="flex flex-col">
+               <h2 class="text-2xl font-bold text-colombiando-red">{t('projects.coCreating.inCommunity.programaLeonor.title')}</h2>
+               <div class="h-0.5 bg-colombiando-red w-full mt-2 mb-6"></div>
+               <p class="text-xs">{t('projects.coCreating.inCommunity.programaLeonor.description')}</p>
+                <div class="gallery flex gap-4 h-[200px] mt-6 pb-4 overflow-x-scroll px-4">
+                  <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                    <Image src={programaLeonor1} alt="Programa Leonor 1" class="object-cover w-full h-full" />
+                  </div>
+                  <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                    <Image src={programaLeonor2} alt="Programa Leonor 2" class="object-cover w-full h-full" />
+                  </div>
+                  <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[150px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                    <Image src={programaLeonor3} alt="Programa Leonor 3" class="object-cover w-full h-full" />
+                  </div>
+                  <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                    <Image src={programaLeonor4} alt="Programa Leonor 4" class="object-cover w-full h-full" />
+                  </div>
+                  <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                    <Image src={programaLeonor5} alt="Programa Leonor 5" class="object-cover w-full h-full" />
+                  </div>
+                </div>
+              </div>            
+            </div>
+           <!-- Card Casa de Leonor -->
+           <div class="bg-white border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] p-7 min-w-[400px] max-w-[450px] mx-auto relative overflow-hidden">
+            <div class="flex flex-col">
+              <h2 class="text-2xl font-bold text-colombiando-red">{t('projects.coCreating.inCommunity.casaLeonor.title')}</h2>
+              <div class="h-0.5 bg-colombiando-red w-full mt-2 mb-6"></div>
+              <p class="text-xs">{t('projects.coCreating.inCommunity.casaLeonor.description')}</p>              
+               <div class="gallery flex gap-4 h-[200px] mt-6 pb-4 overflow-x-scroll">
+                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                   <Image src={casaLeonor1} alt="Casa de Leonor 1" class="object-cover w-full h-full" />
+                 </div>
+                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                   <Image src={casaLeonor2} alt="Casa de Leonor 2" class="object-cover w-full h-full" />
+                 </div>
+                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[150px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                   <Image src={casaLeonor3} alt="Casa de Leonor 3" class="object-cover w-full h-full" />
+                 </div>
+                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                   <Image src={casaLeonor4} alt="Casa de Leonor 4" class="object-cover w-full h-full" />
+                 </div>
+                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                   <Image src={casaLeonor5} alt="Casa de Leonor 5" class="object-cover w-full h-full" />
+                 </div>
+                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                   <Image src={casaLeonor6} alt="Casa de Leonor 6" class="object-cover w-full h-full" />
+                 </div>
+               </div>
+             </div>            
+           </div>        
+
+           <!-- Card Programa Ando Ingeniando -->
+           <div class="bg-white border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] p-7 min-w-[400px] max-w-[450px] mx-auto relative overflow-hidden">
+            <div class="flex flex-col">
+              <h2 class="text-2xl font-bold text-colombiando-red">{t('projects.coCreating.inCommunity.andoIngeniando.title')}</h2>
+              <div class="h-0.5 bg-colombiando-red w-full mt-2 mb-6"></div>
+              <p class="text-xs">{t('projects.coCreating.inCommunity.andoIngeniando.description')}</p>              
+               <div class="gallery flex gap-4 h-[200px] mt-6 pb-4 overflow-x-scroll">
+                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                   <Image src={andoIngeniando1} alt="Ando Ingeniando 1" class="object-cover w-full h-full" />
+                 </div>
+                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                   <Image src={andoIngeniando2} alt="Ando Ingeniando 2" class="object-cover w-full h-full" />
+                 </div>
+                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[150px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                   <Image src={andoIngeniando3} alt="Ando Ingeniando 3" class="object-cover w-full h-full" />
+                 </div>
+                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                   <Image src={andoIngeniando4} alt="Ando Ingeniando 4" class="object-cover w-full h-full" />
+                 </div>
+                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                   <Image src={andoIngeniando5} alt="Ando Ingeniando 5" class="object-cover w-full h-full" />
+                 </div>
+               </div>
+             </div>            
+           </div>
+           
+           <!-- Card Campamento Lectoescritura -->
+           <div class="bg-white border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] p-7 min-w-[400px] max-w-[450px] mx-auto relative overflow-hidden">
+            <div class="flex flex-col">
+              <h2 class="text-2xl font-bold text-colombiando-red">{t('projects.coCreating.inCommunity.campamentoLectoescritura.title')}</h2>
+              <div class="h-0.5 bg-colombiando-red w-full mt-2 mb-6"></div>
+              <p class="text-xs">{t('projects.coCreating.inCommunity.campamentoLectoescritura.description')}</p>              
+               <div class="gallery flex gap-4 h-[200px] mt-6 pb-4 overflow-x-scroll">
+                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                   <Image src={lectoescritura1} alt="Campamento Lectoescritura 1" class="object-cover w-full h-full" />
+                 </div>
+                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                   <Image src={lectoescritura2} alt="Campamento Lectoescritura 2" class="object-cover w-full h-full" />
+                 </div>
+                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[150px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                   <Image src={lectoescritura3} alt="Campamento Lectoescritura 3" class="object-cover w-full h-full" />
+                 </div>
+                 <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+                   <Image src={lectoescritura4} alt="Campamento Lectoescritura 4" class="object-cover w-full h-full" />
+                 </div>
+               </div>
+             </div>            
+           </div>           
+
+        </div>
+      </AccordionItem>
+
+      <AccordionItem title={t('projects.coCreating.boletiando.title')} color="red">
+        <div class="flex flex-col gap-4 p-4">
+          <div class="flex flex-col">
+            <p class="text-sm"><span class="font-bold">El boletín Colombiando</span> {t('projects.coCreating.boletiando.description')}
+            </p>
+            <div class="mt-4">
+              <NewsletterSignup variant="red" />
+            </div>
+          </div>
+          <div class="flex flex-row overflow-auto gap-4">
+            <div class="flex flex-col border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] overflow-hidden w-xs">
+              <Image src={boletinColombiando2} alt="Boletín Colombiando 2" class="object-cover w-full h-full" />
+            </div>
+            <div class="flex flex-col border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] overflow-hidden w-xs">
+              <Image src={boletinColombiando3} alt="Boletín Colombiando 3" class="object-cover w-full h-full" />
+            </div>
+            <div class="flex flex-col border border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000] overflow-hidden w-xs">
+              <Image src={boletinColombiando} alt="Boletín Colombiando" class="object-cover w-full h-full" />
+            </div>                        
+           </div> 
+        </div>  
+      </AccordionItem>
+
+      <AccordionItem title={t('projects.coCreating.educatorsSeedbed.title')} color="red">
+        <p class="text-xs mb-2">{t('projects.coCreating.educatorsSeedbed.description1')}</p>
+        <p class="text-xs">{t('projects.coCreating.educatorsSeedbed.description2')}</p>
+        <div class="gallery flex gap-4 h-[200px] mt-6 pb-4 overflow-x-scroll">
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores1} alt="Semillero de Educadores 1" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores2} alt="Semillero de Educadores 2" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[150px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores3} alt="Semillero de Educadores 3" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores4} alt="Semillero de Educadores 4" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores5} alt="Semillero de Educadores 5" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+              <Image src={semilleroEducadores6} alt="Semillero de Educadores 6" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores7} alt="Semillero de Educadores 7" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores8} alt="Semillero de Educadores 8" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores9} alt="Semillero de Educadores 9" class="object-cover w-full h-full" />
+          </div>
+          <div class="transition-all duration-500 overflow-hidden cursor-pointer min-w-[250px] border-black rounded-2xl shadow-[2px_2px_0px_0px_#000000]">
+            <Image src={semilleroEducadores10} alt="Semillero de Educadores 10" class="object-cover w-full h-full" />
+          </div>
+        </div>        
+      </AccordionItem>
+    </Accordion>
+    </div>
+    
+  </section>
+</Layout> 
+
+<style scoped>
+  .gallery:hover .gallery-item {
+    flex: 1;
+  }
+  .gallery-item:hover {
+    flex: 2.5 !important;
+    z-index: 10;
+  }
+</style>
+

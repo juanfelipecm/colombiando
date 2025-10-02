@@ -1,0 +1,250 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About Us",
+    "joinUs": "Join Us"
+  },
+  "home": {
+    "hero": {
+      "title": "We are the best ally of multigrade rural teachers."
+    },
+    "teacherToTeacher": {
+      "title": "From teacher to teacher",
+      "description": "A platform by teachers for teachers. We are a community of multigrade teachers who support each other, connect, share best practices, and make rural education visible."
+    },
+    "whoWeAre": {
+      "title": "Who we are",
+      "description": "Colombiando is a non-profit organization that, since 2022, has been researching how to be the best ally of multigrade rural teachers. We currently co-create educational projects with rural teachers from multigrade schools in remote areas of the country with the goal of supporting them in their teaching practice."
+    },
+    "ruralClassroom": {
+      "title": "We invite you to discover this multigrade rural classroom",
+      "description": "This image reflects the heart of a multigrade rural school: a living classroom where learning, challenges, and dreams come together, told from the voice of those who teach there every day.",
+      "bubbles": {
+        "1": "Students of all ages support each other a lot",
+        "2": "Here I teach as best I can subjects that are not my strength",
+        "3": "Students respect different learning paces",
+        "4": "The school is a main part of the community",
+        "5": "During recess there are play spaces among students of different ages",
+        "6": "The first to arrive and last to leave, the jack-of-all-trades, the psychologist as well as the teacher",
+        "7": "They take care of each other a lot",
+        "8": "I have to plan classes for Spanish, mathematics, social sciences, natural sciences, geography, history, peace studies, Afro studies, geometry, statistics, English, literacy, computer science, religion…",
+        "9": "There is so much love for the school and interest in learning",
+        "10": "We still don't have bathrooms at school and we don't have electricity either",
+        "11": "They recognize me for being a teacher",
+        "12": "I have students from Kindergarten, 1st, 2nd, 3rd, 4th, 5th grade",
+        "13": "I have never received training on how to teach a multigrade classroom",
+        "14": "It's March and this year's textbooks haven't arrived yet",
+        "15": "The principal hasn't come in the last 2 years",
+        "16": "The textbook model doesn't exist for all classes"
+      }
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Colombiando is all of us"
+    },
+    "ourStory": {
+      "title": "Our story",
+      "intro": "If we want to propose, we must understand. That's why Investigando proposes a participatory action-research model. As teachers, we seek to live and understand what really happens inside the multigrade rural classroom and characterize these spaces. Currently there is a deficit of accessible, clear, and useful information that defines what the enabling factors, barriers, teacher needs, and professional support are. We do this process at three different scales:",
+      "timeline": {
+        "2022_1": {
+          "year": "2022",
+          "title": "Beginnings",
+          "description": "Four teachers started working at the same school. The question arises: what's happening in rural education?"
+        },
+        "2022_2": {
+          "year": "2022",
+          "title": "We wanted to understand",
+          "description": "We traveled to Carmen de Viborál wanting to understand the dynamics of early childhood education in rural areas. Inequality in Colombia begins from early childhood."
+        },
+        "2023_1": {
+          "year": "2023",
+          "title": "First pilot",
+          "description": "Wanting to connect different play centers and have greater reach, Leonor, the traveling mule, was born."
+        },
+        "2023_2": {
+          "year": "2023",
+          "title": "We wanted to connect",
+          "description": "We started with recreational vacations for different schools in the Santo Domingo River Canyon and creating play centers in the schools."
+        },
+        "2023_3": {
+          "year": "2023",
+          "title": "The first allies",
+          "description": "Different allies are arriving to execute the different projects: J&J, Sanofi, Los Nogales School"
+        },
+        "2024_1": {
+          "year": "2024",
+          "title": "Learning Center",
+          "description": "After conversations with the community, the idea of a learning center emerges. Participatory design of Casa de Leonor begins."
+        },
+        "2024_2": {
+          "year": "2024",
+          "title": "Beginning of Investigando",
+          "description": "Really wanting to understand the challenge of multigrade rural education, a research phase begins: Investigando."
+        }
+      }
+    }
+  },
+  "projects": {
+    "hero": {
+      "title": "Our Projects"
+    },
+    "investigating": {
+      "title": "Investigating",
+      "intro": "If we want to propose, we must understand. Investigando is the core of Colombiando. We seek to innovate with purpose, make evidence-based decisions, and build on what already exists. That's why we research in the field, living the rural school, and from outside, connecting data and making visible the information gaps about the multigrade classroom.",
+      "inTerritory": {
+        "title": "In the field",
+        "description": "Investigando in the field is a participatory action-research model in which a Colombiando teacher lives in the rural community and accompanies the teacher and their students daily, in order to support, understand the dynamics of the multigrade classroom, and identify opportunities to innovate with purpose."
+      },
+      "fromOutside": {
+        "title": "From outside",
+        "description": "We love data, although it hasn't been easy to find. That's why we search, collect, and analyze information from existing databases. Additionally, we map each of the places visited and analyze what was observed in the field. Finally, we consolidate strategic alliances that strengthen our understanding of the multigrade classroom."
+      },
+      "quantitativeData": {
+        "title": "Quantitative data",
+        "description": "We believe in data. We focus on finding and analyzing quantitative information about the multigrade rural modality in Colombia. It's a unique modality that deserves to be analyzed from its own data and its particular teaching and learning methodologies.",
+        "stats": {
+          "days_palma": "Days",
+          "days_palma_desc": "in La Palma, Antioquia",
+          "days_junin": "Days",
+          "days_junin_desc": "in Junín, Cundinamarca",
+          "days_jovi": "Days",
+          "days_jovi_desc": "in Joví, Chocó",
+          "days_pajonal": "Days",
+          "days_pajonal_desc": "in Pajonal, Sucre",
+          "schools_visited": "Schools visited",
+          "schools_visited_desc": "and 16 teachers",
+          "research_group": "Student group",
+          "research_group_desc": "from Universidad de los Andes researching quantitative data.",
+          "educators_seedbed": "Educators",
+          "educators_seedbed_sub": "Seedbed",
+          "educators_seedbed_desc": "with volunteer students from Escuela Nueva and Todos a Aprender Program",
+          "volunteers": "Volunteers",
+          "volunteers_desc": "Consolidated in our team",
+          "schools_accompanied": "Schools",
+          "schools_accompanied_desc": "accompanied in person by Investigando program",
+          "schools_visited_total": "Schools",
+          "schools_visited_total_desc": "visited",
+          "schools_connected": "Schools",
+          "schools_connected_desc": "connected by the Leonor program (Canyon)",
+          "teachers_network": "Teachers",
+          "teachers_network_desc": "linked to the network",
+          "newsletters": "Newsletters",
+          "newsletters_desc": "\"Boletiando\" published",
+          "students_benefited": "Students benefited",
+          "students_benefited_desc": "in activities with partners",
+          "partnerships": "Partnerships implemented",
+          "partnerships_desc": " with Johnson & Johnson, Los Nogales School, Sanofi, Alianza Educativa",
+          "support_hours": "Support hours",
+          "support_hours_desc": "in person to multigrade teachers",
+          "rural_schools_percentage": "Schools",
+          "rural_schools_percentage_desc": "in Colombia are rural",
+          "total_rural_schools": "Rural schools",
+          "total_rural_schools_desc": "in Colombia"
+        }
+      }
+    },
+    "coCreating": {
+      "title": "Co-creating",
+      "intro": "We are innovators. We love co-creating programs, piloting, and evaluating them as a research process. We are currently in the Santo Domingo River Canyon with the Leonor program and the Educators Seedbed.",
+      "inCommunity": {
+        "title": "In community",
+        "description": "As a result of joint work with teachers, students and families, and the support of strategic partners, very powerful initiatives have emerged in the territory.",
+        "programaLeonor": {
+          "title": "Leonor Program",
+          "description": "Because \"learning is an honor\", it is Colombiando's educational mule that connects the eight schools of the Santo Domingo River Canyon, Antioquia, through traveling libraries once a month in each school."
+        },
+        "casaLeonor": {
+          "title": "Casa de Leonor",
+          "description": "Learning space in La Palma village where the community can rent games, read books, and participate in workshops."
+        },
+        "andoIngeniando": {
+          "title": "Ando Ingeniando Program",
+          "description": "Program to awaken and cultivate curiosity for STEM areas in 8 schools in the Santo Domingo River Canyon, Antioquia"
+        },
+        "campamentoLectoescritura": {
+          "title": "Literacy Camp",
+          "description": "Literacy process strengthening program in Buenaventura village in Pajonal, Sucre."
+        }
+      },
+      "boletiando": {
+        "title": "Newsletter",
+        "description": "The Colombiando bulletin Network of 46 multigrade rural teachers. A space to find resources, messages, ideas, questions, and best practices that we as multigrade teachers want to share."
+      },
+      "educatorsSeedbed": {
+        "title": "Educators Seedbed",
+        "description1": "Currently at Colombiando we promote spaces for building bridges between communities through the co-creation of educational projects that strengthen mutual learning, collaborative work, and social commitment.",
+        "description2": "We want to awaken interest and commitment in young people from private schools in the city towards education and rural life in Colombia."
+      }
+    }
+  },
+  "joinUs": {
+    "hero": {
+      "title": "Join Us"
+    },
+    "main": {
+      "title": "Join Colombiando",
+      "description": "A foundation with open doors. Contribute to multigrade rural education with a donation, an idea, a message of support."
+    },
+    "donation": {
+      "title": "Donation",
+      "description": "If you want to make a donation, please complete this form.",
+      "points": {
+        "1": "We currently have donations enabled via bank transfer at Bancolombia.",
+        "2": "Fill out the form to access the bank account details.",
+        "3": "Request that we contact you for corporate donations, questions and support."
+      },
+      "button": "Donate"
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Have questions? Want to collaborate? We love meeting people committed to rural education. Write to us and let's talk about how you can join our mission.",
+      "button": "Write to Us",
+      "contactInfo": {
+        "title": "Contact Information",
+        "email": "Email:",
+        "whatsapp": "WhatsApp:"
+      },
+      "socialMedia": {
+        "title": "Social Media",
+        "instagram": "Instagram:",
+        "linkedin": "LinkedIn:"
+      },
+      "waysToCollaborate": {
+        "title": "Ways to collaborate:",
+        "volunteer": "Volunteering in educational programs",
+        "partnerships": "Strategic partnerships",
+        "materials": "Donation of educational materials",
+        "professional": "Specialized professional support",
+        "spread": "Spreading our cause"
+      }
+    }
+  },
+  "documents": {
+    "hero": {
+      "title": "Documents of Interest"
+    },
+    "viewPdf": "View PDF",
+    "items": {
+      "constitutionAct": "Act of Constitution",
+      "legalCertificate": "Certificate of Existence and Legal Representation",
+      "salaryCertificate": "Certificate of Salary Payments to Management",
+      "complianceCertificate": "Certificate of Compliance with Requirements",
+      "openingFinancials": "Opening Financial Statements",
+      "meritoriousActivity": "Description of Meritorious Activity",
+      "projectReports": "Reports of Ongoing Projects",
+      "criminalRecord": "Criminal Background Certificate"
+    }
+  },
+  "footer": {
+    "tagline": "A platform by teachers for teachers",
+    "description": "We are a community of multigrade teachers who support each other, connect, share best practices, and make rural education visible.",
+    "contactInfo": "Contact Information",
+    "rteInfo": "RTE Information"
+  },
+  "newsletter": {
+    "button": "Subscribe to Newsletter"
+  }
+}
+

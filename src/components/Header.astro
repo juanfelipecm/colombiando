@@ -1,14 +1,34 @@
 ---
 import Button from './Button.astro';
+import { getLangFromUrl, type Language } from '../i18n/config';
+import { useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 const currentPath = Astro.url.pathname;
 
 // Helper function to check if a path is active
 const isActive = (path: string) => {
-  if (path === '/') {
-    return currentPath === '/' || currentPath === '';
+  if (path === `/${lang}/` || path === `/${lang}`) {
+    return currentPath === `/${lang}/` || currentPath === `/${lang}`;
   }
-  return currentPath.startsWith(path);
+  return currentPath.includes(path);
 };
+
+// Get the current route without language prefix for language switching
+const getCurrentRoute = () => {
+  const parts = currentPath.split('/').filter(Boolean);
+  if (parts.length > 1 && (parts[0] === 'es' || parts[0] === 'en')) {
+    return parts.slice(1).join('/');
+  }
+  return '';
+};
+
+const currentRoute = getCurrentRoute();
+
+// Generate alternate language URL
+const alternateLang: Language = lang === 'es' ? 'en' : 'es';
+const alternateUrl = currentRoute ? `/${alternateLang}/${currentRoute}` : `/${alternateLang}/`;
 ---
 
 <header class="fixed top-0 left-0 right-0 z-100 flex items-center justify-between bg-white rounded-lg px-6 py-3 mx-2 md:mx-8 mt-2 md:mt-4 shadow-lg">
@@ -26,18 +46,18 @@ const isActive = (path: string) => {
   </button>
   
   <!-- Desktop Navigation -->
-  <nav class="hidden md:flex flex-grow gap-4 border-b-4 border-black justify-end ml-6 pb-4">
-    <a href="/">
-      <Button variant="yellow" active={isActive('/')}>Inicio</Button>
+  <nav class="hidden md:flex flex-grow gap-4 border-b-4 border-black justify-end ml-6 pb-4 items-center">
+    <a href={`/${lang}/`}>
+      <Button variant="yellow" active={isActive(`/${lang}/`)}>{t('nav.home')}</Button>
     </a>
-    <a href="/proyectos">
-      <Button variant="blue" active={isActive('/proyectos')}>Proyectos</Button>
+    <a href={`/${lang}/${lang === 'es' ? 'proyectos' : 'proyectos'}`}>
+      <Button variant="blue" active={isActive('proyectos')}>{t('nav.projects')}</Button>
     </a>
-    <a href="/nosotras">
-      <Button variant="red" active={isActive('/nosotras')}>Nosotras</Button>
+    <a href={`/${lang}/${lang === 'es' ? 'nosotras' : 'nosotras'}`}>
+      <Button variant="red" active={isActive('nosotras')}>{t('nav.about')}</Button>
     </a>
-    <a href="/sumate">
-      <Button variant="white" active={isActive('/donaciones')}>Súmate</Button>
+    <a href={`/${lang}/${lang === 'es' ? 'sumate' : 'sumate'}`}>
+      <Button variant="white" active={isActive('sumate')}>{t('nav.joinUs')}</Button>
     </a>
   </nav>
   
@@ -52,17 +72,17 @@ const isActive = (path: string) => {
       </button>
     </div>
     <nav class="flex flex-col items-center gap-6 p-8">
-      <a href="/" class="w-full max-w-xs text-center">
-        <Button variant="yellow" active={isActive('/')} class="w-full">Inicio</Button>
+      <a href={`/${lang}/`} class="w-full max-w-xs text-center">
+        <Button variant="yellow" active={isActive(`/${lang}/`)} class="w-full">{t('nav.home')}</Button>
       </a>
-      <a href="/proyectos" class="w-full max-w-xs text-center">
-        <Button variant="blue" active={isActive('/proyectos')} class="w-full">Proyectos</Button>
+      <a href={`/${lang}/${lang === 'es' ? 'proyectos' : 'proyectos'}`} class="w-full max-w-xs text-center">
+        <Button variant="blue" active={isActive('proyectos')} class="w-full">{t('nav.projects')}</Button>
       </a>
-      <a href="/nosotras" class="w-full max-w-xs text-center">
-        <Button variant="red" active={isActive('/nosotras')} class="w-full">Nosotras</Button>
+      <a href={`/${lang}/${lang === 'es' ? 'nosotras' : 'nosotras'}`} class="w-full max-w-xs text-center">
+        <Button variant="red" active={isActive('nosotras')} class="w-full">{t('nav.about')}</Button>
       </a>
-      <a href="/sumate" class="w-full max-w-xs text-center">
-        <Button variant="white" active={isActive('/sumate')} class="w-full">Súmate</Button>
+      <a href={`/${lang}/${lang === 'es' ? 'sumate' : 'sumate'}`} class="w-full max-w-xs text-center">
+        <Button variant="white" active={isActive('sumate')} class="w-full">{t('nav.joinUs')}</Button>
       </a>
     </nav>
   </div>
@@ -81,6 +101,20 @@ const isActive = (path: string) => {
     
     mobileMenuClose?.addEventListener('click', () => {
       mobileMenu?.classList.add('translate-x-full');
+    });
+    
+    // Save language preference when switching
+    const langSwitchers = document.querySelectorAll('.lang-switcher, a[href^="/es/"], a[href^="/en/"]');
+    langSwitchers.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = (e.currentTarget as HTMLAnchorElement).getAttribute('href');
+        if (href) {
+          const lang = href.startsWith('/es') ? 'es' : href.startsWith('/en') ? 'en' : null;
+          if (lang) {
+            localStorage.setItem('preferred-language', lang);
+          }
+        }
+      });
     });
   });
 </script>
